@@ -6,5 +6,7 @@ The target compiler is GCC.
 
 ### Currrently supported devices:
 
-* Atmel SAMD20
+* Atmel SAMD20J18 (SAM D20 Xplained Pro)
+* Atmel SAMD10D14 (SAM D10 Xplained Mini)
+
 

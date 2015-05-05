@@ -31,72 +31,72 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "samd20.h"
+#include "samd10.h"
 #include "hal_gpio.h"
 
 //-----------------------------------------------------------------------------
 #define PERIOD_FAST     100
 #define PERIOD_SLOW     500
 
-HAL_GPIO_PIN(LED,      A, 14)
-HAL_GPIO_PIN(BUTTON,   A, 15)
-HAL_GPIO_PIN(UART_TX,  A, 24)
-HAL_GPIO_PIN(UART_RX,  A, 25)
+HAL_GPIO_PIN(LED,      A, 9)
+HAL_GPIO_PIN(BUTTON,   A, 25)
+HAL_GPIO_PIN(UART_TX,  A, 10)
+HAL_GPIO_PIN(UART_RX,  A, 11)
 
 //-----------------------------------------------------------------------------
 static inline void timer_sync(void)
 {
-  while (TC0->COUNT16.STATUS.bit.SYNCBUSY);
+  while (TC1->COUNT16.STATUS.bit.SYNCBUSY);
 }
 
 //-----------------------------------------------------------------------------
 static void timer_set_period(uint16_t i)
 {
-  TC0->COUNT16.CC[0].reg = (F_CPU / 1000ul / 256) * i;
+  TC1->COUNT16.CC[0].reg = (F_CPU / 1000ul / 256) * i;
   timer_sync();
 
-  TC0->COUNT16.COUNT.reg = 0;
+  TC1->COUNT16.COUNT.reg = 0;
   timer_sync();
 }
 
 //-----------------------------------------------------------------------------
-void irq_handler_tc0(void)
+void irq_handler_tc1(void)
 {
-  if (TC0->COUNT16.INTFLAG.reg & TC_INTFLAG_MC(1))
+  if (TC1->COUNT16.INTFLAG.reg & TC_INTFLAG_MC(1))
   {
     HAL_GPIO_LED_toggle();
-    TC0->COUNT16.INTFLAG.reg = TC_INTFLAG_MC(1);
+    TC1->COUNT16.INTFLAG.reg = TC_INTFLAG_MC(1);
   }
 }
 
 //-----------------------------------------------------------------------------
 static void timer_init(void)
 {
-  PM->APBCMASK.reg |= PM_APBCMASK_TC0;
+  PM->APBCMASK.reg |= PM_APBCMASK_TC1;
 
-  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID(TC0_GCLK_ID) |
+  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID(TC1_GCLK_ID) |
       GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN(0);
 
-  TC0->COUNT16.CTRLA.reg = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MFRQ |
+  TC1->COUNT16.CTRLA.reg = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MFRQ |
       TC_CTRLA_PRESCALER_DIV256 | TC_CTRLA_PRESCSYNC_RESYNC;
   timer_sync();
 
-  TC0->COUNT16.COUNT.reg = 0;
+  TC1->COUNT16.COUNT.reg = 0;
   timer_sync();
 
   timer_set_period(PERIOD_SLOW);
 
-  TC0->COUNT16.CTRLA.reg |= TC_CTRLA_ENABLE;
+  TC1->COUNT16.CTRLA.reg |= TC_CTRLA_ENABLE;
   timer_sync();
 
-  TC0->COUNT16.INTENSET.reg = TC_INTENSET_MC(1);
-  NVIC_EnableIRQ(TC0_IRQn);
+  TC1->COUNT16.INTENSET.reg = TC_INTENSET_MC(1);
+  NVIC_EnableIRQ(TC1_IRQn);
 }
 
 //-----------------------------------------------------------------------------
 static void uart_sync(void)
 {
-  while (SERCOM3->USART.STATUS.bit.SYNCBUSY);
+  while (SERCOM0->USART.STATUS.reg);
 }
 
 //-----------------------------------------------------------------------------
@@ -109,32 +109,32 @@ static void uart_init(uint32_t baud)
   HAL_GPIO_UART_RX_in();
   HAL_GPIO_UART_RX_pmuxen(PORT_PMUX_PMUXE_C_Val);
 
-  PM->APBCMASK.reg |= PM_APBCMASK_SERCOM3;
+  PM->APBCMASK.reg |= PM_APBCMASK_SERCOM0;
 
-  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID(SERCOM3_GCLK_ID_CORE) |
+  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID(SERCOM0_GCLK_ID_CORE) |
       GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN(0);
 
-  SERCOM3->USART.CTRLA.reg =
+  SERCOM0->USART.CTRLA.reg =
       SERCOM_USART_CTRLA_DORD | SERCOM_USART_CTRLA_MODE_USART_INT_CLK |
-      SERCOM_USART_CTRLA_RXPO(3/*PAD3*/) | SERCOM_USART_CTRLA_TXPO/*PAD2*/;
+      SERCOM_USART_CTRLA_RXPO(3/*PAD3*/) | SERCOM_USART_CTRLA_TXPO(1/*PAD2*/);
   uart_sync();
 
-  SERCOM3->USART.CTRLB.reg = SERCOM_USART_CTRLB_RXEN | SERCOM_USART_CTRLB_TXEN |
+  SERCOM0->USART.CTRLB.reg = SERCOM_USART_CTRLB_RXEN | SERCOM_USART_CTRLB_TXEN |
       SERCOM_USART_CTRLB_CHSIZE(0/*8 bits*/);
   uart_sync();
 
-  SERCOM3->USART.BAUD.reg = (uint16_t)br;
+  SERCOM0->USART.BAUD.reg = (uint16_t)br+1;
   uart_sync();
 
-  SERCOM3->USART.CTRLA.reg |= SERCOM_USART_CTRLA_ENABLE;
+  SERCOM0->USART.CTRLA.reg |= SERCOM_USART_CTRLA_ENABLE;
   uart_sync();
 }
 
 //-----------------------------------------------------------------------------
 static void uart_putc(char c)
 {
-  while (!(SERCOM3->USART.INTFLAG.reg & SERCOM_USART_INTFLAG_DRE));
-  SERCOM3->USART.DATA.reg = c;
+  while (!(SERCOM0->USART.INTFLAG.reg & SERCOM_USART_INTFLAG_DRE));
+  SERCOM0->USART.DATA.reg = c;
 }
 
 //-----------------------------------------------------------------------------
@@ -162,7 +162,7 @@ int main(void)
 
   sys_init();
   timer_init();
-  uart_init(115200);
+  uart_init(38400); // mEDBG can't handle 115200
 
   uart_puts("\r\nHello, world!\r\n");
 
