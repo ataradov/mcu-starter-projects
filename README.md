@@ -8,5 +8,6 @@ The target compiler is GCC.
 
 * Atmel SAMD20J18 (SAM D20 Xplained Pro)
 * Atmel SAMD10D14 (SAM D10 Xplained Mini)
+* Atmel SAMG55J19 (SAM G55 Xplained Pro)
 
 
