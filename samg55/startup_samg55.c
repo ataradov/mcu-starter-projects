@@ -26,6 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+/*- Includes ----------------------------------------------------------------*/
+#include "samg55.h"
+
 /*- Definitions -------------------------------------------------------------*/
 #define DUMMY         __attribute__ ((weak, alias ("irq_handler_dummy")))
 
