@@ -130,11 +130,6 @@ static void sys_init(void)
   // Enable PIOA and PIOB
   PMC->PMC_PCER0 = PMC_PCER0_PID11 | PMC_PCER0_PID12;
 
-  // Enable FPU
-  SCB->CPACR |=  (0xf << 20);
-  __DSB();
-  __ISB();
-
   // Enable interrupts
   asm volatile ("cpsie i");
 }

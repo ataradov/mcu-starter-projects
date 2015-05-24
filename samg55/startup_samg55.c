@@ -51,7 +51,6 @@ DUMMY void irq_handler_efc(void);
 DUMMY void irq_handler_flexcom7(void);
 DUMMY void irq_handler_flexcom0(void);
 DUMMY void irq_handler_flexcom1(void);
-
 DUMMY void irq_handler_pioa(void);
 DUMMY void irq_handler_piob(void);
 DUMMY void irq_handler_pdmic0(void);
@@ -178,6 +177,11 @@ void irq_handler_reset(void)
   dst = &_bss;
   while (dst < &_ebss)
     *dst++ = 0;
+
+  // Enable FPU
+  SCB->CPACR |=  (0xf << 20);
+  __DSB();
+  __ISB();
 
   main();
 
