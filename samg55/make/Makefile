@@ -9,7 +9,7 @@ CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 SIZE = arm-none-eabi-size
 
-CFLAGS += -W -Wall --std=gnu99 -Os -flto
+CFLAGS += -W -Wall --std=gnu99 -Os
 CFLAGS += -fno-diagnostics-show-caret
 CFLAGS += -fdata-sections -ffunction-sections
 CFLAGS += -funsigned-char -funsigned-bitfields
@@ -21,7 +21,6 @@ LDFLAGS += -mcpu=cortex-m4 -mthumb
 LDFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -Wl,--script=../linker/samg55j19.ld
-LDFLAGS += -Os -flto
 
 INCLUDES += \
   -I../include \
