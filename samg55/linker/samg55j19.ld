@@ -32,7 +32,7 @@ MEMORY
   ram (rwx)  : ORIGIN = 0x20000000, LENGTH = 0x28000 /* 160k */
 }
 
-__top_flash = 0x00000000 + 0x80000;
+__top_flash = 0x00400000 + 0x80000;
 __top_ram = 0x20000000 + 0x28000;
 
 ENTRY(irq_handler_reset)
