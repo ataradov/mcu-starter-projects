@@ -33,7 +33,7 @@ SRCS += \
 DEFINES += \
   -D__SAMV71Q21__ \
   -DDONT_USE_CMSIS_INIT \
-  -DF_CPU=300000000
+  -DF_CPU=150000000 # peripheral frequency
 
 CFLAGS += $(INCLUDES) $(DEFINES)
 
@@ -58,7 +58,7 @@ $(BUILD)/$(BIN).bin: $(BUILD)/$(BIN).elf
 	@$(CC) $(CFLAGS) $(filter %/$(subst .o,.c,$(notdir $@)), $(SRCS)) -c -o $@
 
 directory:
-	@mkdir -p $(BUILD)
+	@gmkdir -p $(BUILD)
 
 size: $(BUILD)/$(BIN).elf
 	@echo size:

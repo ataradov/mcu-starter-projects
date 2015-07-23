@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
+    <ProjectGuid>{22CBC4AC-0DB7-F32F-F866-38AB515616EC}</ProjectGuid>
+    <avrdevice>ATSAMV71Q21</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Demo</AssemblyName>
+    <Name>Demo</Name>
+    <RootNamespace>Demo</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_edbg>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
+      <ToolNumber>ATML2407060200000332</ToolNumber>
+      <ToolName>EDBG</ToolName>
+    </com_atmel_avrdbg_tool_edbg>
+    <preserveEEPROM>true</preserveEEPROM>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>False</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>False</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>False</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</armgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <armgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</armgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__SAMV71Q21__</Value>
+      <Value>DONT_USE_CMSIS_INIT</Value>
+      <Value>F_CPU=150000000</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../include</Value>
+      <Value>../..</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samv71\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+  <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.linker.general.GenerateMAPFile>False</armgcc.linker.general.GenerateMAPFile>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
+  <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--script=../../linker/samv71q21.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>../../include</Value>
+      <Value>../..</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samv71\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+  <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
+</ArmGcc>
+    </ToolchainSettings>
+    <OutputFileName>Demo</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\include\component\component_acc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_acc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_aes.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_aes.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_afec.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_afec.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_chipid.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_chipid.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_dacc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_dacc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_efc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_efc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_gmac.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_gmac.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_gpbr.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_gpbr.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_hsmci.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_hsmci.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_icm.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_icm.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_isi.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_isi.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_matrix.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_matrix.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_mcan.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_mcan.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_mlb.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_mlb.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_pio.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_pio.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_pmc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_pmc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_pwm.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_pwm.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_qspi.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_qspi.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_rstc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_rstc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_rswdt.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_rswdt.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_rtc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_rtc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_rtt.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_rtt.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_sdramc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_sdramc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_smc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_smc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_spi.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_spi.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_ssc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_ssc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_supc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_supc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_tc.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_tc.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_trng.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_trng.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_twi.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_twi.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_twihs.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_twihs.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_uart.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_uart.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_uotghs.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_uotghs.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_usart.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_usart.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_usbhs.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_usbhs.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_utmi.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_utmi.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_wdt.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_wdt.h</Link>
+    </Compile>
+    <Compile Include="..\include\component\component_xdmac.h">
+      <SubType>compile</SubType>
+      <Link>include\component\component_xdmac.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_acc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_acc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_aes.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_aes.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_afec0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_afec0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_afec1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_afec1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_chipid.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_chipid.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_dacc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_dacc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_efc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_efc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_gmac.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_gmac.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_gpbr.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_gpbr.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_hsmci.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_hsmci.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_icm.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_icm.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_isi.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_isi.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_matrix.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_matrix.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_mcan0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_mcan0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_mcan1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_mcan1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_mlb.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_mlb.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pioa.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pioa.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_piob.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_piob.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pioc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pioc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_piod.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_piod.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pioe.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pioe.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pmc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pmc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pwm0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pwm0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_pwm1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_pwm1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_qspi.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_qspi.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_rstc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_rstc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_rswdt.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_rswdt.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_rtc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_rtc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_rtt.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_rtt.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_sdramc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_sdramc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_smc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_smc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_spi0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_spi0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_spi1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_spi1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_ssc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_ssc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_supc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_supc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_tc0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_tc0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_tc1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_tc1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_tc2.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_tc2.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_tc3.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_tc3.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_trng.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_trng.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_twihs0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_twihs0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_twihs1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_twihs1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_twihs2.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_twihs2.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_uart0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_uart0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_uart1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_uart1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_uart2.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_uart2.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_uart3.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_uart3.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_uart4.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_uart4.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_usart0.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_usart0.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_usart1.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_usart1.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_usart2.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_usart2.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_usbhs.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_usbhs.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_utmi.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_utmi.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_wdt.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_wdt.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\instance_xdmac.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\instance_xdmac.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71j19.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71j19.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71j20.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71j20.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71j21.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71j21.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71n19.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71n19.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71n20.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71n20.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71n21.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71n21.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71q19.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71q19.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71q20.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71q20.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\pio_samv71q21.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\pio_samv71q21.h</Link>
+    </Compile>
+    <Compile Include="..\include\core_cm7.h">
+      <SubType>compile</SubType>
+      <Link>include\core_cm7.h</Link>
+    </Compile>
+    <Compile Include="..\include\core_cmFunc.h">
+      <SubType>compile</SubType>
+      <Link>include\core_cmFunc.h</Link>
+    </Compile>
+    <Compile Include="..\include\core_cmInstr.h">
+      <SubType>compile</SubType>
+      <Link>include\core_cmInstr.h</Link>
+    </Compile>
+    <Compile Include="..\include\core_cmSimd.h">
+      <SubType>compile</SubType>
+      <Link>include\core_cmSimd.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71j19.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71j19.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71j20.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71j20.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71j21.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71j21.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71n19.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71n19.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71n20.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71n20.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71n21.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71n21.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71q19.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71q19.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71q20.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71q20.h</Link>
+    </Compile>
+    <Compile Include="..\include\samv71q21.h">
+      <SubType>compile</SubType>
+      <Link>include\samv71q21.h</Link>
+    </Compile>
+    <Compile Include="..\startup_samv71.c">
+      <SubType>compile</SubType>
+      <Link>startup_samv71.c</Link>
+    </Compile>
+    <Compile Include="..\main.c">
+      <SubType>compile</SubType>
+      <Link>main.c</Link>
+    </Compile>
+    <Compile Include="..\hal_gpio.h">
+      <SubType>compile</SubType>
+      <Link>hal_gpio.h</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include" />
+    <Folder Include="include\component" />
+    <Folder Include="include\instance" />
+    <Folder Include="include\pio" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

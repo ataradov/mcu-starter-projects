@@ -87,14 +87,13 @@ static void uart_init(uint32_t baud)
   USART1->US_CR = US_CR_RXEN | US_CR_TXEN;
   USART1->US_MR = US_MR_USART_MODE_NORMAL | US_MR_CHRL_8_BIT | US_MR_PAR_NO |
       US_MR_NBSTOP_1_BIT;
-
   USART1->US_BRGR = US_BRGR_CD(F_CPU / 16 / baud);
 }
 
 //-----------------------------------------------------------------------------
 static void uart_putc(char c)
 {
-  while (0 == (USART1->US_CSR & US_CSR_TXRDY));
+  while (0 == (USART1->US_CSR & US_CSR_TXEMPTY));
   USART1->US_THR = c;
 }
 
@@ -111,8 +110,8 @@ static void sys_init(void)
   // Disable watchdog
   WDT->WDT_MR = WDT_MR_WDDIS;
 
-  // Set flash wait states to maximum for 300 MHz operation
-  EFC->EEFC_FMR = EEFC_FMR_FWS(15) | EEFC_FMR_CLOE;
+  // Set flash wait states to maximum for 150 MHz operation
+  EFC->EEFC_FMR = EEFC_FMR_FWS(5) | EEFC_FMR_CLOE;
 
   // Enable 32 kHz Xtal
   SUPC->SUPC_CR |= SUPC_CR_KEY_PASSWD | SUPC_CR_XTALSEL;
@@ -126,13 +125,16 @@ static void sys_init(void)
       CKGR_MOR_MOSCRCEN | CKGR_MOR_MOSCXTEN | CKGR_MOR_MOSCSEL;
   while (!(PMC->PMC_SR & PMC_SR_MOSCSELS));
 
-  // Setup PLL
+  // Setup PLL (12 MHz * 25 = 300 MHz)
   PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | CKGR_PLLAR_MULA(25-1) |
       CKGR_PLLAR_PLLACOUNT(0x3f) | CKGR_PLLAR_DIVA(1);
   while (!(PMC->PMC_SR & PMC_SR_LOCKA));
 
-  // Switch main clock to PLL
-  PMC->PMC_MCKR = PMC_MCKR_CSS_PLLA_CLK;
+  // Switch main clock to PLL (two step process)
+  PMC->PMC_MCKR = PMC_MCKR_CSS_MAIN_CLK | PMC_MCKR_MDIV_PCK_DIV2;
+  while (!(PMC->PMC_SR & PMC_SR_MCKRDY));
+
+  PMC->PMC_MCKR = PMC_MCKR_CSS_PLLA_CLK | PMC_MCKR_MDIV_PCK_DIV2;
   while (!(PMC->PMC_SR & PMC_SR_MCKRDY));
 
   // Enable PIOA, PIOB, PIOC, PIOD and PIOE

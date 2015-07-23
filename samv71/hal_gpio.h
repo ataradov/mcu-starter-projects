@@ -83,6 +83,7 @@
     return (PIO##port->PIO_ODSR & (1 << pin)) != 0;				\
     (void)HAL_GPIO_##name##_state;						\
   }										\
+										\
   static inline void HAL_GPIO_##name##_abcd(uint8_t abcd)			\
   {										\
     if (abcd & 1)								\
@@ -96,11 +97,13 @@
     PIO##port->PIO_PDR = (1 << pin);						\
     (void)HAL_GPIO_##name##_abcd;						\
   }										\
+										\
   static inline void HAL_GPIO_##name##_mden(void)				\
   {										\
     PIO##port->PIO_MDER = (1 << pin);						\
     (void)HAL_GPIO_##name##_mden;						\
   }										\
+										\
   static inline void HAL_GPIO_##name##_mddis(void)				\
   {										\
     PIO##port->PIO_MDDR = (1 << pin);						\
