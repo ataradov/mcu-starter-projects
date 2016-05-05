@@ -12,6 +12,4 @@ The target compiler is GCC.
 * Atmel SAMD21J19 (SAM D21 Xplained Pro)
 * Atmel SAML21J18 (SAM L21 Xplained Pro)
 * Atmel SAMG55J19 (SAM G55 Xplained Pro)
-* Atmel SAML21J18A (SAM L21 Xplained Pro)
-* Atmel SAML21J18B (SAM L21 Xplained Pro)
 * Atmel SAMV71Q21 (SAM V71 Xplained Ultra)
