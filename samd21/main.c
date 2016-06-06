@@ -44,19 +44,10 @@ HAL_GPIO_PIN(UART_TX,  A, 22)
 HAL_GPIO_PIN(UART_RX,  A, 23)
 
 //-----------------------------------------------------------------------------
-static inline void timer_sync(void)
-{
-  while (TC3->COUNT16.STATUS.bit.SYNCBUSY);
-}
-
-//-----------------------------------------------------------------------------
 static void timer_set_period(uint16_t i)
 {
   TC3->COUNT16.CC[0].reg = (F_CPU / 1000ul / 256) * i;
-  timer_sync();
-
   TC3->COUNT16.COUNT.reg = 0;
-  timer_sync();
 }
 
 //-----------------------------------------------------------------------------
@@ -79,24 +70,15 @@ static void timer_init(void)
 
   TC3->COUNT16.CTRLA.reg = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MFRQ |
       TC_CTRLA_PRESCALER_DIV256 | TC_CTRLA_PRESCSYNC_RESYNC;
-  timer_sync();
 
   TC3->COUNT16.COUNT.reg = 0;
-  timer_sync();
 
   timer_set_period(PERIOD_SLOW);
 
   TC3->COUNT16.CTRLA.reg |= TC_CTRLA_ENABLE;
-  timer_sync();
 
   TC3->COUNT16.INTENSET.reg = TC_INTENSET_MC(1);
   NVIC_EnableIRQ(TC3_IRQn);
-}
-
-//-----------------------------------------------------------------------------
-static void uart_sync(void)
-{
-  while (SERCOM3->USART.SYNCBUSY.reg);
 }
 
 //-----------------------------------------------------------------------------
@@ -117,17 +99,13 @@ static void uart_init(uint32_t baud)
   SERCOM3->USART.CTRLA.reg =
       SERCOM_USART_CTRLA_DORD | SERCOM_USART_CTRLA_MODE_USART_INT_CLK |
       SERCOM_USART_CTRLA_RXPO(1/*PAD1*/) | SERCOM_USART_CTRLA_TXPO(0/*PAD0*/);
-  uart_sync();
 
   SERCOM3->USART.CTRLB.reg = SERCOM_USART_CTRLB_RXEN | SERCOM_USART_CTRLB_TXEN |
       SERCOM_USART_CTRLB_CHSIZE(0/*8 bits*/);
-  uart_sync();
 
   SERCOM3->USART.BAUD.reg = (uint16_t)br;
-  uart_sync();
 
   SERCOM3->USART.CTRLA.reg |= SERCOM_USART_CTRLA_ENABLE;
-  uart_sync();
 }
 
 //-----------------------------------------------------------------------------
