@@ -32,8 +32,8 @@ MEMORY
   ram  (rwx) : ORIGIN = 0x20000000, LENGTH = 0x1000 /* 4k */
 }
 
-__top_flash = 0x4000;
-__top_ram = 0x20000000 + 0x1000;
+__top_flash = ORIGIN(flash) + LENGTH(flash);
+__top_ram = ORIGIN(ram) + LENGTH(ram);
 
 ENTRY(irq_handler_reset)
 
