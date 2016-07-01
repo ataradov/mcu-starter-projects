@@ -62,6 +62,7 @@ SECTIONS
   {
     FILL(0xff)
     _data = .;
+    *(.ramfunc .ramfunc.*);
     *(vtable)
     *(.data*)
     . = ALIGN(4);
