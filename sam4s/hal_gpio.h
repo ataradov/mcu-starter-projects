@@ -52,6 +52,15 @@
     (void)HAL_GPIO_##name##_toggle;						\
   }										\
 										\
+  static inline void HAL_GPIO_##name##_write(int value)				\
+  {										\
+    if (value)									\
+      PIO##port->PIO_SODR = (1 << pin);						\
+    else									\
+      PIO##port->PIO_CODR = (1 << pin);						\
+    (void)HAL_GPIO_##name##_write;						\
+  }										\
+										\
   static inline void HAL_GPIO_##name##_in(void)					\
   {										\
     PIO##port->PIO_PER = (1 << pin);						\
@@ -83,7 +92,8 @@
     return (PIO##port->PIO_ODSR & (1 << pin)) != 0;				\
     (void)HAL_GPIO_##name##_state;						\
   }										\
-  static inline void HAL_GPIO_##name##_abcd(uint8_t abcd)			\
+										\
+  static inline void HAL_GPIO_##name##_abcd(int abcd)				\
   {										\
     if (abcd & 1)								\
       PIO##port->PIO_ABCDSR[0] |= (1 << pin);					\
@@ -96,11 +106,13 @@
     PIO##port->PIO_PDR = (1 << pin);						\
     (void)HAL_GPIO_##name##_abcd;						\
   }										\
+										\
   static inline void HAL_GPIO_##name##_mden(void)				\
   {										\
     PIO##port->PIO_MDER = (1 << pin);						\
     (void)HAL_GPIO_##name##_mden;						\
   }										\
+										\
   static inline void HAL_GPIO_##name##_mddis(void)				\
   {										\
     PIO##port->PIO_MDDR = (1 << pin);						\

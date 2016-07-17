@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2014-2016, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -34,6 +34,16 @@
 #define HAL_GPIO_PORTB       1
 #define HAL_GPIO_PORTC       2
 
+#define HAL_GPIO_PMUX_A      0
+#define HAL_GPIO_PMUX_B      1
+#define HAL_GPIO_PMUX_C      2
+#define HAL_GPIO_PMUX_D      3
+#define HAL_GPIO_PMUX_E      4
+#define HAL_GPIO_PMUX_F      5
+#define HAL_GPIO_PMUX_G      6
+#define HAL_GPIO_PMUX_H      7
+#define HAL_GPIO_PMUX_I      8
+
 #define HAL_GPIO_PIN(name, port, pin)						\
   static inline void HAL_GPIO_##name##_set(void)				\
   {										\
@@ -51,6 +61,15 @@
   {										\
     PORT->Group[HAL_GPIO_PORT##port].OUTTGL.reg = (1 << pin);			\
     (void)HAL_GPIO_##name##_toggle;						\
+  }										\
+										\
+  static inline void HAL_GPIO_##name##_write(int value)				\
+  {										\
+    if (value)									\
+      PORT->Group[HAL_GPIO_PORT##port].OUTSET.reg = (1 << pin);			\
+    else									\
+      PORT->Group[HAL_GPIO_PORT##port].OUTCLR.reg = (1 << pin);			\
+    (void)HAL_GPIO_##name##_write;						\
   }										\
 										\
   static inline void HAL_GPIO_##name##_in(void)					\
@@ -87,7 +106,7 @@
     (void)HAL_GPIO_##name##_state;						\
   }										\
 										\
-  static inline void HAL_GPIO_##name##_pmuxen(uint8_t mux)			\
+  static inline void HAL_GPIO_##name##_pmuxen(int mux)				\
   {										\
     PORT->Group[HAL_GPIO_PORT##port].PINCFG[pin].reg |= PORT_PINCFG_PMUXEN;	\
     if (pin & 1)								\

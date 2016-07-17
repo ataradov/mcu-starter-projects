@@ -63,6 +63,15 @@
     (void)HAL_GPIO_##name##_toggle;						\
   }										\
 										\
+  static inline void HAL_GPIO_##name##_write(int value)				\
+  {										\
+    if (value)									\
+      PORT->Group[HAL_GPIO_PORT##port].OUTSET.reg = (1 << pin);			\
+    else									\
+      PORT->Group[HAL_GPIO_PORT##port].OUTCLR.reg = (1 << pin);			\
+    (void)HAL_GPIO_##name##_write;						\
+  }										\
+										\
   static inline void HAL_GPIO_##name##_in(void)					\
   {										\
     PORT->Group[HAL_GPIO_PORT##port].DIRCLR.reg = (1 << pin);			\
@@ -97,7 +106,7 @@
     (void)HAL_GPIO_##name##_state;						\
   }										\
 										\
-  static inline void HAL_GPIO_##name##_pmuxen(uint8_t mux)			\
+  static inline void HAL_GPIO_##name##_pmuxen(int mux)				\
   {										\
     PORT->Group[HAL_GPIO_PORT##port].PINCFG[pin].reg |= PORT_PINCFG_PMUXEN;	\
     if (pin & 1)								\
