@@ -55,6 +55,7 @@
 #define REG_DMAC_CRCCHKSUM         (0x41004808U) /**< \brief (DMAC) CRC Checksum */
 #define REG_DMAC_CRCSTATUS         (0x4100480CU) /**< \brief (DMAC) CRC Status */
 #define REG_DMAC_DBGCTRL           (0x4100480DU) /**< \brief (DMAC) Debug Control */
+#define REG_DMAC_QOSCTRL           (0x4100480EU) /**< \brief (DMAC) QOS Control */
 #define REG_DMAC_SWTRIGCTRL        (0x41004810U) /**< \brief (DMAC) Software Trigger Control */
 #define REG_DMAC_PRICTRL0          (0x41004814U) /**< \brief (DMAC) Priority Control 0 */
 #define REG_DMAC_INTPEND           (0x41004820U) /**< \brief (DMAC) Interrupt Pending */
@@ -78,6 +79,7 @@
 #define REG_DMAC_CRCCHKSUM         (*(RwReg  *)0x41004808U) /**< \brief (DMAC) CRC Checksum */
 #define REG_DMAC_CRCSTATUS         (*(RwReg8 *)0x4100480CU) /**< \brief (DMAC) CRC Status */
 #define REG_DMAC_DBGCTRL           (*(RwReg8 *)0x4100480DU) /**< \brief (DMAC) Debug Control */
+#define REG_DMAC_QOSCTRL           (*(RwReg8 *)0x4100480EU) /**< \brief (DMAC) QOS Control */
 #define REG_DMAC_SWTRIGCTRL        (*(RwReg  *)0x41004810U) /**< \brief (DMAC) Software Trigger Control */
 #define REG_DMAC_PRICTRL0          (*(RwReg  *)0x41004814U) /**< \brief (DMAC) Priority Control 0 */
 #define REG_DMAC_INTPEND           (*(RwReg16*)0x41004820U) /**< \brief (DMAC) Interrupt Pending */

@@ -1,9 +1,9 @@
 /**
  * \file
  *
- * \brief Header file for SAMD10D14AS
+ * \brief Header file for SAMD10D14AU
  *
- * Copyright (c) 2014-2015 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2015 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -40,17 +40,14 @@
  * \asf_license_stop
  *
  */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 
-#ifndef _SAMD10D14AS_
-#define _SAMD10D14AS_
+#ifndef _SAMD10D14AU_
+#define _SAMD10D14AU_
 
 /**
  * \ingroup SAMD10_definitions
- * \addtogroup SAMD10D14AS_definitions SAMD10D14AS definitions
- * This file defines all structures and symbols for SAMD10D14AS:
+ * \addtogroup SAMD10D14AU_definitions SAMD10D14AU definitions
+ * This file defines all structures and symbols for SAMD10D14AU:
  *   - registers and bitfields
  *   - peripheral base address
  *   - peripheral ID
@@ -87,9 +84,9 @@ typedef volatile       uint8_t  RwReg8;  /**< Read-Write  8-bit register (volati
 #endif
 
 /* ************************************************************************** */
-/**  CMSIS DEFINITIONS FOR SAMD10D14AS */
+/**  CMSIS DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_cmsis CMSIS Definitions */
+/** \defgroup SAMD10D14AU_cmsis CMSIS Definitions */
 /*@{*/
 
 /** Interrupt Number Definition */
@@ -101,25 +98,25 @@ typedef enum IRQn
   SVCall_IRQn              = -5, /**< 11 Cortex-M0+ SV Call Interrupt           */
   PendSV_IRQn              = -2, /**< 14 Cortex-M0+ Pend SV Interrupt           */
   SysTick_IRQn             = -1, /**< 15 Cortex-M0+ System Tick Interrupt       */
-  /******  SAMD10D14AS-specific Interrupt Numbers ***********************/
-  PM_IRQn                  =  0, /**<  0 SAMD10D14AS Power Manager (PM) */
-  SYSCTRL_IRQn             =  1, /**<  1 SAMD10D14AS System Control (SYSCTRL) */
-  WDT_IRQn                 =  2, /**<  2 SAMD10D14AS Watchdog Timer (WDT) */
-  RTC_IRQn                 =  3, /**<  3 SAMD10D14AS Real-Time Counter (RTC) */
-  EIC_IRQn                 =  4, /**<  4 SAMD10D14AS External Interrupt Controller (EIC) */
-  NVMCTRL_IRQn             =  5, /**<  5 SAMD10D14AS Non-Volatile Memory Controller (NVMCTRL) */
-  DMAC_IRQn                =  6, /**<  6 SAMD10D14AS Direct Memory Access Controller (DMAC) */
-  EVSYS_IRQn               =  8, /**<  8 SAMD10D14AS Event System Interface (EVSYS) */
-  SERCOM0_IRQn             =  9, /**<  9 SAMD10D14AS Serial Communication Interface 0 (SERCOM0) */
-  SERCOM1_IRQn             = 10, /**< 10 SAMD10D14AS Serial Communication Interface 1 (SERCOM1) */
-  SERCOM2_IRQn             = 11, /**< 11 SAMD10D14AS Serial Communication Interface 2 (SERCOM2) */
-  TCC0_IRQn                = 12, /**< 12 SAMD10D14AS Timer Counter Control (TCC0) */
-  TC1_IRQn                 = 13, /**< 13 SAMD10D14AS Basic Timer Counter 1 (TC1) */
-  TC2_IRQn                 = 14, /**< 14 SAMD10D14AS Basic Timer Counter 2 (TC2) */
-  ADC_IRQn                 = 15, /**< 15 SAMD10D14AS Analog Digital Converter (ADC) */
-  AC_IRQn                  = 16, /**< 16 SAMD10D14AS Analog Comparators (AC) */
-  DAC_IRQn                 = 17, /**< 17 SAMD10D14AS Digital Analog Converter (DAC) */
-  PTC_IRQn                 = 18, /**< 18 SAMD10D14AS Peripheral Touch Controller (PTC) */
+  /******  SAMD10D14AU-specific Interrupt Numbers ***********************/
+  PM_IRQn                  =  0, /**<  0 SAMD10D14AU Power Manager (PM) */
+  SYSCTRL_IRQn             =  1, /**<  1 SAMD10D14AU System Control (SYSCTRL) */
+  WDT_IRQn                 =  2, /**<  2 SAMD10D14AU Watchdog Timer (WDT) */
+  RTC_IRQn                 =  3, /**<  3 SAMD10D14AU Real-Time Counter (RTC) */
+  EIC_IRQn                 =  4, /**<  4 SAMD10D14AU External Interrupt Controller (EIC) */
+  NVMCTRL_IRQn             =  5, /**<  5 SAMD10D14AU Non-Volatile Memory Controller (NVMCTRL) */
+  DMAC_IRQn                =  6, /**<  6 SAMD10D14AU Direct Memory Access Controller (DMAC) */
+  EVSYS_IRQn               =  8, /**<  8 SAMD10D14AU Event System Interface (EVSYS) */
+  SERCOM0_IRQn             =  9, /**<  9 SAMD10D14AU Serial Communication Interface 0 (SERCOM0) */
+  SERCOM1_IRQn             = 10, /**< 10 SAMD10D14AU Serial Communication Interface 1 (SERCOM1) */
+  SERCOM2_IRQn             = 11, /**< 11 SAMD10D14AU Serial Communication Interface 2 (SERCOM2) */
+  TCC0_IRQn                = 12, /**< 12 SAMD10D14AU Timer Counter Control (TCC0) */
+  TC1_IRQn                 = 13, /**< 13 SAMD10D14AU Basic Timer Counter 1 (TC1) */
+  TC2_IRQn                 = 14, /**< 14 SAMD10D14AU Basic Timer Counter 2 (TC2) */
+  ADC_IRQn                 = 15, /**< 15 SAMD10D14AU Analog Digital Converter (ADC) */
+  AC_IRQn                  = 16, /**< 16 SAMD10D14AU Analog Comparators (AC) */
+  DAC_IRQn                 = 17, /**< 17 SAMD10D14AU Digital Analog Converter (DAC) */
+  PTC_IRQn                 = 18, /**< 18 SAMD10D14AU Peripheral Touch Controller (PTC) */
 
   PERIPH_COUNT_IRQn        = 19  /**< Number of peripheral IDs */
 } IRQn_Type;
@@ -219,9 +216,9 @@ void PTC_Handler                 ( void );
 /*@}*/
 
 /* ************************************************************************** */
-/**  SOFTWARE PERIPHERAL API DEFINITION FOR SAMD10D14AS */
+/**  SOFTWARE PERIPHERAL API DEFINITION FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_api Peripheral Software API */
+/** \defgroup SAMD10D14AU_api Peripheral Software API */
 /*@{*/
 
 #include "component/ac.h"
@@ -247,9 +244,9 @@ void PTC_Handler                 ( void );
 /*@}*/
 
 /* ************************************************************************** */
-/**  REGISTERS ACCESS DEFINITIONS FOR SAMD10D14AS */
+/**  REGISTERS ACCESS DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_reg Registers Access Definitions */
+/** \defgroup SAMD10D14AU_reg Registers Access Definitions */
 /*@{*/
 
 #include "instance/ac.h"
@@ -280,9 +277,9 @@ void PTC_Handler                 ( void );
 /*@}*/
 
 /* ************************************************************************** */
-/**  PERIPHERAL ID DEFINITIONS FOR SAMD10D14AS */
+/**  PERIPHERAL ID DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_id Peripheral Ids Definitions */
+/** \defgroup SAMD10D14AU_id Peripheral Ids Definitions */
 /*@{*/
 
 // Peripheral instances on HPB0 bridge
@@ -317,13 +314,13 @@ void PTC_Handler                 ( void );
 #define ID_DAC           74 /**< \brief Digital Analog Converter (DAC) */
 #define ID_PTC           75 /**< \brief Peripheral Touch Controller (PTC) */
 
-#define ID_PERIPH_COUNT  76 /**< \brief Number of peripheral IDs */
+#define ID_PERIPH_COUNT  76 /**< \brief Max number of peripheral IDs */
 /*@}*/
 
 /* ************************************************************************** */
-/**  BASE ADDRESS DEFINITIONS FOR SAMD10D14AS */
+/**  BASE ADDRESS DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_base Peripheral Base Address Definitions */
+/** \defgroup SAMD10D14AU_base Peripheral Base Address Definitions */
 /*@{*/
 
 #if defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)
@@ -462,16 +459,16 @@ void PTC_Handler                 ( void );
 /*@}*/
 
 /* ************************************************************************** */
-/**  PORT DEFINITIONS FOR SAMD10D14AS */
+/**  PORT DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
-/** \defgroup SAMD10D14AS_port PORT Definitions */
+/** \defgroup SAMD10D14AU_port PORT Definitions */
 /*@{*/
 
-#include "pio/samd10d14as.h"
+#include "pio/samd10d14au.h"
 /*@}*/
 
 /* ************************************************************************** */
-/**  MEMORY MAPPING DEFINITIONS FOR SAMD10D14AS */
+/**  MEMORY MAPPING DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
 
 #define FLASH_SIZE            0x4000UL /* 16 kB */
@@ -488,10 +485,10 @@ void PTC_Handler                 ( void );
 #define HPB2_ADDR             (0x42000000u) /**< HPB2 base address */
 #define PPB_ADDR              (0xE0000000u) /**< PPB base address */
 
-#define DSU_DID_RESETVALUE    0x10020003UL
+#define DSU_DID_RESETVALUE    0x10020009UL
 
 /* ************************************************************************** */
-/**  ELECTRICAL DEFINITIONS FOR SAMD10D14AS */
+/**  ELECTRICAL DEFINITIONS FOR SAMD10D14AU */
 /* ************************************************************************** */
 
 
@@ -501,4 +498,4 @@ void PTC_Handler                 ( void );
 
 /*@}*/
 
-#endif /* SAMD10D14AS_H */
+#endif /* SAMD10D14AU_H */

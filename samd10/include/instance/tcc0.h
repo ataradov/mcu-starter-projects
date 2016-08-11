@@ -53,10 +53,10 @@
 #define REG_TCC0_CTRLBCLR          (0x42001404U) /**< \brief (TCC0) Control B Clear */
 #define REG_TCC0_CTRLBSET          (0x42001405U) /**< \brief (TCC0) Control B Set */
 #define REG_TCC0_SYNCBUSY          (0x42001408U) /**< \brief (TCC0) Synchronization Busy */
-#define REG_TCC0_FCTRLA            (0x4200140CU) /**< \brief (TCC0) Recoverable FaultA Configuration */
-#define REG_TCC0_FCTRLB            (0x42001410U) /**< \brief (TCC0) Recoverable FaultB Configuration */
+#define REG_TCC0_FCTRLA            (0x4200140CU) /**< \brief (TCC0) Recoverable Fault A Configuration */
+#define REG_TCC0_FCTRLB            (0x42001410U) /**< \brief (TCC0) Recoverable Fault B Configuration */
 #define REG_TCC0_WEXCTRL           (0x42001414U) /**< \brief (TCC0) Waveform Extension Configuration */
-#define REG_TCC0_DRVCTRL           (0x42001418U) /**< \brief (TCC0) Driver Configuration */
+#define REG_TCC0_DRVCTRL           (0x42001418U) /**< \brief (TCC0) Driver Control */
 #define REG_TCC0_DBGCTRL           (0x4200141EU) /**< \brief (TCC0) Debug Control */
 #define REG_TCC0_EVCTRL            (0x42001420U) /**< \brief (TCC0) Event Control */
 #define REG_TCC0_INTENCLR          (0x42001424U) /**< \brief (TCC0) Interrupt Enable Clear */
@@ -83,10 +83,10 @@
 #define REG_TCC0_CTRLBCLR          (*(RwReg8 *)0x42001404U) /**< \brief (TCC0) Control B Clear */
 #define REG_TCC0_CTRLBSET          (*(RwReg8 *)0x42001405U) /**< \brief (TCC0) Control B Set */
 #define REG_TCC0_SYNCBUSY          (*(RoReg  *)0x42001408U) /**< \brief (TCC0) Synchronization Busy */
-#define REG_TCC0_FCTRLA            (*(RwReg  *)0x4200140CU) /**< \brief (TCC0) Recoverable FaultA Configuration */
-#define REG_TCC0_FCTRLB            (*(RwReg  *)0x42001410U) /**< \brief (TCC0) Recoverable FaultB Configuration */
+#define REG_TCC0_FCTRLA            (*(RwReg  *)0x4200140CU) /**< \brief (TCC0) Recoverable Fault A Configuration */
+#define REG_TCC0_FCTRLB            (*(RwReg  *)0x42001410U) /**< \brief (TCC0) Recoverable Fault B Configuration */
 #define REG_TCC0_WEXCTRL           (*(RwReg  *)0x42001414U) /**< \brief (TCC0) Waveform Extension Configuration */
-#define REG_TCC0_DRVCTRL           (*(RwReg  *)0x42001418U) /**< \brief (TCC0) Driver Configuration */
+#define REG_TCC0_DRVCTRL           (*(RwReg  *)0x42001418U) /**< \brief (TCC0) Driver Control */
 #define REG_TCC0_DBGCTRL           (*(RwReg8 *)0x4200141EU) /**< \brief (TCC0) Debug Control */
 #define REG_TCC0_EVCTRL            (*(RwReg  *)0x42001420U) /**< \brief (TCC0) Event Control */
 #define REG_TCC0_INTENCLR          (*(RwReg  *)0x42001424U) /**< \brief (TCC0) Interrupt Enable Clear */

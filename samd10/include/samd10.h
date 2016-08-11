@@ -70,6 +70,8 @@
   #include "samd10d14am.h"
 #elif defined(__SAMD10D14AS__) || defined(__ATSAMD10D14AS__)
   #include "samd10d14as.h"
+#elif defined(__SAMD10D14AU__) || defined(__ATSAMD10D14AU__)
+  #include "samd10d14au.h"
 #else
   #error Library does not support the specified device.
 #endif

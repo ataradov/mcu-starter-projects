@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.2</ProjectVersion>
+    <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
     <ProjectGuid>{22CBC4AC-0DB7-F32F-F866-38AB515616EC}</ProjectGuid>
     <avrdevice>ATSAMD10D14AM</avrdevice>
@@ -27,15 +27,15 @@
     <eraseonlaunchrule>1</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.medbg</avrtool>
     <avrtoolinterface>SWD</avrtoolinterface>
@@ -85,10 +85,8 @@
     <ListValues>
       <Value>../../include</Value>
       <Value>../..</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd10\include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+      <Value>%24(PackRepoDir)\atmel\SAMD10_DFP\1.0.31\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -98,17 +96,26 @@
   <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcc.linker.general.GenerateMAPFile>False</armgcc.linker.general.GenerateMAPFile>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>%24(ProjectDir)\Device_Startup</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--script=../../linker/samd10d14.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMD10_DFP\1.0.31\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
       <Value>../../include</Value>
       <Value>../..</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd10\include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+      <Value>%24(PackRepoDir)\atmel\SAMD10_DFP\1.0.31\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
 </ArmGcc>
@@ -189,9 +196,9 @@
       <SubType>compile</SubType>
       <Link>include\component\tcc.h</Link>
     </Compile>
-    <Compile Include="..\include\component\usb.h">
+    <Compile Include="..\include\component\hmatrixb.h">
       <SubType>compile</SubType>
-      <Link>include\component\usb.h</Link>
+      <Link>include\component\hmatrixb.h</Link>
     </Compile>
     <Compile Include="..\include\component\wdt.h">
       <SubType>compile</SubType>
@@ -289,9 +296,9 @@
       <SubType>compile</SubType>
       <Link>include\instance\tcc0.h</Link>
     </Compile>
-    <Compile Include="..\include\instance\usb.h">
+    <Compile Include="..\include\instance\sbmatrix.h">
       <SubType>compile</SubType>
-      <Link>include\instance\usb.h</Link>
+      <Link>include\instance\sbmatrix.h</Link>
     </Compile>
     <Compile Include="..\include\instance\wdt.h">
       <SubType>compile</SubType>
@@ -332,6 +339,10 @@
     <Compile Include="..\include\pio\samd10d14as.h">
       <SubType>compile</SubType>
       <Link>include\pio\samd10d14as.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\samd10d14au.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\samd10d14au.h</Link>
     </Compile>
     <Compile Include="..\include\core_cm0plus.h">
       <SubType>compile</SubType>
@@ -384,6 +395,10 @@
     <Compile Include="..\include\samd10d14as.h">
       <SubType>compile</SubType>
       <Link>include\samd10d14as.h</Link>
+    </Compile>
+    <Compile Include="..\include\samd10d14au.h">
+      <SubType>compile</SubType>
+      <Link>include\samd10d14au.h</Link>
     </Compile>
     <Compile Include="..\startup_samd10.c">
       <SubType>compile</SubType>
