@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.2</ProjectVersion>
+    <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
     <ProjectGuid>{22CBC4AC-0DB7-F32F-F866-38AB515616EC}</ProjectGuid>
     <avrdevice>ATSAMV71Q21</avrdevice>
@@ -27,15 +27,15 @@
     <eraseonlaunchrule>1</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
     <avrtoolinterface>SWD</avrtoolinterface>
@@ -74,10 +74,8 @@
     <ListValues>
       <Value>../../include</Value>
       <Value>../..</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samv71\include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+      <Value>%24(PackRepoDir)\atmel\SAMV71_DFP\1.1.61\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -87,18 +85,27 @@
   <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcc.linker.general.GenerateMAPFile>False</armgcc.linker.general.GenerateMAPFile>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>%24(ProjectDir)\Device_Startup</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--script=../../linker/samv71q21.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\SAMV71_DFP\1.1.61\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+    </ListValues>
+  </armgcc.assembler.general.IncludePaths>
   <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
       <Value>../../include</Value>
       <Value>../..</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samv71\include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+      <Value>%24(PackRepoDir)\atmel\SAMV71_DFP\1.1.61\include</Value>
+      <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
   <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
