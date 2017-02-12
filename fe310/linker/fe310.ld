@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2017, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,58 +26,105 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+OUTPUT_ARCH("riscv")
+
 MEMORY
 {
-  flash (rx) : ORIGIN = 0x00000000, LENGTH = 0x4000 /* 16k */
-  ram  (rwx) : ORIGIN = 0x20000000, LENGTH = 0x1000 /* 4k */
+  flash (rxai!w) : ORIGIN = 0x20400000, LENGTH = 16M
+  ram (wxa!ri)   : ORIGIN = 0x80000000, LENGTH = 16K
 }
+
+PHDRS
+{
+  flash PT_LOAD;
+  ram_init PT_LOAD;
+  ram PT_NULL;
+}
+
+ENTRY(_start)
 
 __top_flash = ORIGIN(flash) + LENGTH(flash);
 __top_ram = ORIGIN(ram) + LENGTH(ram);
 
-ENTRY(irq_handler_reset)
-
 SECTIONS
 {
-  .text : ALIGN(4)
+  .text :
   {
-    FILL(0xff)
-    KEEP(*(.vectors))
-    *(.text*)
-    *(.rodata)
-    *(.rodata.*)
-    . = ALIGN(4);
-  } > flash
+    KEEP (*(.init._start))
+    KEEP (*(.init.reset_handler))
+    KEEP (*(SORT_NONE(.init)))
+    *(.text.unlikely .text.unlikely.*)
+    *(.text.startup .text.startup.*)
+    *(.text .text.*)
+    *(.gnu.linkonce.t.*)
+  } >flash AT>flash :flash
 
   . = ALIGN(4);
-  _etext = .;
 
-  .uninit_RESERVED : ALIGN(4)
-  {
-    KEEP(*(.bss.$RESERVED*))
-  } > ram
+  PROVIDE (_etext = .);
 
-  .data : ALIGN(4)
+  .rodata :
   {
-    FILL(0xff)
-    _data = .;
-    *(.ramfunc .ramfunc.*);
-    *(vtable)
-    *(.data*)
+    *(.rdata)
+    *(.rodata .rodata.*)
+    *(.gnu.linkonce.r.*)
+  } >flash AT>flash :flash
+
+  . = ALIGN(4);
+
+  .lalign :
+  {
     . = ALIGN(4);
-    _edata = .;
-  } > ram AT > flash
+    PROVIDE( _data_lma = . );
+  } >flash AT>flash :flash
 
-  .bss : ALIGN(4)
+  .dalign :
   {
-    _bss = .;
-    *(.bss*)
+    . = ALIGN(4);
+    PROVIDE( _data = . );
+  } >ram AT>flash :ram_init
+
+  .data :
+  {
+    *(.data .data.*)
+    *(.gnu.linkonce.d.*)
+  } >ram AT>flash :ram_init
+
+  .srodata :
+  {
+    PROVIDE( _gp = . + 0x800 );
+    *(.srodata.cst16)
+    *(.srodata.cst8)
+    *(.srodata.cst4)
+    *(.srodata.cst2)
+    *(.srodata .srodata.*)
+  } >ram AT>flash :ram_init
+
+  .sdata :
+  {
+    *(.sdata .sdata.*)
+    *(.gnu.linkonce.s.*)
+  } >ram AT>flash :ram_init
+
+  . = ALIGN(4);
+
+  PROVIDE( _edata = . );
+  PROVIDE( _bss = . );
+
+  .bss :
+  {
+    *(.sbss*)
+    *(.gnu.linkonce.sb.*)
+    *(.bss .bss.*)
+    *(.gnu.linkonce.b.*)
     *(COMMON)
     . = ALIGN(4);
-    _ebss = .;
-    PROVIDE(_end = .);
-  } > ram
+  } >ram AT>ram :ram
 
-  PROVIDE(_stack_top = __top_ram - 0);
+  . = ALIGN(8);
+  PROVIDE( _ebss = . );
+  PROVIDE( _end = . );
+
+  PROVIDE(_stack_top = __top_ram);
 }
 
