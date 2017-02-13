@@ -151,7 +151,7 @@ int main(void)
   uart_puts("\r\nHello, world!\r\n");
 
   HAL_GPIO_LED_R_out();
-  HAL_GPIO_LED_R_set();
+  HAL_GPIO_LED_R_clr();
 
   HAL_GPIO_LED_G_out();
   HAL_GPIO_LED_G_set();
