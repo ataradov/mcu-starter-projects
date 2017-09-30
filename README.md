@@ -17,6 +17,7 @@ The target compiler is GCC.
 * Atmel SAMV71Q21 (SAM V71 Xplained Ultra)
 * Atmel SAME70Q21 (SAM E70 Xplained)
 * Atmel SAM4SD32C (SAM 4S Xplained Pro)
+* Atmel SAME54P20A (SAM E45 Xplained Pro)
 * SiFive FE310-G000 (HiFive1)
 
 
