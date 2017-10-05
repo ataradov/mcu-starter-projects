@@ -33,7 +33,7 @@
   <documentation help="" />
   <offline-documentation help="" />
   <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.25.0" />
   </dependencies>
 </framework-data>
     </AsfFrameworkConfig>
@@ -536,13 +536,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="component\" />
     <Folder Include="include" />
     <Folder Include="include\component" />
     <Folder Include="include\instance" />
     <Folder Include="include\pio" />
-    <Folder Include="instance\" />
-    <Folder Include="pio\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

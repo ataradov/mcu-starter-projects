@@ -472,13 +472,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="component\" />
     <Folder Include="include" />
     <Folder Include="include\component" />
     <Folder Include="include\instance" />
     <Folder Include="include\pio" />
-    <Folder Include="instance\" />
-    <Folder Include="pio\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
