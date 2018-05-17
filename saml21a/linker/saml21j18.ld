@@ -69,6 +69,15 @@ SECTIONS
     _edata = .;
   } > ram AT > flash
 
+  .lpram (NOLOAD):
+  {
+    . = ALIGN(8);
+    _slpram = .;
+    *(.lpram .lpram.*);
+    . = ALIGN(8);
+    _elpram = .;
+  } > lpram
+
   .bss : ALIGN(4)
   {
     _bss = .;

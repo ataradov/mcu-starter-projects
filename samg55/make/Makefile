@@ -58,7 +58,7 @@ $(BUILD)/$(BIN).bin: $(BUILD)/$(BIN).elf
 	@$(CC) $(CFLAGS) $(filter %/$(subst .o,.c,$(notdir $@)), $(SRCS)) -c -o $@
 
 directory:
-	@mkdir -p $(BUILD)
+	@gmkdir -p $(BUILD)
 
 size: $(BUILD)/$(BIN).elf
 	@echo size:
