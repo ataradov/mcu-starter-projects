@@ -460,7 +460,7 @@
     </Compile>
     <Compile Include="..\startup_samc21n.c">
       <SubType>compile</SubType>
-      <Link>startup_samc21.c</Link>
+      <Link>startup_samc21n.c</Link>
     </Compile>
     <Compile Include="..\main.c">
       <SubType>compile</SubType>
