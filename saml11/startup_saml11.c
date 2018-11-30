@@ -184,6 +184,7 @@ void irq_handler_reset(void)
   SCB->VTOR = (uint32_t)vectors;
 
   main();
+
   while (1);
 }
 

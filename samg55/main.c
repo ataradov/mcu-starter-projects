@@ -129,9 +129,6 @@ static void sys_init(void)
 
   // Enable PIOA and PIOB
   PMC->PMC_PCER0 = PMC_PCER0_PID11 | PMC_PCER0_PID12;
-
-  // Enable interrupts
-  asm volatile ("cpsie i");
 }
 
 //-----------------------------------------------------------------------------

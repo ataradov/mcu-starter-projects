@@ -134,9 +134,6 @@ static void sys_init(void)
   PM->INTFLAG.reg = PM_INTFLAG_PLRDY;
   PM->PLCFG.reg = PM_PLCFG_PLSEL_PL2_Val;
   while (!PM->INTFLAG.reg);
-
-  // Enable interrupts
-  __enable_irq();
 }
 
 //-----------------------------------------------------------------------------

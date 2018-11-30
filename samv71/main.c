@@ -139,9 +139,6 @@ static void sys_init(void)
 
   // Disable altenate functions on some pins
   MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4;
-
-  // Enable interrupts
-  asm volatile ("cpsie i");
 }
 
 //-----------------------------------------------------------------------------

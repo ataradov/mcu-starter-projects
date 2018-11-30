@@ -139,7 +139,10 @@ void irq_handler_reset(void)
   while (dst < &_ebss)
     *dst++ = 0;
 
+  SCB->VTOR = (uint32_t)vectors;
+
   main();
+
   while (1);
 }
 

@@ -127,9 +127,6 @@ static void sys_init(void)
 {
   // Switch to 8MHz clock (disable prescaler)
   SYSCTRL->OSC8M.bit.PRESC = 0;
-
-  // Enable interrupts
-  asm volatile ("cpsie i");
 }
 
 //-----------------------------------------------------------------------------
