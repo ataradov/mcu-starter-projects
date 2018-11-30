@@ -16,14 +16,15 @@ TARGETS = \
   samv71 \
   sam4s \
 
-.PHONY: $(TARGETS)
+.PHONY: all clean hard_clean
 
-all: $(TARGETS)
+all:
+	$(foreach TGT, $(TARGETS), make -C $(TGT)/make/ all ; )
 
-$(TARGETS):
-	-rm -fr $@/make/build
-	make -C $@/make/ clean all
-	make -C $@/make/ clean
-	-rm -fr $@/make/build
+clean:
+	$(foreach TGT, $(TARGETS), make -C $(TGT)/make/ clean ; )
+
+hard_clean:
+	$(foreach TGT, $(TARGETS), rm -fr $(TGT)/make/build ; )
 
 
