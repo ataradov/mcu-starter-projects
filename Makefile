@@ -16,15 +16,25 @@ TARGETS = \
   samv71 \
   sam4s \
 
-.PHONY: all clean hard_clean
+TARGETS_ALL   = $(addprefix all_,   $(TARGETS))
+TARGETS_CLEAN = $(addprefix clean_, $(TARGETS))
+TARGETS_HARD  = $(addprefix hard_,  $(TARGETS))
 
-all:
-	$(foreach TGT, $(TARGETS), make -C $(TGT)/make/ all ; )
+.PHONY: all clean hard_clean $(TARGETS) $(TARGETS_ALL) $(TARGETS_CLEAN) $(TARGETS_HARD)
 
-clean:
-	$(foreach TGT, $(TARGETS), make -C $(TGT)/make/ clean ; )
+all: $(TARGETS_ALL)
 
-hard_clean:
-	$(foreach TGT, $(TARGETS), rm -fr $(TGT)/make/build ; )
+clean: $(TARGETS_CLEAN)
+
+hard_clean: $(TARGETS_HARD)
+
+$(TARGETS_ALL):
+	make -C $(subst all_,, $@)/make/ all
+
+$(TARGETS_CLEAN):
+	make -C $(subst clean_,, $@)/make/ clean
+
+$(TARGETS_HARD):
+	rm -fr $(subst hard_,, $@)/make/build
 
 
