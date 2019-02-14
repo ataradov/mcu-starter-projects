@@ -1,4 +1,5 @@
 TARGETS = \
+  samd09 \
   samd10 \
   samd11 \
   samd20 \
