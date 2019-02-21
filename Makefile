@@ -4,6 +4,7 @@ TARGETS = \
   samd11 \
   samd20 \
   samd21 \
+  samda1b \
   samc21 \
   samc21n \
   saml10 \

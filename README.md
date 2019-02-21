@@ -11,6 +11,7 @@ The target compiler is GCC.
 * Atmel SAMD11D14 (SAM D11 Xplained Pro)
 * Atmel SAMD20J18 (SAM D20 Xplained Pro)
 * Atmel SAMD21J19 (SAM D21 Xplained Pro)
+* Atmel SAMDA1J16B (SAM DA1 Xplained Pro)
 * Atmel SAMC21J18 (SAM C21 Xplained Pro)
 * Atmel SAML21J18 (SAM L21 Xplained Pro)
 * Atmel SAML23N18 (SAM L22 Xplained Pro)
