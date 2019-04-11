@@ -27,15 +27,15 @@
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.20.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
     <avrtoolinterface>SWD</avrtoolinterface>
@@ -66,6 +66,8 @@
       <ToolNumber>J41800003910</ToolNumber>
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -209,10 +211,6 @@
       <SubType>compile</SubType>
       <Link>include\component\supc.h</Link>
     </Compile>
-    <Compile Include="..\include\component\tal.h">
-      <SubType>compile</SubType>
-      <Link>include\component\tal.h</Link>
-    </Compile>
     <Compile Include="..\include\component\tc.h">
       <SubType>compile</SubType>
       <Link>include\component\tc.h</Link>
@@ -309,6 +307,10 @@
       <SubType>compile</SubType>
       <Link>include\instance\port.h</Link>
     </Compile>
+    <Compile Include="..\include\instance\ptc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\ptc.h</Link>
+    </Compile>
     <Compile Include="..\include\instance\rstc.h">
       <SubType>compile</SubType>
       <Link>include\instance\rstc.h</Link>
@@ -344,10 +346,6 @@
     <Compile Include="..\include\instance\supc.h">
       <SubType>compile</SubType>
       <Link>include\instance\supc.h</Link>
-    </Compile>
-    <Compile Include="..\include\instance\tal.h">
-      <SubType>compile</SubType>
-      <Link>include\instance\tal.h</Link>
     </Compile>
     <Compile Include="..\include\instance\tc0.h">
       <SubType>compile</SubType>
@@ -429,9 +427,17 @@
       <SubType>compile</SubType>
       <Link>include\pio\saml21j17b.h</Link>
     </Compile>
+    <Compile Include="..\include\pio\saml21j17bu.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\saml21j17bu.h</Link>
+    </Compile>
     <Compile Include="..\include\pio\saml21j18b.h">
       <SubType>compile</SubType>
       <Link>include\pio\saml21j18b.h</Link>
+    </Compile>
+    <Compile Include="..\include\pio\saml21j18bu.h">
+      <SubType>compile</SubType>
+      <Link>include\pio\saml21j18bu.h</Link>
     </Compile>
     <Compile Include="..\include\core_cm0plus.h">
       <SubType>compile</SubType>
@@ -485,9 +491,17 @@
       <SubType>compile</SubType>
       <Link>include\saml21j17b.h</Link>
     </Compile>
+    <Compile Include="..\include\saml21j17bu.h">
+      <SubType>compile</SubType>
+      <Link>include\saml21j17bu.h</Link>
+    </Compile>
     <Compile Include="..\include\saml21j18b.h">
       <SubType>compile</SubType>
       <Link>include\saml21j18b.h</Link>
+    </Compile>
+    <Compile Include="..\include\saml21j18bu.h">
+      <SubType>compile</SubType>
+      <Link>include\saml21j18bu.h</Link>
     </Compile>
     <Compile Include="..\startup_saml21.c">
       <SubType>compile</SubType>

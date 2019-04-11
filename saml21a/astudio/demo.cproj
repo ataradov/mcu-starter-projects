@@ -27,15 +27,15 @@
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.20.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
     <avrtoolinterface>SWD</avrtoolinterface>
@@ -66,6 +66,8 @@
       <ToolNumber>J41800003910</ToolNumber>
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -209,17 +211,13 @@
       <SubType>compile</SubType>
       <Link>include\component\supc_100.h</Link>
     </Compile>
-    <Compile Include="..\include\component\tal.h">
+    <Compile Include="..\include\component\tcc_200.h">
       <SubType>compile</SubType>
-      <Link>include\component\tal.h</Link>
+      <Link>include\component\tcc_200.h</Link>
     </Compile>
     <Compile Include="..\include\component\tc_100.h">
       <SubType>compile</SubType>
       <Link>include\component\tc_100.h</Link>
-    </Compile>
-    <Compile Include="..\include\component\tcc_200.h">
-      <SubType>compile</SubType>
-      <Link>include\component\tcc_200.h</Link>
     </Compile>
     <Compile Include="..\include\component\trng.h">
       <SubType>compile</SubType>
@@ -309,6 +307,10 @@
       <SubType>compile</SubType>
       <Link>include\instance\port.h</Link>
     </Compile>
+    <Compile Include="..\include\instance\ptc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\ptc.h</Link>
+    </Compile>
     <Compile Include="..\include\instance\rstc_100.h">
       <SubType>compile</SubType>
       <Link>include\instance\rstc_100.h</Link>
@@ -344,10 +346,6 @@
     <Compile Include="..\include\instance\supc_100.h">
       <SubType>compile</SubType>
       <Link>include\instance\supc_100.h</Link>
-    </Compile>
-    <Compile Include="..\include\instance\tal.h">
-      <SubType>compile</SubType>
-      <Link>include\instance\tal.h</Link>
     </Compile>
     <Compile Include="..\include\instance\tc0_100.h">
       <SubType>compile</SubType>

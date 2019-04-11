@@ -27,15 +27,15 @@
     <eraseonlaunchrule>1</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.medbg</avrtool>
     <avrtoolinterface>SWD</avrtoolinterface>
@@ -63,6 +63,8 @@
       <ToolNumber>ATML2378020200000275</ToolNumber>
       <ToolName>mEDBG</ToolName>
     </com_atmel_avrdbg_tool_medbg>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -156,6 +158,10 @@
       <SubType>compile</SubType>
       <Link>include\component\gclk.h</Link>
     </Compile>
+    <Compile Include="..\include\component\hmatrixb.h">
+      <SubType>compile</SubType>
+      <Link>include\component\hmatrixb.h</Link>
+    </Compile>
     <Compile Include="..\include\component\mtb.h">
       <SubType>compile</SubType>
       <Link>include\component\mtb.h</Link>
@@ -195,10 +201,6 @@
     <Compile Include="..\include\component\tcc.h">
       <SubType>compile</SubType>
       <Link>include\component\tcc.h</Link>
-    </Compile>
-    <Compile Include="..\include\component\hmatrixb.h">
-      <SubType>compile</SubType>
-      <Link>include\component\hmatrixb.h</Link>
     </Compile>
     <Compile Include="..\include\component\wdt.h">
       <SubType>compile</SubType>
@@ -264,9 +266,17 @@
       <SubType>compile</SubType>
       <Link>include\instance\port.h</Link>
     </Compile>
+    <Compile Include="..\include\instance\ptc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\ptc.h</Link>
+    </Compile>
     <Compile Include="..\include\instance\rtc.h">
       <SubType>compile</SubType>
       <Link>include\instance\rtc.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\sbmatrix.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\sbmatrix.h</Link>
     </Compile>
     <Compile Include="..\include\instance\sercom0.h">
       <SubType>compile</SubType>
@@ -296,17 +306,9 @@
       <SubType>compile</SubType>
       <Link>include\instance\tcc0.h</Link>
     </Compile>
-    <Compile Include="..\include\instance\sbmatrix.h">
-      <SubType>compile</SubType>
-      <Link>include\instance\sbmatrix.h</Link>
-    </Compile>
     <Compile Include="..\include\instance\wdt.h">
       <SubType>compile</SubType>
       <Link>include\instance\wdt.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd10c12a.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd10c12a.h</Link>
     </Compile>
     <Compile Include="..\include\pio\samd10c13a.h">
       <SubType>compile</SubType>
@@ -315,14 +317,6 @@
     <Compile Include="..\include\pio\samd10c14a.h">
       <SubType>compile</SubType>
       <Link>include\pio\samd10c14a.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd10d12am.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd10d12am.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd10d12as.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd10d12as.h</Link>
     </Compile>
     <Compile Include="..\include\pio\samd10d13am.h">
       <SubType>compile</SubType>
@@ -360,10 +354,6 @@
       <SubType>compile</SubType>
       <Link>include\samd10.h</Link>
     </Compile>
-    <Compile Include="..\include\samd10c12a.h">
-      <SubType>compile</SubType>
-      <Link>include\samd10c12a.h</Link>
-    </Compile>
     <Compile Include="..\include\samd10c13a.h">
       <SubType>compile</SubType>
       <Link>include\samd10c13a.h</Link>
@@ -371,14 +361,6 @@
     <Compile Include="..\include\samd10c14a.h">
       <SubType>compile</SubType>
       <Link>include\samd10c14a.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd10d12am.h">
-      <SubType>compile</SubType>
-      <Link>include\samd10d12am.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd10d12as.h">
-      <SubType>compile</SubType>
-      <Link>include\samd10d12as.h</Link>
     </Compile>
     <Compile Include="..\include\samd10d13am.h">
       <SubType>compile</SubType>

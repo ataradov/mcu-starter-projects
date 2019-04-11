@@ -33,7 +33,7 @@
   <documentation help="" />
   <offline-documentation help="" />
   <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
   </dependencies>
 </framework-data>
     </AsfFrameworkConfig>
@@ -52,6 +52,8 @@
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
     <preserveEEPROM>true</preserveEEPROM>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -82,6 +84,7 @@
   <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
   <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
   <armgcc.compiler.optimization.EnableLongCalls>False</armgcc.compiler.optimization.EnableLongCalls>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcc.linker.general.GenerateMAPFile>False</armgcc.linker.general.GenerateMAPFile>
   <armgcc.linker.libraries.LibrarySearchPaths>
@@ -192,10 +195,6 @@
       <SubType>compile</SubType>
       <Link>include\component\tcc.h</Link>
     </Compile>
-    <Compile Include="..\include\component\tcc_lighting.h">
-      <SubType>compile</SubType>
-      <Link>include\component\tcc_lighting.h</Link>
-    </Compile>
     <Compile Include="..\include\component\usb.h">
       <SubType>compile</SubType>
       <Link>include\component\usb.h</Link>
@@ -207,10 +206,6 @@
     <Compile Include="..\include\instance\ac.h">
       <SubType>compile</SubType>
       <Link>include\instance\ac.h</Link>
-    </Compile>
-    <Compile Include="..\include\instance\ac1.h">
-      <SubType>compile</SubType>
-      <Link>include\instance\ac1.h</Link>
     </Compile>
     <Compile Include="..\include\instance\adc.h">
       <SubType>compile</SubType>
@@ -271,6 +266,10 @@
     <Compile Include="..\include\instance\port.h">
       <SubType>compile</SubType>
       <Link>include\instance\port.h</Link>
+    </Compile>
+    <Compile Include="..\include\instance\ptc.h">
+      <SubType>compile</SubType>
+      <Link>include\instance\ptc.h</Link>
     </Compile>
     <Compile Include="..\include\instance\rtc.h">
       <SubType>compile</SubType>
@@ -352,33 +351,9 @@
       <SubType>compile</SubType>
       <Link>include\pio\samd21e15a.h</Link>
     </Compile>
-    <Compile Include="..\include\pio\samd21e15b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e15b.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21e15bu.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e15bu.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21e15l.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e15l.h</Link>
-    </Compile>
     <Compile Include="..\include\pio\samd21e16a.h">
       <SubType>compile</SubType>
       <Link>include\pio\samd21e16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21e16b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e16b.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21e16bu.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e16bu.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21e16l.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21e16l.h</Link>
     </Compile>
     <Compile Include="..\include\pio\samd21e17a.h">
       <SubType>compile</SubType>
@@ -392,17 +367,9 @@
       <SubType>compile</SubType>
       <Link>include\pio\samd21g15a.h</Link>
     </Compile>
-    <Compile Include="..\include\pio\samd21g15b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21g15b.h</Link>
-    </Compile>
     <Compile Include="..\include\pio\samd21g16a.h">
       <SubType>compile</SubType>
       <Link>include\pio\samd21g16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21g16b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21g16b.h</Link>
     </Compile>
     <Compile Include="..\include\pio\samd21g17a.h">
       <SubType>compile</SubType>
@@ -424,17 +391,9 @@
       <SubType>compile</SubType>
       <Link>include\pio\samd21j15a.h</Link>
     </Compile>
-    <Compile Include="..\include\pio\samd21j15b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21j15b.h</Link>
-    </Compile>
     <Compile Include="..\include\pio\samd21j16a.h">
       <SubType>compile</SubType>
       <Link>include\pio\samd21j16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\pio\samd21j16b.h">
-      <SubType>compile</SubType>
-      <Link>include\pio\samd21j16b.h</Link>
     </Compile>
     <Compile Include="..\include\pio\samd21j17a.h">
       <SubType>compile</SubType>
@@ -464,33 +423,9 @@
       <SubType>compile</SubType>
       <Link>include\samd21e15a.h</Link>
     </Compile>
-    <Compile Include="..\include\samd21e15b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e15b.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21e15bu.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e15bu.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21e15l.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e15l.h</Link>
-    </Compile>
     <Compile Include="..\include\samd21e16a.h">
       <SubType>compile</SubType>
       <Link>include\samd21e16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21e16b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e16b.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21e16bu.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e16bu.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21e16l.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21e16l.h</Link>
     </Compile>
     <Compile Include="..\include\samd21e17a.h">
       <SubType>compile</SubType>
@@ -504,17 +439,9 @@
       <SubType>compile</SubType>
       <Link>include\samd21g15a.h</Link>
     </Compile>
-    <Compile Include="..\include\samd21g15b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21g15b.h</Link>
-    </Compile>
     <Compile Include="..\include\samd21g16a.h">
       <SubType>compile</SubType>
       <Link>include\samd21g16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21g16b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21g16b.h</Link>
     </Compile>
     <Compile Include="..\include\samd21g17a.h">
       <SubType>compile</SubType>
@@ -536,17 +463,9 @@
       <SubType>compile</SubType>
       <Link>include\samd21j15a.h</Link>
     </Compile>
-    <Compile Include="..\include\samd21j15b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21j15b.h</Link>
-    </Compile>
     <Compile Include="..\include\samd21j16a.h">
       <SubType>compile</SubType>
       <Link>include\samd21j16a.h</Link>
-    </Compile>
-    <Compile Include="..\include\samd21j16b.h">
-      <SubType>compile</SubType>
-      <Link>include\samd21j16b.h</Link>
     </Compile>
     <Compile Include="..\include\samd21j17a.h">
       <SubType>compile</SubType>
