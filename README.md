@@ -23,5 +23,6 @@ The target compiler is GCC.
 * Microchip SAML10E16A (SAM L10 Xplained Pro)
 * Microchip SAML11E16A (SAM L11 Xplained Pro)
 * SiFive FE310-G000 (HiFive1)
+* ST STM32G071 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/stm32g071c))
 
 
