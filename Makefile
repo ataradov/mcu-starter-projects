@@ -19,6 +19,7 @@ TARGETS = \
   sam4s \
   sam4l \
   stm32g0 \
+  gd32f4 \
 
 TARGETS_ALL   = $(addprefix all_,   $(TARGETS))
 TARGETS_CLEAN = $(addprefix clean_, $(TARGETS))
