@@ -18,7 +18,7 @@ TARGETS = \
   samv71 \
   sam4s \
   sam4l \
-  stm32g0 \
+  stm32g071 \
   gd32f4 \
 
 TARGETS_ALL   = $(addprefix all_,   $(TARGETS))
