@@ -1,141 +1,134 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for MCAN1
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_MCAN1_INSTANCE_
-#define _SAME70_MCAN1_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_MCAN1_INSTANCE_H_
+#define _SAME70_MCAN1_INSTANCE_H_
 
 /* ========== Register definition for MCAN1 peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_MCAN1_CUST                    (0x40034008U) /**< \brief (MCAN1) Customer Register */
-  #define REG_MCAN1_FBTP                    (0x4003400CU) /**< \brief (MCAN1) Fast Bit Timing and Prescaler Register */
-  #define REG_MCAN1_TEST                    (0x40034010U) /**< \brief (MCAN1) Test Register */
-  #define REG_MCAN1_RWD                     (0x40034014U) /**< \brief (MCAN1) RAM Watchdog Register */
-  #define REG_MCAN1_CCCR                    (0x40034018U) /**< \brief (MCAN1) CC Control Register */
-  #define REG_MCAN1_BTP                     (0x4003401CU) /**< \brief (MCAN1) Bit Timing and Prescaler Register */
-  #define REG_MCAN1_TSCC                    (0x40034020U) /**< \brief (MCAN1) Timestamp Counter Configuration Register */
-  #define REG_MCAN1_TSCV                    (0x40034024U) /**< \brief (MCAN1) Timestamp Counter Value Register */
-  #define REG_MCAN1_TOCC                    (0x40034028U) /**< \brief (MCAN1) Timeout Counter Configuration Register */
-  #define REG_MCAN1_TOCV                    (0x4003402CU) /**< \brief (MCAN1) Timeout Counter Value Register */
-  #define REG_MCAN1_ECR                     (0x40034040U) /**< \brief (MCAN1) Error Counter Register */
-  #define REG_MCAN1_PSR                     (0x40034044U) /**< \brief (MCAN1) Protocol Status Register */
-  #define REG_MCAN1_IR                      (0x40034050U) /**< \brief (MCAN1) Interrupt Register */
-  #define REG_MCAN1_IE                      (0x40034054U) /**< \brief (MCAN1) Interrupt Enable Register */
-  #define REG_MCAN1_ILS                     (0x40034058U) /**< \brief (MCAN1) Interrupt Line Select Register */
-  #define REG_MCAN1_ILE                     (0x4003405CU) /**< \brief (MCAN1) Interrupt Line Enable Register */
-  #define REG_MCAN1_GFC                     (0x40034080U) /**< \brief (MCAN1) Global Filter Configuration Register */
-  #define REG_MCAN1_SIDFC                   (0x40034084U) /**< \brief (MCAN1) Standard ID Filter Configuration Register */
-  #define REG_MCAN1_XIDFC                   (0x40034088U) /**< \brief (MCAN1) Extended ID Filter Configuration Register */
-  #define REG_MCAN1_XIDAM                   (0x40034090U) /**< \brief (MCAN1) Extended ID AND Mask Register */
-  #define REG_MCAN1_HPMS                    (0x40034094U) /**< \brief (MCAN1) High Priority Message Status Register */
-  #define REG_MCAN1_NDAT1                   (0x40034098U) /**< \brief (MCAN1) New Data 1 Register */
-  #define REG_MCAN1_NDAT2                   (0x4003409CU) /**< \brief (MCAN1) New Data 2 Register */
-  #define REG_MCAN1_RXF0C                   (0x400340A0U) /**< \brief (MCAN1) Receive FIFO 0 Configuration Register */
-  #define REG_MCAN1_RXF0S                   (0x400340A4U) /**< \brief (MCAN1) Receive FIFO 0 Status Register */
-  #define REG_MCAN1_RXF0A                   (0x400340A8U) /**< \brief (MCAN1) Receive FIFO 0 Acknowledge Register */
-  #define REG_MCAN1_RXBC                    (0x400340ACU) /**< \brief (MCAN1) Receive Rx Buffer Configuration Register */
-  #define REG_MCAN1_RXF1C                   (0x400340B0U) /**< \brief (MCAN1) Receive FIFO 1 Configuration Register */
-  #define REG_MCAN1_RXF1S                   (0x400340B4U) /**< \brief (MCAN1) Receive FIFO 1 Status Register */
-  #define REG_MCAN1_RXF1A                   (0x400340B8U) /**< \brief (MCAN1) Receive FIFO 1 Acknowledge Register */
-  #define REG_MCAN1_RXESC                   (0x400340BCU) /**< \brief (MCAN1) Receive Buffer / FIFO Element Size Configuration Register */
-  #define REG_MCAN1_TXBC                    (0x400340C0U) /**< \brief (MCAN1) Transmit Buffer Configuration Register */
-  #define REG_MCAN1_TXFQS                   (0x400340C4U) /**< \brief (MCAN1) Transmit FIFO/Queue Status Register */
-  #define REG_MCAN1_TXESC                   (0x400340C8U) /**< \brief (MCAN1) Transmit Buffer Element Size Configuration Register */
-  #define REG_MCAN1_TXBRP                   (0x400340CCU) /**< \brief (MCAN1) Transmit Buffer Request Pending Register */
-  #define REG_MCAN1_TXBAR                   (0x400340D0U) /**< \brief (MCAN1) Transmit Buffer Add Request Register */
-  #define REG_MCAN1_TXBCR                   (0x400340D4U) /**< \brief (MCAN1) Transmit Buffer Cancellation Request Register */
-  #define REG_MCAN1_TXBTO                   (0x400340D8U) /**< \brief (MCAN1) Transmit Buffer Transmission Occurred Register */
-  #define REG_MCAN1_TXBCF                   (0x400340DCU) /**< \brief (MCAN1) Transmit Buffer Cancellation Finished Register */
-  #define REG_MCAN1_TXBTIE                  (0x400340E0U) /**< \brief (MCAN1) Transmit Buffer Transmission Interrupt Enable Register */
-  #define REG_MCAN1_TXBCIE                  (0x400340E4U) /**< \brief (MCAN1) Transmit Buffer Cancellation Finished Interrupt Enable Register */
-  #define REG_MCAN1_TXEFC                   (0x400340F0U) /**< \brief (MCAN1) Transmit Event FIFO Configuration Register */
-  #define REG_MCAN1_TXEFS                   (0x400340F4U) /**< \brief (MCAN1) Transmit Event FIFO Status Register */
-  #define REG_MCAN1_TXEFA                   (0x400340F8U) /**< \brief (MCAN1) Transmit Event FIFO Acknowledge Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_MCAN1_CUST          (0x40034008) /**< (MCAN1) Customer Register */
+#define REG_MCAN1_FBTP          (0x4003400C) /**< (MCAN1) Fast Bit Timing and Prescaler Register */
+#define REG_MCAN1_TEST          (0x40034010) /**< (MCAN1) Test Register */
+#define REG_MCAN1_RWD           (0x40034014) /**< (MCAN1) RAM Watchdog Register */
+#define REG_MCAN1_CCCR          (0x40034018) /**< (MCAN1) CC Control Register */
+#define REG_MCAN1_BTP           (0x4003401C) /**< (MCAN1) Bit Timing and Prescaler Register */
+#define REG_MCAN1_TSCC          (0x40034020) /**< (MCAN1) Timestamp Counter Configuration Register */
+#define REG_MCAN1_TSCV          (0x40034024) /**< (MCAN1) Timestamp Counter Value Register */
+#define REG_MCAN1_TOCC          (0x40034028) /**< (MCAN1) Timeout Counter Configuration Register */
+#define REG_MCAN1_TOCV          (0x4003402C) /**< (MCAN1) Timeout Counter Value Register */
+#define REG_MCAN1_ECR           (0x40034040) /**< (MCAN1) Error Counter Register */
+#define REG_MCAN1_PSR           (0x40034044) /**< (MCAN1) Protocol Status Register */
+#define REG_MCAN1_IR            (0x40034050) /**< (MCAN1) Interrupt Register */
+#define REG_MCAN1_IE            (0x40034054) /**< (MCAN1) Interrupt Enable Register */
+#define REG_MCAN1_ILS           (0x40034058) /**< (MCAN1) Interrupt Line Select Register */
+#define REG_MCAN1_ILE           (0x4003405C) /**< (MCAN1) Interrupt Line Enable Register */
+#define REG_MCAN1_GFC           (0x40034080) /**< (MCAN1) Global Filter Configuration Register */
+#define REG_MCAN1_SIDFC         (0x40034084) /**< (MCAN1) Standard ID Filter Configuration Register */
+#define REG_MCAN1_XIDFC         (0x40034088) /**< (MCAN1) Extended ID Filter Configuration Register */
+#define REG_MCAN1_XIDAM         (0x40034090) /**< (MCAN1) Extended ID AND Mask Register */
+#define REG_MCAN1_HPMS          (0x40034094) /**< (MCAN1) High Priority Message Status Register */
+#define REG_MCAN1_NDAT1         (0x40034098) /**< (MCAN1) New Data 1 Register */
+#define REG_MCAN1_NDAT2         (0x4003409C) /**< (MCAN1) New Data 2 Register */
+#define REG_MCAN1_RXF0C         (0x400340A0) /**< (MCAN1) Receive FIFO 0 Configuration Register */
+#define REG_MCAN1_RXF0S         (0x400340A4) /**< (MCAN1) Receive FIFO 0 Status Register */
+#define REG_MCAN1_RXF0A         (0x400340A8) /**< (MCAN1) Receive FIFO 0 Acknowledge Register */
+#define REG_MCAN1_RXBC          (0x400340AC) /**< (MCAN1) Receive Rx Buffer Configuration Register */
+#define REG_MCAN1_RXF1C         (0x400340B0) /**< (MCAN1) Receive FIFO 1 Configuration Register */
+#define REG_MCAN1_RXF1S         (0x400340B4) /**< (MCAN1) Receive FIFO 1 Status Register */
+#define REG_MCAN1_RXF1A         (0x400340B8) /**< (MCAN1) Receive FIFO 1 Acknowledge Register */
+#define REG_MCAN1_RXESC         (0x400340BC) /**< (MCAN1) Receive Buffer / FIFO Element Size Configuration Register */
+#define REG_MCAN1_TXBC          (0x400340C0) /**< (MCAN1) Transmit Buffer Configuration Register */
+#define REG_MCAN1_TXFQS         (0x400340C4) /**< (MCAN1) Transmit FIFO/Queue Status Register */
+#define REG_MCAN1_TXESC         (0x400340C8) /**< (MCAN1) Transmit Buffer Element Size Configuration Register */
+#define REG_MCAN1_TXBRP         (0x400340CC) /**< (MCAN1) Transmit Buffer Request Pending Register */
+#define REG_MCAN1_TXBAR         (0x400340D0) /**< (MCAN1) Transmit Buffer Add Request Register */
+#define REG_MCAN1_TXBCR         (0x400340D4) /**< (MCAN1) Transmit Buffer Cancellation Request Register */
+#define REG_MCAN1_TXBTO         (0x400340D8) /**< (MCAN1) Transmit Buffer Transmission Occurred Register */
+#define REG_MCAN1_TXBCF         (0x400340DC) /**< (MCAN1) Transmit Buffer Cancellation Finished Register */
+#define REG_MCAN1_TXBTIE        (0x400340E0) /**< (MCAN1) Transmit Buffer Transmission Interrupt Enable Register */
+#define REG_MCAN1_TXBCIE        (0x400340E4) /**< (MCAN1) Transmit Buffer Cancellation Finished Interrupt Enable Register */
+#define REG_MCAN1_TXEFC         (0x400340F0) /**< (MCAN1) Transmit Event FIFO Configuration Register */
+#define REG_MCAN1_TXEFS         (0x400340F4) /**< (MCAN1) Transmit Event FIFO Status Register */
+#define REG_MCAN1_TXEFA         (0x400340F8) /**< (MCAN1) Transmit Event FIFO Acknowledge Register */
+
 #else
-  #define REG_MCAN1_CUST   (*(__IO uint32_t*)0x40034008U) /**< \brief (MCAN1) Customer Register */
-  #define REG_MCAN1_FBTP   (*(__IO uint32_t*)0x4003400CU) /**< \brief (MCAN1) Fast Bit Timing and Prescaler Register */
-  #define REG_MCAN1_TEST   (*(__IO uint32_t*)0x40034010U) /**< \brief (MCAN1) Test Register */
-  #define REG_MCAN1_RWD    (*(__IO uint32_t*)0x40034014U) /**< \brief (MCAN1) RAM Watchdog Register */
-  #define REG_MCAN1_CCCR   (*(__IO uint32_t*)0x40034018U) /**< \brief (MCAN1) CC Control Register */
-  #define REG_MCAN1_BTP    (*(__IO uint32_t*)0x4003401CU) /**< \brief (MCAN1) Bit Timing and Prescaler Register */
-  #define REG_MCAN1_TSCC   (*(__IO uint32_t*)0x40034020U) /**< \brief (MCAN1) Timestamp Counter Configuration Register */
-  #define REG_MCAN1_TSCV   (*(__IO uint32_t*)0x40034024U) /**< \brief (MCAN1) Timestamp Counter Value Register */
-  #define REG_MCAN1_TOCC   (*(__IO uint32_t*)0x40034028U) /**< \brief (MCAN1) Timeout Counter Configuration Register */
-  #define REG_MCAN1_TOCV   (*(__IO uint32_t*)0x4003402CU) /**< \brief (MCAN1) Timeout Counter Value Register */
-  #define REG_MCAN1_ECR    (*(__I  uint32_t*)0x40034040U) /**< \brief (MCAN1) Error Counter Register */
-  #define REG_MCAN1_PSR    (*(__I  uint32_t*)0x40034044U) /**< \brief (MCAN1) Protocol Status Register */
-  #define REG_MCAN1_IR     (*(__IO uint32_t*)0x40034050U) /**< \brief (MCAN1) Interrupt Register */
-  #define REG_MCAN1_IE     (*(__IO uint32_t*)0x40034054U) /**< \brief (MCAN1) Interrupt Enable Register */
-  #define REG_MCAN1_ILS    (*(__IO uint32_t*)0x40034058U) /**< \brief (MCAN1) Interrupt Line Select Register */
-  #define REG_MCAN1_ILE    (*(__IO uint32_t*)0x4003405CU) /**< \brief (MCAN1) Interrupt Line Enable Register */
-  #define REG_MCAN1_GFC    (*(__IO uint32_t*)0x40034080U) /**< \brief (MCAN1) Global Filter Configuration Register */
-  #define REG_MCAN1_SIDFC  (*(__IO uint32_t*)0x40034084U) /**< \brief (MCAN1) Standard ID Filter Configuration Register */
-  #define REG_MCAN1_XIDFC  (*(__IO uint32_t*)0x40034088U) /**< \brief (MCAN1) Extended ID Filter Configuration Register */
-  #define REG_MCAN1_XIDAM  (*(__IO uint32_t*)0x40034090U) /**< \brief (MCAN1) Extended ID AND Mask Register */
-  #define REG_MCAN1_HPMS   (*(__I  uint32_t*)0x40034094U) /**< \brief (MCAN1) High Priority Message Status Register */
-  #define REG_MCAN1_NDAT1  (*(__IO uint32_t*)0x40034098U) /**< \brief (MCAN1) New Data 1 Register */
-  #define REG_MCAN1_NDAT2  (*(__IO uint32_t*)0x4003409CU) /**< \brief (MCAN1) New Data 2 Register */
-  #define REG_MCAN1_RXF0C  (*(__IO uint32_t*)0x400340A0U) /**< \brief (MCAN1) Receive FIFO 0 Configuration Register */
-  #define REG_MCAN1_RXF0S  (*(__I  uint32_t*)0x400340A4U) /**< \brief (MCAN1) Receive FIFO 0 Status Register */
-  #define REG_MCAN1_RXF0A  (*(__IO uint32_t*)0x400340A8U) /**< \brief (MCAN1) Receive FIFO 0 Acknowledge Register */
-  #define REG_MCAN1_RXBC   (*(__IO uint32_t*)0x400340ACU) /**< \brief (MCAN1) Receive Rx Buffer Configuration Register */
-  #define REG_MCAN1_RXF1C  (*(__IO uint32_t*)0x400340B0U) /**< \brief (MCAN1) Receive FIFO 1 Configuration Register */
-  #define REG_MCAN1_RXF1S  (*(__I  uint32_t*)0x400340B4U) /**< \brief (MCAN1) Receive FIFO 1 Status Register */
-  #define REG_MCAN1_RXF1A  (*(__IO uint32_t*)0x400340B8U) /**< \brief (MCAN1) Receive FIFO 1 Acknowledge Register */
-  #define REG_MCAN1_RXESC  (*(__IO uint32_t*)0x400340BCU) /**< \brief (MCAN1) Receive Buffer / FIFO Element Size Configuration Register */
-  #define REG_MCAN1_TXBC   (*(__IO uint32_t*)0x400340C0U) /**< \brief (MCAN1) Transmit Buffer Configuration Register */
-  #define REG_MCAN1_TXFQS  (*(__I  uint32_t*)0x400340C4U) /**< \brief (MCAN1) Transmit FIFO/Queue Status Register */
-  #define REG_MCAN1_TXESC  (*(__IO uint32_t*)0x400340C8U) /**< \brief (MCAN1) Transmit Buffer Element Size Configuration Register */
-  #define REG_MCAN1_TXBRP  (*(__I  uint32_t*)0x400340CCU) /**< \brief (MCAN1) Transmit Buffer Request Pending Register */
-  #define REG_MCAN1_TXBAR  (*(__IO uint32_t*)0x400340D0U) /**< \brief (MCAN1) Transmit Buffer Add Request Register */
-  #define REG_MCAN1_TXBCR  (*(__IO uint32_t*)0x400340D4U) /**< \brief (MCAN1) Transmit Buffer Cancellation Request Register */
-  #define REG_MCAN1_TXBTO  (*(__I  uint32_t*)0x400340D8U) /**< \brief (MCAN1) Transmit Buffer Transmission Occurred Register */
-  #define REG_MCAN1_TXBCF  (*(__I  uint32_t*)0x400340DCU) /**< \brief (MCAN1) Transmit Buffer Cancellation Finished Register */
-  #define REG_MCAN1_TXBTIE (*(__IO uint32_t*)0x400340E0U) /**< \brief (MCAN1) Transmit Buffer Transmission Interrupt Enable Register */
-  #define REG_MCAN1_TXBCIE (*(__IO uint32_t*)0x400340E4U) /**< \brief (MCAN1) Transmit Buffer Cancellation Finished Interrupt Enable Register */
-  #define REG_MCAN1_TXEFC  (*(__IO uint32_t*)0x400340F0U) /**< \brief (MCAN1) Transmit Event FIFO Configuration Register */
-  #define REG_MCAN1_TXEFS  (*(__I  uint32_t*)0x400340F4U) /**< \brief (MCAN1) Transmit Event FIFO Status Register */
-  #define REG_MCAN1_TXEFA  (*(__IO uint32_t*)0x400340F8U) /**< \brief (MCAN1) Transmit Event FIFO Acknowledge Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_MCAN1_CUST          (*(__IO uint32_t*)0x40034008U) /**< (MCAN1) Customer Register */
+#define REG_MCAN1_FBTP          (*(__IO uint32_t*)0x4003400CU) /**< (MCAN1) Fast Bit Timing and Prescaler Register */
+#define REG_MCAN1_TEST          (*(__IO uint32_t*)0x40034010U) /**< (MCAN1) Test Register */
+#define REG_MCAN1_RWD           (*(__IO uint32_t*)0x40034014U) /**< (MCAN1) RAM Watchdog Register */
+#define REG_MCAN1_CCCR          (*(__IO uint32_t*)0x40034018U) /**< (MCAN1) CC Control Register */
+#define REG_MCAN1_BTP           (*(__IO uint32_t*)0x4003401CU) /**< (MCAN1) Bit Timing and Prescaler Register */
+#define REG_MCAN1_TSCC          (*(__IO uint32_t*)0x40034020U) /**< (MCAN1) Timestamp Counter Configuration Register */
+#define REG_MCAN1_TSCV          (*(__IO uint32_t*)0x40034024U) /**< (MCAN1) Timestamp Counter Value Register */
+#define REG_MCAN1_TOCC          (*(__IO uint32_t*)0x40034028U) /**< (MCAN1) Timeout Counter Configuration Register */
+#define REG_MCAN1_TOCV          (*(__IO uint32_t*)0x4003402CU) /**< (MCAN1) Timeout Counter Value Register */
+#define REG_MCAN1_ECR           (*(__I  uint32_t*)0x40034040U) /**< (MCAN1) Error Counter Register */
+#define REG_MCAN1_PSR           (*(__I  uint32_t*)0x40034044U) /**< (MCAN1) Protocol Status Register */
+#define REG_MCAN1_IR            (*(__IO uint32_t*)0x40034050U) /**< (MCAN1) Interrupt Register */
+#define REG_MCAN1_IE            (*(__IO uint32_t*)0x40034054U) /**< (MCAN1) Interrupt Enable Register */
+#define REG_MCAN1_ILS           (*(__IO uint32_t*)0x40034058U) /**< (MCAN1) Interrupt Line Select Register */
+#define REG_MCAN1_ILE           (*(__IO uint32_t*)0x4003405CU) /**< (MCAN1) Interrupt Line Enable Register */
+#define REG_MCAN1_GFC           (*(__IO uint32_t*)0x40034080U) /**< (MCAN1) Global Filter Configuration Register */
+#define REG_MCAN1_SIDFC         (*(__IO uint32_t*)0x40034084U) /**< (MCAN1) Standard ID Filter Configuration Register */
+#define REG_MCAN1_XIDFC         (*(__IO uint32_t*)0x40034088U) /**< (MCAN1) Extended ID Filter Configuration Register */
+#define REG_MCAN1_XIDAM         (*(__IO uint32_t*)0x40034090U) /**< (MCAN1) Extended ID AND Mask Register */
+#define REG_MCAN1_HPMS          (*(__I  uint32_t*)0x40034094U) /**< (MCAN1) High Priority Message Status Register */
+#define REG_MCAN1_NDAT1         (*(__IO uint32_t*)0x40034098U) /**< (MCAN1) New Data 1 Register */
+#define REG_MCAN1_NDAT2         (*(__IO uint32_t*)0x4003409CU) /**< (MCAN1) New Data 2 Register */
+#define REG_MCAN1_RXF0C         (*(__IO uint32_t*)0x400340A0U) /**< (MCAN1) Receive FIFO 0 Configuration Register */
+#define REG_MCAN1_RXF0S         (*(__I  uint32_t*)0x400340A4U) /**< (MCAN1) Receive FIFO 0 Status Register */
+#define REG_MCAN1_RXF0A         (*(__IO uint32_t*)0x400340A8U) /**< (MCAN1) Receive FIFO 0 Acknowledge Register */
+#define REG_MCAN1_RXBC          (*(__IO uint32_t*)0x400340ACU) /**< (MCAN1) Receive Rx Buffer Configuration Register */
+#define REG_MCAN1_RXF1C         (*(__IO uint32_t*)0x400340B0U) /**< (MCAN1) Receive FIFO 1 Configuration Register */
+#define REG_MCAN1_RXF1S         (*(__I  uint32_t*)0x400340B4U) /**< (MCAN1) Receive FIFO 1 Status Register */
+#define REG_MCAN1_RXF1A         (*(__IO uint32_t*)0x400340B8U) /**< (MCAN1) Receive FIFO 1 Acknowledge Register */
+#define REG_MCAN1_RXESC         (*(__IO uint32_t*)0x400340BCU) /**< (MCAN1) Receive Buffer / FIFO Element Size Configuration Register */
+#define REG_MCAN1_TXBC          (*(__IO uint32_t*)0x400340C0U) /**< (MCAN1) Transmit Buffer Configuration Register */
+#define REG_MCAN1_TXFQS         (*(__I  uint32_t*)0x400340C4U) /**< (MCAN1) Transmit FIFO/Queue Status Register */
+#define REG_MCAN1_TXESC         (*(__IO uint32_t*)0x400340C8U) /**< (MCAN1) Transmit Buffer Element Size Configuration Register */
+#define REG_MCAN1_TXBRP         (*(__I  uint32_t*)0x400340CCU) /**< (MCAN1) Transmit Buffer Request Pending Register */
+#define REG_MCAN1_TXBAR         (*(__IO uint32_t*)0x400340D0U) /**< (MCAN1) Transmit Buffer Add Request Register */
+#define REG_MCAN1_TXBCR         (*(__IO uint32_t*)0x400340D4U) /**< (MCAN1) Transmit Buffer Cancellation Request Register */
+#define REG_MCAN1_TXBTO         (*(__I  uint32_t*)0x400340D8U) /**< (MCAN1) Transmit Buffer Transmission Occurred Register */
+#define REG_MCAN1_TXBCF         (*(__I  uint32_t*)0x400340DCU) /**< (MCAN1) Transmit Buffer Cancellation Finished Register */
+#define REG_MCAN1_TXBTIE        (*(__IO uint32_t*)0x400340E0U) /**< (MCAN1) Transmit Buffer Transmission Interrupt Enable Register */
+#define REG_MCAN1_TXBCIE        (*(__IO uint32_t*)0x400340E4U) /**< (MCAN1) Transmit Buffer Cancellation Finished Interrupt Enable Register */
+#define REG_MCAN1_TXEFC         (*(__IO uint32_t*)0x400340F0U) /**< (MCAN1) Transmit Event FIFO Configuration Register */
+#define REG_MCAN1_TXEFS         (*(__I  uint32_t*)0x400340F4U) /**< (MCAN1) Transmit Event FIFO Status Register */
+#define REG_MCAN1_TXEFA         (*(__IO uint32_t*)0x400340F8U) /**< (MCAN1) Transmit Event FIFO Acknowledge Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for MCAN1 peripheral ========== */
+#define MCAN1_INSTANCE_ID                        37         
 
 #endif /* _SAME70_MCAN1_INSTANCE_ */

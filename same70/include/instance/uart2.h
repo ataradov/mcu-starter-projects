@@ -1,75 +1,70 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for UART2
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_UART2_INSTANCE_
-#define _SAME70_UART2_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_UART2_INSTANCE_H_
+#define _SAME70_UART2_INSTANCE_H_
 
 /* ========== Register definition for UART2 peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_UART2_CR                    (0x400E1A00U) /**< \brief (UART2) Control Register */
-  #define REG_UART2_MR                    (0x400E1A04U) /**< \brief (UART2) Mode Register */
-  #define REG_UART2_IER                   (0x400E1A08U) /**< \brief (UART2) Interrupt Enable Register */
-  #define REG_UART2_IDR                   (0x400E1A0CU) /**< \brief (UART2) Interrupt Disable Register */
-  #define REG_UART2_IMR                   (0x400E1A10U) /**< \brief (UART2) Interrupt Mask Register */
-  #define REG_UART2_SR                    (0x400E1A14U) /**< \brief (UART2) Status Register */
-  #define REG_UART2_RHR                   (0x400E1A18U) /**< \brief (UART2) Receive Holding Register */
-  #define REG_UART2_THR                   (0x400E1A1CU) /**< \brief (UART2) Transmit Holding Register */
-  #define REG_UART2_BRGR                  (0x400E1A20U) /**< \brief (UART2) Baud Rate Generator Register */
-  #define REG_UART2_CMPR                  (0x400E1A24U) /**< \brief (UART2) Comparison Register */
-  #define REG_UART2_WPMR                  (0x400E1AE4U) /**< \brief (UART2) Write Protection Mode Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_UART2_CR            (0x400E1A00) /**< (UART2) Control Register */
+#define REG_UART2_MR            (0x400E1A04) /**< (UART2) Mode Register */
+#define REG_UART2_IER           (0x400E1A08) /**< (UART2) Interrupt Enable Register */
+#define REG_UART2_IDR           (0x400E1A0C) /**< (UART2) Interrupt Disable Register */
+#define REG_UART2_IMR           (0x400E1A10) /**< (UART2) Interrupt Mask Register */
+#define REG_UART2_SR            (0x400E1A14) /**< (UART2) Status Register */
+#define REG_UART2_RHR           (0x400E1A18) /**< (UART2) Receive Holding Register */
+#define REG_UART2_THR           (0x400E1A1C) /**< (UART2) Transmit Holding Register */
+#define REG_UART2_BRGR          (0x400E1A20) /**< (UART2) Baud Rate Generator Register */
+#define REG_UART2_CMPR          (0x400E1A24) /**< (UART2) Comparison Register */
+#define REG_UART2_WPMR          (0x400E1AE4) /**< (UART2) Write Protection Mode Register */
+
 #else
-  #define REG_UART2_CR   (*(__O  uint32_t*)0x400E1A00U) /**< \brief (UART2) Control Register */
-  #define REG_UART2_MR   (*(__IO uint32_t*)0x400E1A04U) /**< \brief (UART2) Mode Register */
-  #define REG_UART2_IER  (*(__O  uint32_t*)0x400E1A08U) /**< \brief (UART2) Interrupt Enable Register */
-  #define REG_UART2_IDR  (*(__O  uint32_t*)0x400E1A0CU) /**< \brief (UART2) Interrupt Disable Register */
-  #define REG_UART2_IMR  (*(__I  uint32_t*)0x400E1A10U) /**< \brief (UART2) Interrupt Mask Register */
-  #define REG_UART2_SR   (*(__I  uint32_t*)0x400E1A14U) /**< \brief (UART2) Status Register */
-  #define REG_UART2_RHR  (*(__I  uint32_t*)0x400E1A18U) /**< \brief (UART2) Receive Holding Register */
-  #define REG_UART2_THR  (*(__O  uint32_t*)0x400E1A1CU) /**< \brief (UART2) Transmit Holding Register */
-  #define REG_UART2_BRGR (*(__IO uint32_t*)0x400E1A20U) /**< \brief (UART2) Baud Rate Generator Register */
-  #define REG_UART2_CMPR (*(__IO uint32_t*)0x400E1A24U) /**< \brief (UART2) Comparison Register */
-  #define REG_UART2_WPMR (*(__IO uint32_t*)0x400E1AE4U) /**< \brief (UART2) Write Protection Mode Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_UART2_CR            (*(__O  uint32_t*)0x400E1A00U) /**< (UART2) Control Register */
+#define REG_UART2_MR            (*(__IO uint32_t*)0x400E1A04U) /**< (UART2) Mode Register */
+#define REG_UART2_IER           (*(__O  uint32_t*)0x400E1A08U) /**< (UART2) Interrupt Enable Register */
+#define REG_UART2_IDR           (*(__O  uint32_t*)0x400E1A0CU) /**< (UART2) Interrupt Disable Register */
+#define REG_UART2_IMR           (*(__I  uint32_t*)0x400E1A10U) /**< (UART2) Interrupt Mask Register */
+#define REG_UART2_SR            (*(__I  uint32_t*)0x400E1A14U) /**< (UART2) Status Register */
+#define REG_UART2_RHR           (*(__I  uint32_t*)0x400E1A18U) /**< (UART2) Receive Holding Register */
+#define REG_UART2_THR           (*(__O  uint32_t*)0x400E1A1CU) /**< (UART2) Transmit Holding Register */
+#define REG_UART2_BRGR          (*(__IO uint32_t*)0x400E1A20U) /**< (UART2) Baud Rate Generator Register */
+#define REG_UART2_CMPR          (*(__IO uint32_t*)0x400E1A24U) /**< (UART2) Comparison Register */
+#define REG_UART2_WPMR          (*(__IO uint32_t*)0x400E1AE4U) /**< (UART2) Write Protection Mode Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for UART2 peripheral ========== */
+#define UART2_DMAC_ID_RX                         25         
+#define UART2_DMAC_ID_TX                         24         
+#define UART2_INSTANCE_ID                        44         
 
 #endif /* _SAME70_UART2_INSTANCE_ */

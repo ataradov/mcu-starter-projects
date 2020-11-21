@@ -1,111 +1,105 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for AFEC0
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_AFEC0_INSTANCE_
-#define _SAME70_AFEC0_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_AFEC0_INSTANCE_H_
+#define _SAME70_AFEC0_INSTANCE_H_
 
 /* ========== Register definition for AFEC0 peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_AFEC0_CR                       (0x4003C000U) /**< \brief (AFEC0) AFEC Control Register */
-  #define REG_AFEC0_MR                       (0x4003C004U) /**< \brief (AFEC0) AFEC Mode Register */
-  #define REG_AFEC0_EMR                      (0x4003C008U) /**< \brief (AFEC0) AFEC Extended Mode Register */
-  #define REG_AFEC0_SEQ1R                    (0x4003C00CU) /**< \brief (AFEC0) AFEC Channel Sequence 1 Register */
-  #define REG_AFEC0_SEQ2R                    (0x4003C010U) /**< \brief (AFEC0) AFEC Channel Sequence 2 Register */
-  #define REG_AFEC0_CHER                     (0x4003C014U) /**< \brief (AFEC0) AFEC Channel Enable Register */
-  #define REG_AFEC0_CHDR                     (0x4003C018U) /**< \brief (AFEC0) AFEC Channel Disable Register */
-  #define REG_AFEC0_CHSR                     (0x4003C01CU) /**< \brief (AFEC0) AFEC Channel Status Register */
-  #define REG_AFEC0_LCDR                     (0x4003C020U) /**< \brief (AFEC0) AFEC Last Converted Data Register */
-  #define REG_AFEC0_IER                      (0x4003C024U) /**< \brief (AFEC0) AFEC Interrupt Enable Register */
-  #define REG_AFEC0_IDR                      (0x4003C028U) /**< \brief (AFEC0) AFEC Interrupt Disable Register */
-  #define REG_AFEC0_IMR                      (0x4003C02CU) /**< \brief (AFEC0) AFEC Interrupt Mask Register */
-  #define REG_AFEC0_ISR                      (0x4003C030U) /**< \brief (AFEC0) AFEC Interrupt Status Register */
-  #define REG_AFEC0_OVER                     (0x4003C04CU) /**< \brief (AFEC0) AFEC Overrun Status Register */
-  #define REG_AFEC0_CWR                      (0x4003C050U) /**< \brief (AFEC0) AFEC Compare Window Register */
-  #define REG_AFEC0_CGR                      (0x4003C054U) /**< \brief (AFEC0) AFEC Channel Gain Register */
-  #define REG_AFEC0_DIFFR                    (0x4003C060U) /**< \brief (AFEC0) AFEC Channel Differential Register */
-  #define REG_AFEC0_CSELR                    (0x4003C064U) /**< \brief (AFEC0) AFEC Channel Selection Register */
-  #define REG_AFEC0_CDR                      (0x4003C068U) /**< \brief (AFEC0) AFEC Channel Data Register */
-  #define REG_AFEC0_COCR                     (0x4003C06CU) /**< \brief (AFEC0) AFEC Channel Offset Compensation Register */
-  #define REG_AFEC0_TEMPMR                   (0x4003C070U) /**< \brief (AFEC0) AFEC Temperature Sensor Mode Register */
-  #define REG_AFEC0_TEMPCWR                  (0x4003C074U) /**< \brief (AFEC0) AFEC Temperature Compare Window Register */
-  #define REG_AFEC0_ACR                      (0x4003C094U) /**< \brief (AFEC0) AFEC Analog Control Register */
-  #define REG_AFEC0_SHMR                     (0x4003C0A0U) /**< \brief (AFEC0) AFEC Sample & Hold Mode Register */
-  #define REG_AFEC0_COSR                     (0x4003C0D0U) /**< \brief (AFEC0) AFEC Correction Select Register */
-  #define REG_AFEC0_CVR                      (0x4003C0D4U) /**< \brief (AFEC0) AFEC Correction Values Register */
-  #define REG_AFEC0_CECR                     (0x4003C0D8U) /**< \brief (AFEC0) AFEC Channel Error Correction Register */
-  #define REG_AFEC0_WPMR                     (0x4003C0E4U) /**< \brief (AFEC0) AFEC Write Protection Mode Register */
-  #define REG_AFEC0_WPSR                     (0x4003C0E8U) /**< \brief (AFEC0) AFEC Write Protection Status Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_AFEC0_CR            (0x4003C000) /**< (AFEC0) AFEC Control Register */
+#define REG_AFEC0_MR            (0x4003C004) /**< (AFEC0) AFEC Mode Register */
+#define REG_AFEC0_EMR           (0x4003C008) /**< (AFEC0) AFEC Extended Mode Register */
+#define REG_AFEC0_SEQ1R         (0x4003C00C) /**< (AFEC0) AFEC Channel Sequence 1 Register */
+#define REG_AFEC0_SEQ2R         (0x4003C010) /**< (AFEC0) AFEC Channel Sequence 2 Register */
+#define REG_AFEC0_CHER          (0x4003C014) /**< (AFEC0) AFEC Channel Enable Register */
+#define REG_AFEC0_CHDR          (0x4003C018) /**< (AFEC0) AFEC Channel Disable Register */
+#define REG_AFEC0_CHSR          (0x4003C01C) /**< (AFEC0) AFEC Channel Status Register */
+#define REG_AFEC0_LCDR          (0x4003C020) /**< (AFEC0) AFEC Last Converted Data Register */
+#define REG_AFEC0_IER           (0x4003C024) /**< (AFEC0) AFEC Interrupt Enable Register */
+#define REG_AFEC0_IDR           (0x4003C028) /**< (AFEC0) AFEC Interrupt Disable Register */
+#define REG_AFEC0_IMR           (0x4003C02C) /**< (AFEC0) AFEC Interrupt Mask Register */
+#define REG_AFEC0_ISR           (0x4003C030) /**< (AFEC0) AFEC Interrupt Status Register */
+#define REG_AFEC0_OVER          (0x4003C04C) /**< (AFEC0) AFEC Overrun Status Register */
+#define REG_AFEC0_CWR           (0x4003C050) /**< (AFEC0) AFEC Compare Window Register */
+#define REG_AFEC0_CGR           (0x4003C054) /**< (AFEC0) AFEC Channel Gain Register */
+#define REG_AFEC0_DIFFR         (0x4003C060) /**< (AFEC0) AFEC Channel Differential Register */
+#define REG_AFEC0_CSELR         (0x4003C064) /**< (AFEC0) AFEC Channel Selection Register */
+#define REG_AFEC0_CDR           (0x4003C068) /**< (AFEC0) AFEC Channel Data Register */
+#define REG_AFEC0_COCR          (0x4003C06C) /**< (AFEC0) AFEC Channel Offset Compensation Register */
+#define REG_AFEC0_TEMPMR        (0x4003C070) /**< (AFEC0) AFEC Temperature Sensor Mode Register */
+#define REG_AFEC0_TEMPCWR       (0x4003C074) /**< (AFEC0) AFEC Temperature Compare Window Register */
+#define REG_AFEC0_ACR           (0x4003C094) /**< (AFEC0) AFEC Analog Control Register */
+#define REG_AFEC0_SHMR          (0x4003C0A0) /**< (AFEC0) AFEC Sample & Hold Mode Register */
+#define REG_AFEC0_COSR          (0x4003C0D0) /**< (AFEC0) AFEC Correction Select Register */
+#define REG_AFEC0_CVR           (0x4003C0D4) /**< (AFEC0) AFEC Correction Values Register */
+#define REG_AFEC0_CECR          (0x4003C0D8) /**< (AFEC0) AFEC Channel Error Correction Register */
+#define REG_AFEC0_WPMR          (0x4003C0E4) /**< (AFEC0) AFEC Write Protection Mode Register */
+#define REG_AFEC0_WPSR          (0x4003C0E8) /**< (AFEC0) AFEC Write Protection Status Register */
+
 #else
-  #define REG_AFEC0_CR      (*(__O  uint32_t*)0x4003C000U) /**< \brief (AFEC0) AFEC Control Register */
-  #define REG_AFEC0_MR      (*(__IO uint32_t*)0x4003C004U) /**< \brief (AFEC0) AFEC Mode Register */
-  #define REG_AFEC0_EMR     (*(__IO uint32_t*)0x4003C008U) /**< \brief (AFEC0) AFEC Extended Mode Register */
-  #define REG_AFEC0_SEQ1R   (*(__IO uint32_t*)0x4003C00CU) /**< \brief (AFEC0) AFEC Channel Sequence 1 Register */
-  #define REG_AFEC0_SEQ2R   (*(__IO uint32_t*)0x4003C010U) /**< \brief (AFEC0) AFEC Channel Sequence 2 Register */
-  #define REG_AFEC0_CHER    (*(__O  uint32_t*)0x4003C014U) /**< \brief (AFEC0) AFEC Channel Enable Register */
-  #define REG_AFEC0_CHDR    (*(__O  uint32_t*)0x4003C018U) /**< \brief (AFEC0) AFEC Channel Disable Register */
-  #define REG_AFEC0_CHSR    (*(__I  uint32_t*)0x4003C01CU) /**< \brief (AFEC0) AFEC Channel Status Register */
-  #define REG_AFEC0_LCDR    (*(__I  uint32_t*)0x4003C020U) /**< \brief (AFEC0) AFEC Last Converted Data Register */
-  #define REG_AFEC0_IER     (*(__O  uint32_t*)0x4003C024U) /**< \brief (AFEC0) AFEC Interrupt Enable Register */
-  #define REG_AFEC0_IDR     (*(__O  uint32_t*)0x4003C028U) /**< \brief (AFEC0) AFEC Interrupt Disable Register */
-  #define REG_AFEC0_IMR     (*(__I  uint32_t*)0x4003C02CU) /**< \brief (AFEC0) AFEC Interrupt Mask Register */
-  #define REG_AFEC0_ISR     (*(__I  uint32_t*)0x4003C030U) /**< \brief (AFEC0) AFEC Interrupt Status Register */
-  #define REG_AFEC0_OVER    (*(__I  uint32_t*)0x4003C04CU) /**< \brief (AFEC0) AFEC Overrun Status Register */
-  #define REG_AFEC0_CWR     (*(__IO uint32_t*)0x4003C050U) /**< \brief (AFEC0) AFEC Compare Window Register */
-  #define REG_AFEC0_CGR     (*(__IO uint32_t*)0x4003C054U) /**< \brief (AFEC0) AFEC Channel Gain Register */
-  #define REG_AFEC0_DIFFR   (*(__IO uint32_t*)0x4003C060U) /**< \brief (AFEC0) AFEC Channel Differential Register */
-  #define REG_AFEC0_CSELR   (*(__IO uint32_t*)0x4003C064U) /**< \brief (AFEC0) AFEC Channel Selection Register */
-  #define REG_AFEC0_CDR     (*(__I  uint32_t*)0x4003C068U) /**< \brief (AFEC0) AFEC Channel Data Register */
-  #define REG_AFEC0_COCR    (*(__IO uint32_t*)0x4003C06CU) /**< \brief (AFEC0) AFEC Channel Offset Compensation Register */
-  #define REG_AFEC0_TEMPMR  (*(__IO uint32_t*)0x4003C070U) /**< \brief (AFEC0) AFEC Temperature Sensor Mode Register */
-  #define REG_AFEC0_TEMPCWR (*(__IO uint32_t*)0x4003C074U) /**< \brief (AFEC0) AFEC Temperature Compare Window Register */
-  #define REG_AFEC0_ACR     (*(__IO uint32_t*)0x4003C094U) /**< \brief (AFEC0) AFEC Analog Control Register */
-  #define REG_AFEC0_SHMR    (*(__IO uint32_t*)0x4003C0A0U) /**< \brief (AFEC0) AFEC Sample & Hold Mode Register */
-  #define REG_AFEC0_COSR    (*(__IO uint32_t*)0x4003C0D0U) /**< \brief (AFEC0) AFEC Correction Select Register */
-  #define REG_AFEC0_CVR     (*(__IO uint32_t*)0x4003C0D4U) /**< \brief (AFEC0) AFEC Correction Values Register */
-  #define REG_AFEC0_CECR    (*(__IO uint32_t*)0x4003C0D8U) /**< \brief (AFEC0) AFEC Channel Error Correction Register */
-  #define REG_AFEC0_WPMR    (*(__IO uint32_t*)0x4003C0E4U) /**< \brief (AFEC0) AFEC Write Protection Mode Register */
-  #define REG_AFEC0_WPSR    (*(__I  uint32_t*)0x4003C0E8U) /**< \brief (AFEC0) AFEC Write Protection Status Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_AFEC0_CR            (*(__O  uint32_t*)0x4003C000U) /**< (AFEC0) AFEC Control Register */
+#define REG_AFEC0_MR            (*(__IO uint32_t*)0x4003C004U) /**< (AFEC0) AFEC Mode Register */
+#define REG_AFEC0_EMR           (*(__IO uint32_t*)0x4003C008U) /**< (AFEC0) AFEC Extended Mode Register */
+#define REG_AFEC0_SEQ1R         (*(__IO uint32_t*)0x4003C00CU) /**< (AFEC0) AFEC Channel Sequence 1 Register */
+#define REG_AFEC0_SEQ2R         (*(__IO uint32_t*)0x4003C010U) /**< (AFEC0) AFEC Channel Sequence 2 Register */
+#define REG_AFEC0_CHER          (*(__O  uint32_t*)0x4003C014U) /**< (AFEC0) AFEC Channel Enable Register */
+#define REG_AFEC0_CHDR          (*(__O  uint32_t*)0x4003C018U) /**< (AFEC0) AFEC Channel Disable Register */
+#define REG_AFEC0_CHSR          (*(__I  uint32_t*)0x4003C01CU) /**< (AFEC0) AFEC Channel Status Register */
+#define REG_AFEC0_LCDR          (*(__I  uint32_t*)0x4003C020U) /**< (AFEC0) AFEC Last Converted Data Register */
+#define REG_AFEC0_IER           (*(__O  uint32_t*)0x4003C024U) /**< (AFEC0) AFEC Interrupt Enable Register */
+#define REG_AFEC0_IDR           (*(__O  uint32_t*)0x4003C028U) /**< (AFEC0) AFEC Interrupt Disable Register */
+#define REG_AFEC0_IMR           (*(__I  uint32_t*)0x4003C02CU) /**< (AFEC0) AFEC Interrupt Mask Register */
+#define REG_AFEC0_ISR           (*(__I  uint32_t*)0x4003C030U) /**< (AFEC0) AFEC Interrupt Status Register */
+#define REG_AFEC0_OVER          (*(__I  uint32_t*)0x4003C04CU) /**< (AFEC0) AFEC Overrun Status Register */
+#define REG_AFEC0_CWR           (*(__IO uint32_t*)0x4003C050U) /**< (AFEC0) AFEC Compare Window Register */
+#define REG_AFEC0_CGR           (*(__IO uint32_t*)0x4003C054U) /**< (AFEC0) AFEC Channel Gain Register */
+#define REG_AFEC0_DIFFR         (*(__IO uint32_t*)0x4003C060U) /**< (AFEC0) AFEC Channel Differential Register */
+#define REG_AFEC0_CSELR         (*(__IO uint32_t*)0x4003C064U) /**< (AFEC0) AFEC Channel Selection Register */
+#define REG_AFEC0_CDR           (*(__I  uint32_t*)0x4003C068U) /**< (AFEC0) AFEC Channel Data Register */
+#define REG_AFEC0_COCR          (*(__IO uint32_t*)0x4003C06CU) /**< (AFEC0) AFEC Channel Offset Compensation Register */
+#define REG_AFEC0_TEMPMR        (*(__IO uint32_t*)0x4003C070U) /**< (AFEC0) AFEC Temperature Sensor Mode Register */
+#define REG_AFEC0_TEMPCWR       (*(__IO uint32_t*)0x4003C074U) /**< (AFEC0) AFEC Temperature Compare Window Register */
+#define REG_AFEC0_ACR           (*(__IO uint32_t*)0x4003C094U) /**< (AFEC0) AFEC Analog Control Register */
+#define REG_AFEC0_SHMR          (*(__IO uint32_t*)0x4003C0A0U) /**< (AFEC0) AFEC Sample & Hold Mode Register */
+#define REG_AFEC0_COSR          (*(__IO uint32_t*)0x4003C0D0U) /**< (AFEC0) AFEC Correction Select Register */
+#define REG_AFEC0_CVR           (*(__IO uint32_t*)0x4003C0D4U) /**< (AFEC0) AFEC Correction Values Register */
+#define REG_AFEC0_CECR          (*(__IO uint32_t*)0x4003C0D8U) /**< (AFEC0) AFEC Channel Error Correction Register */
+#define REG_AFEC0_WPMR          (*(__IO uint32_t*)0x4003C0E4U) /**< (AFEC0) AFEC Write Protection Mode Register */
+#define REG_AFEC0_WPSR          (*(__I  uint32_t*)0x4003C0E8U) /**< (AFEC0) AFEC Write Protection Status Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for AFEC0 peripheral ========== */
+#define AFEC0_DMAC_ID_RX                         35         
+#define AFEC0_INSTANCE_ID                        29         
 
 #endif /* _SAME70_AFEC0_INSTANCE_ */

@@ -1,143 +1,390 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Component description for ACC
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
- *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
+ * \license_stop
  *
  */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
+
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_ACC_COMPONENT_H_
+#define _SAME70_ACC_COMPONENT_H_
+#define _SAME70_ACC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
+
+/** \addtogroup SAME_SAME70 Analog Comparator Controller
+ *  @{
  */
+/* ========================================================================== */
+/**  SOFTWARE API DEFINITION FOR ACC */
+/* ========================================================================== */
+#ifndef COMPONENT_TYPEDEF_STYLE
+  #define COMPONENT_TYPEDEF_STYLE 'R'  /**< Defines default style of typedefs for the component header files ('R' = RFO, 'N' = NTO)*/
+#endif
 
-#ifndef _SAME70_ACC_COMPONENT_
-#define _SAME70_ACC_COMPONENT_
+#define ACC_6490                       /**< (ACC) Module ID */
+#define REV_ACC H                      /**< (ACC) Module revision */
 
-/* ============================================================================= */
-/**  SOFTWARE API DEFINITION FOR Analog Comparator Controller */
-/* ============================================================================= */
-/** \addtogroup SAME70_ACC Analog Comparator Controller */
-/*@{*/
+/* -------- ACC_CR : (ACC Offset: 0x00) (/W 32) Control Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t SWRST:1;                   /**< bit:      0  Software Reset                           */
+    uint32_t :31;                       /**< bit:  1..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_CR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief Acc hardware registers */
-typedef struct {
-  __O  uint32_t ACC_CR;        /**< \brief (Acc Offset: 0x00) Control Register */
-  __IO uint32_t ACC_MR;        /**< \brief (Acc Offset: 0x04) Mode Register */
-  __I  uint32_t Reserved1[7];
-  __O  uint32_t ACC_IER;       /**< \brief (Acc Offset: 0x24) Interrupt Enable Register */
-  __O  uint32_t ACC_IDR;       /**< \brief (Acc Offset: 0x28) Interrupt Disable Register */
-  __I  uint32_t ACC_IMR;       /**< \brief (Acc Offset: 0x2C) Interrupt Mask Register */
-  __I  uint32_t ACC_ISR;       /**< \brief (Acc Offset: 0x30) Interrupt Status Register */
-  __I  uint32_t Reserved2[24];
-  __IO uint32_t ACC_ACR;       /**< \brief (Acc Offset: 0x94) Analog Control Register */
-  __I  uint32_t Reserved3[19];
-  __IO uint32_t ACC_WPMR;      /**< \brief (Acc Offset: 0xE4) Write Protection Mode Register */
-  __I  uint32_t ACC_WPSR;      /**< \brief (Acc Offset: 0xE8) Write Protection Status Register */
+#define ACC_CR_OFFSET                       (0x00)                                        /**<  (ACC_CR) Control Register  Offset */
+
+#define ACC_CR_SWRST_Pos                    0                                              /**< (ACC_CR) Software Reset Position */
+#define ACC_CR_SWRST_Msk                    (_U_(0x1) << ACC_CR_SWRST_Pos)                 /**< (ACC_CR) Software Reset Mask */
+#define ACC_CR_SWRST                        ACC_CR_SWRST_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_CR_SWRST_Msk instead */
+#define ACC_CR_MASK                         _U_(0x01)                                      /**< \deprecated (ACC_CR) Register MASK  (Use ACC_CR_Msk instead)  */
+#define ACC_CR_Msk                          _U_(0x01)                                      /**< (ACC_CR) Register Mask  */
+
+
+/* -------- ACC_MR : (ACC Offset: 0x04) (R/W 32) Mode Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t SELMINUS:3;                /**< bit:   0..2  Selection for Minus Comparator Input     */
+    uint32_t :1;                        /**< bit:      3  Reserved */
+    uint32_t SELPLUS:3;                 /**< bit:   4..6  Selection For Plus Comparator Input      */
+    uint32_t :1;                        /**< bit:      7  Reserved */
+    uint32_t ACEN:1;                    /**< bit:      8  Analog Comparator Enable                 */
+    uint32_t EDGETYP:2;                 /**< bit:  9..10  Edge Type                                */
+    uint32_t :1;                        /**< bit:     11  Reserved */
+    uint32_t INV:1;                     /**< bit:     12  Invert Comparator Output                 */
+    uint32_t SELFS:1;                   /**< bit:     13  Selection Of Fault Source                */
+    uint32_t FE:1;                      /**< bit:     14  Fault Enable                             */
+    uint32_t :17;                       /**< bit: 15..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_MR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_MR_OFFSET                       (0x04)                                        /**<  (ACC_MR) Mode Register  Offset */
+
+#define ACC_MR_SELMINUS_Pos                 0                                              /**< (ACC_MR) Selection for Minus Comparator Input Position */
+#define ACC_MR_SELMINUS_Msk                 (_U_(0x7) << ACC_MR_SELMINUS_Pos)              /**< (ACC_MR) Selection for Minus Comparator Input Mask */
+#define ACC_MR_SELMINUS(value)              (ACC_MR_SELMINUS_Msk & ((value) << ACC_MR_SELMINUS_Pos))
+#define   ACC_MR_SELMINUS_TS_Val            _U_(0x0)                                       /**< (ACC_MR) Select TS  */
+#define   ACC_MR_SELMINUS_VREFP_Val         _U_(0x1)                                       /**< (ACC_MR) Select VREFP  */
+#define   ACC_MR_SELMINUS_DAC0_Val          _U_(0x2)                                       /**< (ACC_MR) Select DAC0  */
+#define   ACC_MR_SELMINUS_DAC1_Val          _U_(0x3)                                       /**< (ACC_MR) Select DAC1  */
+#define   ACC_MR_SELMINUS_AFE0_AD0_Val      _U_(0x4)                                       /**< (ACC_MR) Select AFE0_AD0  */
+#define   ACC_MR_SELMINUS_AFE0_AD1_Val      _U_(0x5)                                       /**< (ACC_MR) Select AFE0_AD1  */
+#define   ACC_MR_SELMINUS_AFE0_AD2_Val      _U_(0x6)                                       /**< (ACC_MR) Select AFE0_AD2  */
+#define   ACC_MR_SELMINUS_AFE0_AD3_Val      _U_(0x7)                                       /**< (ACC_MR) Select AFE0_AD3  */
+#define ACC_MR_SELMINUS_TS                  (ACC_MR_SELMINUS_TS_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select TS Position  */
+#define ACC_MR_SELMINUS_VREFP               (ACC_MR_SELMINUS_VREFP_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select VREFP Position  */
+#define ACC_MR_SELMINUS_DAC0                (ACC_MR_SELMINUS_DAC0_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select DAC0 Position  */
+#define ACC_MR_SELMINUS_DAC1                (ACC_MR_SELMINUS_DAC1_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select DAC1 Position  */
+#define ACC_MR_SELMINUS_AFE0_AD0            (ACC_MR_SELMINUS_AFE0_AD0_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select AFE0_AD0 Position  */
+#define ACC_MR_SELMINUS_AFE0_AD1            (ACC_MR_SELMINUS_AFE0_AD1_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select AFE0_AD1 Position  */
+#define ACC_MR_SELMINUS_AFE0_AD2            (ACC_MR_SELMINUS_AFE0_AD2_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select AFE0_AD2 Position  */
+#define ACC_MR_SELMINUS_AFE0_AD3            (ACC_MR_SELMINUS_AFE0_AD3_Val << ACC_MR_SELMINUS_Pos)  /**< (ACC_MR) Select AFE0_AD3 Position  */
+#define ACC_MR_SELPLUS_Pos                  4                                              /**< (ACC_MR) Selection For Plus Comparator Input Position */
+#define ACC_MR_SELPLUS_Msk                  (_U_(0x7) << ACC_MR_SELPLUS_Pos)               /**< (ACC_MR) Selection For Plus Comparator Input Mask */
+#define ACC_MR_SELPLUS(value)               (ACC_MR_SELPLUS_Msk & ((value) << ACC_MR_SELPLUS_Pos))
+#define   ACC_MR_SELPLUS_AFE0_AD0_Val       _U_(0x0)                                       /**< (ACC_MR) Select AFE0_AD0  */
+#define   ACC_MR_SELPLUS_AFE0_AD1_Val       _U_(0x1)                                       /**< (ACC_MR) Select AFE0_AD1  */
+#define   ACC_MR_SELPLUS_AFE0_AD2_Val       _U_(0x2)                                       /**< (ACC_MR) Select AFE0_AD2  */
+#define   ACC_MR_SELPLUS_AFE0_AD3_Val       _U_(0x3)                                       /**< (ACC_MR) Select AFE0_AD3  */
+#define   ACC_MR_SELPLUS_AFE0_AD4_Val       _U_(0x4)                                       /**< (ACC_MR) Select AFE0_AD4  */
+#define   ACC_MR_SELPLUS_AFE0_AD5_Val       _U_(0x5)                                       /**< (ACC_MR) Select AFE0_AD5  */
+#define   ACC_MR_SELPLUS_AFE1_AD0_Val       _U_(0x6)                                       /**< (ACC_MR) Select AFE1_AD0  */
+#define   ACC_MR_SELPLUS_AFE1_AD1_Val       _U_(0x7)                                       /**< (ACC_MR) Select AFE1_AD1  */
+#define ACC_MR_SELPLUS_AFE0_AD0             (ACC_MR_SELPLUS_AFE0_AD0_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD0 Position  */
+#define ACC_MR_SELPLUS_AFE0_AD1             (ACC_MR_SELPLUS_AFE0_AD1_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD1 Position  */
+#define ACC_MR_SELPLUS_AFE0_AD2             (ACC_MR_SELPLUS_AFE0_AD2_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD2 Position  */
+#define ACC_MR_SELPLUS_AFE0_AD3             (ACC_MR_SELPLUS_AFE0_AD3_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD3 Position  */
+#define ACC_MR_SELPLUS_AFE0_AD4             (ACC_MR_SELPLUS_AFE0_AD4_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD4 Position  */
+#define ACC_MR_SELPLUS_AFE0_AD5             (ACC_MR_SELPLUS_AFE0_AD5_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE0_AD5 Position  */
+#define ACC_MR_SELPLUS_AFE1_AD0             (ACC_MR_SELPLUS_AFE1_AD0_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE1_AD0 Position  */
+#define ACC_MR_SELPLUS_AFE1_AD1             (ACC_MR_SELPLUS_AFE1_AD1_Val << ACC_MR_SELPLUS_Pos)  /**< (ACC_MR) Select AFE1_AD1 Position  */
+#define ACC_MR_ACEN_Pos                     8                                              /**< (ACC_MR) Analog Comparator Enable Position */
+#define ACC_MR_ACEN_Msk                     (_U_(0x1) << ACC_MR_ACEN_Pos)                  /**< (ACC_MR) Analog Comparator Enable Mask */
+#define ACC_MR_ACEN                         ACC_MR_ACEN_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_MR_ACEN_Msk instead */
+#define   ACC_MR_ACEN_DIS_Val               _U_(0x0)                                       /**< (ACC_MR) Analog comparator disabled.  */
+#define   ACC_MR_ACEN_EN_Val                _U_(0x1)                                       /**< (ACC_MR) Analog comparator enabled.  */
+#define ACC_MR_ACEN_DIS                     (ACC_MR_ACEN_DIS_Val << ACC_MR_ACEN_Pos)       /**< (ACC_MR) Analog comparator disabled. Position  */
+#define ACC_MR_ACEN_EN                      (ACC_MR_ACEN_EN_Val << ACC_MR_ACEN_Pos)        /**< (ACC_MR) Analog comparator enabled. Position  */
+#define ACC_MR_EDGETYP_Pos                  9                                              /**< (ACC_MR) Edge Type Position */
+#define ACC_MR_EDGETYP_Msk                  (_U_(0x3) << ACC_MR_EDGETYP_Pos)               /**< (ACC_MR) Edge Type Mask */
+#define ACC_MR_EDGETYP(value)               (ACC_MR_EDGETYP_Msk & ((value) << ACC_MR_EDGETYP_Pos))
+#define   ACC_MR_EDGETYP_RISING_Val         _U_(0x0)                                       /**< (ACC_MR) Only rising edge of comparator output  */
+#define   ACC_MR_EDGETYP_FALLING_Val        _U_(0x1)                                       /**< (ACC_MR) Falling edge of comparator output  */
+#define   ACC_MR_EDGETYP_ANY_Val            _U_(0x2)                                       /**< (ACC_MR) Any edge of comparator output  */
+#define ACC_MR_EDGETYP_RISING               (ACC_MR_EDGETYP_RISING_Val << ACC_MR_EDGETYP_Pos)  /**< (ACC_MR) Only rising edge of comparator output Position  */
+#define ACC_MR_EDGETYP_FALLING              (ACC_MR_EDGETYP_FALLING_Val << ACC_MR_EDGETYP_Pos)  /**< (ACC_MR) Falling edge of comparator output Position  */
+#define ACC_MR_EDGETYP_ANY                  (ACC_MR_EDGETYP_ANY_Val << ACC_MR_EDGETYP_Pos)  /**< (ACC_MR) Any edge of comparator output Position  */
+#define ACC_MR_INV_Pos                      12                                             /**< (ACC_MR) Invert Comparator Output Position */
+#define ACC_MR_INV_Msk                      (_U_(0x1) << ACC_MR_INV_Pos)                   /**< (ACC_MR) Invert Comparator Output Mask */
+#define ACC_MR_INV                          ACC_MR_INV_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_MR_INV_Msk instead */
+#define   ACC_MR_INV_DIS_Val                _U_(0x0)                                       /**< (ACC_MR) Analog comparator output is directly processed.  */
+#define   ACC_MR_INV_EN_Val                 _U_(0x1)                                       /**< (ACC_MR) Analog comparator output is inverted prior to being processed.  */
+#define ACC_MR_INV_DIS                      (ACC_MR_INV_DIS_Val << ACC_MR_INV_Pos)         /**< (ACC_MR) Analog comparator output is directly processed. Position  */
+#define ACC_MR_INV_EN                       (ACC_MR_INV_EN_Val << ACC_MR_INV_Pos)          /**< (ACC_MR) Analog comparator output is inverted prior to being processed. Position  */
+#define ACC_MR_SELFS_Pos                    13                                             /**< (ACC_MR) Selection Of Fault Source Position */
+#define ACC_MR_SELFS_Msk                    (_U_(0x1) << ACC_MR_SELFS_Pos)                 /**< (ACC_MR) Selection Of Fault Source Mask */
+#define ACC_MR_SELFS                        ACC_MR_SELFS_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_MR_SELFS_Msk instead */
+#define   ACC_MR_SELFS_CE_Val               _U_(0x0)                                       /**< (ACC_MR) The CE flag is used to drive the FAULT output.  */
+#define   ACC_MR_SELFS_OUTPUT_Val           _U_(0x1)                                       /**< (ACC_MR) The output of the analog comparator flag is used to drive the FAULT output.  */
+#define ACC_MR_SELFS_CE                     (ACC_MR_SELFS_CE_Val << ACC_MR_SELFS_Pos)      /**< (ACC_MR) The CE flag is used to drive the FAULT output. Position  */
+#define ACC_MR_SELFS_OUTPUT                 (ACC_MR_SELFS_OUTPUT_Val << ACC_MR_SELFS_Pos)  /**< (ACC_MR) The output of the analog comparator flag is used to drive the FAULT output. Position  */
+#define ACC_MR_FE_Pos                       14                                             /**< (ACC_MR) Fault Enable Position */
+#define ACC_MR_FE_Msk                       (_U_(0x1) << ACC_MR_FE_Pos)                    /**< (ACC_MR) Fault Enable Mask */
+#define ACC_MR_FE                           ACC_MR_FE_Msk                                  /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_MR_FE_Msk instead */
+#define   ACC_MR_FE_DIS_Val                 _U_(0x0)                                       /**< (ACC_MR) The FAULT output is tied to 0.  */
+#define   ACC_MR_FE_EN_Val                  _U_(0x1)                                       /**< (ACC_MR) The FAULT output is driven by the signal defined by SELFS.  */
+#define ACC_MR_FE_DIS                       (ACC_MR_FE_DIS_Val << ACC_MR_FE_Pos)           /**< (ACC_MR) The FAULT output is tied to 0. Position  */
+#define ACC_MR_FE_EN                        (ACC_MR_FE_EN_Val << ACC_MR_FE_Pos)            /**< (ACC_MR) The FAULT output is driven by the signal defined by SELFS. Position  */
+#define ACC_MR_MASK                         _U_(0x7777)                                    /**< \deprecated (ACC_MR) Register MASK  (Use ACC_MR_Msk instead)  */
+#define ACC_MR_Msk                          _U_(0x7777)                                    /**< (ACC_MR) Register Mask  */
+
+
+/* -------- ACC_IER : (ACC Offset: 0x24) (/W 32) Interrupt Enable Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t CE:1;                      /**< bit:      0  Comparison Edge                          */
+    uint32_t :31;                       /**< bit:  1..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_IER_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_IER_OFFSET                      (0x24)                                        /**<  (ACC_IER) Interrupt Enable Register  Offset */
+
+#define ACC_IER_CE_Pos                      0                                              /**< (ACC_IER) Comparison Edge Position */
+#define ACC_IER_CE_Msk                      (_U_(0x1) << ACC_IER_CE_Pos)                   /**< (ACC_IER) Comparison Edge Mask */
+#define ACC_IER_CE                          ACC_IER_CE_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_IER_CE_Msk instead */
+#define ACC_IER_MASK                        _U_(0x01)                                      /**< \deprecated (ACC_IER) Register MASK  (Use ACC_IER_Msk instead)  */
+#define ACC_IER_Msk                         _U_(0x01)                                      /**< (ACC_IER) Register Mask  */
+
+
+/* -------- ACC_IDR : (ACC Offset: 0x28) (/W 32) Interrupt Disable Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t CE:1;                      /**< bit:      0  Comparison Edge                          */
+    uint32_t :31;                       /**< bit:  1..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_IDR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_IDR_OFFSET                      (0x28)                                        /**<  (ACC_IDR) Interrupt Disable Register  Offset */
+
+#define ACC_IDR_CE_Pos                      0                                              /**< (ACC_IDR) Comparison Edge Position */
+#define ACC_IDR_CE_Msk                      (_U_(0x1) << ACC_IDR_CE_Pos)                   /**< (ACC_IDR) Comparison Edge Mask */
+#define ACC_IDR_CE                          ACC_IDR_CE_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_IDR_CE_Msk instead */
+#define ACC_IDR_MASK                        _U_(0x01)                                      /**< \deprecated (ACC_IDR) Register MASK  (Use ACC_IDR_Msk instead)  */
+#define ACC_IDR_Msk                         _U_(0x01)                                      /**< (ACC_IDR) Register Mask  */
+
+
+/* -------- ACC_IMR : (ACC Offset: 0x2c) (R/ 32) Interrupt Mask Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t CE:1;                      /**< bit:      0  Comparison Edge                          */
+    uint32_t :31;                       /**< bit:  1..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_IMR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_IMR_OFFSET                      (0x2C)                                        /**<  (ACC_IMR) Interrupt Mask Register  Offset */
+
+#define ACC_IMR_CE_Pos                      0                                              /**< (ACC_IMR) Comparison Edge Position */
+#define ACC_IMR_CE_Msk                      (_U_(0x1) << ACC_IMR_CE_Pos)                   /**< (ACC_IMR) Comparison Edge Mask */
+#define ACC_IMR_CE                          ACC_IMR_CE_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_IMR_CE_Msk instead */
+#define ACC_IMR_MASK                        _U_(0x01)                                      /**< \deprecated (ACC_IMR) Register MASK  (Use ACC_IMR_Msk instead)  */
+#define ACC_IMR_Msk                         _U_(0x01)                                      /**< (ACC_IMR) Register Mask  */
+
+
+/* -------- ACC_ISR : (ACC Offset: 0x30) (R/ 32) Interrupt Status Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t CE:1;                      /**< bit:      0  Comparison Edge (cleared on read)        */
+    uint32_t SCO:1;                     /**< bit:      1  Synchronized Comparator Output           */
+    uint32_t :29;                       /**< bit:  2..30  Reserved */
+    uint32_t MASK:1;                    /**< bit:     31  Flag Mask                                */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_ISR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_ISR_OFFSET                      (0x30)                                        /**<  (ACC_ISR) Interrupt Status Register  Offset */
+
+#define ACC_ISR_CE_Pos                      0                                              /**< (ACC_ISR) Comparison Edge (cleared on read) Position */
+#define ACC_ISR_CE_Msk                      (_U_(0x1) << ACC_ISR_CE_Pos)                   /**< (ACC_ISR) Comparison Edge (cleared on read) Mask */
+#define ACC_ISR_CE                          ACC_ISR_CE_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_ISR_CE_Msk instead */
+#define ACC_ISR_SCO_Pos                     1                                              /**< (ACC_ISR) Synchronized Comparator Output Position */
+#define ACC_ISR_SCO_Msk                     (_U_(0x1) << ACC_ISR_SCO_Pos)                  /**< (ACC_ISR) Synchronized Comparator Output Mask */
+#define ACC_ISR_SCO                         ACC_ISR_SCO_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_ISR_SCO_Msk instead */
+#define ACC_ISR_MASK_Pos                    31                                             /**< (ACC_ISR) Flag Mask Position */
+#define ACC_ISR_MASK_Msk                    (_U_(0x1) << ACC_ISR_MASK_Pos)                 /**< (ACC_ISR) Flag Mask Mask */
+#define ACC_ISR_MASK                        ACC_ISR_MASK_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_ISR_MASK_Msk instead */
+#define ACC_ISR_Msk                         _U_(0x80000003)                                /**< (ACC_ISR) Register Mask  */
+
+
+/* -------- ACC_ACR : (ACC Offset: 0x94) (R/W 32) Analog Control Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t ISEL:1;                    /**< bit:      0  Current Selection                        */
+    uint32_t HYST:2;                    /**< bit:   1..2  Hysteresis Selection                     */
+    uint32_t :29;                       /**< bit:  3..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_ACR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_ACR_OFFSET                      (0x94)                                        /**<  (ACC_ACR) Analog Control Register  Offset */
+
+#define ACC_ACR_ISEL_Pos                    0                                              /**< (ACC_ACR) Current Selection Position */
+#define ACC_ACR_ISEL_Msk                    (_U_(0x1) << ACC_ACR_ISEL_Pos)                 /**< (ACC_ACR) Current Selection Mask */
+#define ACC_ACR_ISEL                        ACC_ACR_ISEL_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_ACR_ISEL_Msk instead */
+#define   ACC_ACR_ISEL_LOPW_Val             _U_(0x0)                                       /**< (ACC_ACR) Low-power option.  */
+#define   ACC_ACR_ISEL_HISP_Val             _U_(0x1)                                       /**< (ACC_ACR) High-speed option.  */
+#define ACC_ACR_ISEL_LOPW                   (ACC_ACR_ISEL_LOPW_Val << ACC_ACR_ISEL_Pos)    /**< (ACC_ACR) Low-power option. Position  */
+#define ACC_ACR_ISEL_HISP                   (ACC_ACR_ISEL_HISP_Val << ACC_ACR_ISEL_Pos)    /**< (ACC_ACR) High-speed option. Position  */
+#define ACC_ACR_HYST_Pos                    1                                              /**< (ACC_ACR) Hysteresis Selection Position */
+#define ACC_ACR_HYST_Msk                    (_U_(0x3) << ACC_ACR_HYST_Pos)                 /**< (ACC_ACR) Hysteresis Selection Mask */
+#define ACC_ACR_HYST(value)                 (ACC_ACR_HYST_Msk & ((value) << ACC_ACR_HYST_Pos))
+#define ACC_ACR_MASK                        _U_(0x07)                                      /**< \deprecated (ACC_ACR) Register MASK  (Use ACC_ACR_Msk instead)  */
+#define ACC_ACR_Msk                         _U_(0x07)                                      /**< (ACC_ACR) Register Mask  */
+
+
+/* -------- ACC_WPMR : (ACC Offset: 0xe4) (R/W 32) Write Protection Mode Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t WPEN:1;                    /**< bit:      0  Write Protection Enable                  */
+    uint32_t :7;                        /**< bit:   1..7  Reserved */
+    uint32_t WPKEY:24;                  /**< bit:  8..31  Write Protection Key                     */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_WPMR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_WPMR_OFFSET                     (0xE4)                                        /**<  (ACC_WPMR) Write Protection Mode Register  Offset */
+
+#define ACC_WPMR_WPEN_Pos                   0                                              /**< (ACC_WPMR) Write Protection Enable Position */
+#define ACC_WPMR_WPEN_Msk                   (_U_(0x1) << ACC_WPMR_WPEN_Pos)                /**< (ACC_WPMR) Write Protection Enable Mask */
+#define ACC_WPMR_WPEN                       ACC_WPMR_WPEN_Msk                              /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_WPMR_WPEN_Msk instead */
+#define ACC_WPMR_WPKEY_Pos                  8                                              /**< (ACC_WPMR) Write Protection Key Position */
+#define ACC_WPMR_WPKEY_Msk                  (_U_(0xFFFFFF) << ACC_WPMR_WPKEY_Pos)          /**< (ACC_WPMR) Write Protection Key Mask */
+#define ACC_WPMR_WPKEY(value)               (ACC_WPMR_WPKEY_Msk & ((value) << ACC_WPMR_WPKEY_Pos))
+#define   ACC_WPMR_WPKEY_PASSWD_Val         _U_(0x414343)                                  /**< (ACC_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.  */
+#define ACC_WPMR_WPKEY_PASSWD               (ACC_WPMR_WPKEY_PASSWD_Val << ACC_WPMR_WPKEY_Pos)  /**< (ACC_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0. Position  */
+#define ACC_WPMR_MASK                       _U_(0xFFFFFF01)                                /**< \deprecated (ACC_WPMR) Register MASK  (Use ACC_WPMR_Msk instead)  */
+#define ACC_WPMR_Msk                        _U_(0xFFFFFF01)                                /**< (ACC_WPMR) Register Mask  */
+
+
+/* -------- ACC_WPSR : (ACC Offset: 0xe8) (R/ 32) Write Protection Status Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t WPVS:1;                    /**< bit:      0  Write Protection Violation Status        */
+    uint32_t :31;                       /**< bit:  1..31  Reserved */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} ACC_WPSR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define ACC_WPSR_OFFSET                     (0xE8)                                        /**<  (ACC_WPSR) Write Protection Status Register  Offset */
+
+#define ACC_WPSR_WPVS_Pos                   0                                              /**< (ACC_WPSR) Write Protection Violation Status Position */
+#define ACC_WPSR_WPVS_Msk                   (_U_(0x1) << ACC_WPSR_WPVS_Pos)                /**< (ACC_WPSR) Write Protection Violation Status Mask */
+#define ACC_WPSR_WPVS                       ACC_WPSR_WPVS_Msk                              /**< \deprecated Old style mask definition for 1 bit bitfield. Use ACC_WPSR_WPVS_Msk instead */
+#define ACC_WPSR_MASK                       _U_(0x01)                                      /**< \deprecated (ACC_WPSR) Register MASK  (Use ACC_WPSR_Msk instead)  */
+#define ACC_WPSR_Msk                        _U_(0x01)                                      /**< (ACC_WPSR) Register Mask  */
+
+
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'R'
+/** \brief ACC hardware registers */
+typedef struct {  
+  __O  uint32_t ACC_CR;         /**< (ACC Offset: 0x00) Control Register */
+  __IO uint32_t ACC_MR;         /**< (ACC Offset: 0x04) Mode Register */
+  __I  uint8_t                        Reserved1[28];
+  __O  uint32_t ACC_IER;        /**< (ACC Offset: 0x24) Interrupt Enable Register */
+  __O  uint32_t ACC_IDR;        /**< (ACC Offset: 0x28) Interrupt Disable Register */
+  __I  uint32_t ACC_IMR;        /**< (ACC Offset: 0x2C) Interrupt Mask Register */
+  __I  uint32_t ACC_ISR;        /**< (ACC Offset: 0x30) Interrupt Status Register */
+  __I  uint8_t                        Reserved2[96];
+  __IO uint32_t ACC_ACR;        /**< (ACC Offset: 0x94) Analog Control Register */
+  __I  uint8_t                        Reserved3[76];
+  __IO uint32_t ACC_WPMR;       /**< (ACC Offset: 0xE4) Write Protection Mode Register */
+  __I  uint32_t ACC_WPSR;       /**< (ACC Offset: 0xE8) Write Protection Status Register */
 } Acc;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
-/* -------- ACC_CR : (ACC Offset: 0x00) Control Register -------- */
-#define ACC_CR_SWRST (0x1u << 0) /**< \brief (ACC_CR) Software Reset */
-/* -------- ACC_MR : (ACC Offset: 0x04) Mode Register -------- */
-#define ACC_MR_SELMINUS_Pos 0
-#define ACC_MR_SELMINUS_Msk (0x7u << ACC_MR_SELMINUS_Pos) /**< \brief (ACC_MR) Selection for Minus Comparator Input */
-#define ACC_MR_SELMINUS(value) ((ACC_MR_SELMINUS_Msk & ((value) << ACC_MR_SELMINUS_Pos)))
-#define   ACC_MR_SELMINUS_TS (0x0u << 0) /**< \brief (ACC_MR) Select TS */
-#define   ACC_MR_SELMINUS_ADVREFP (0x1u << 0) /**< \brief (ACC_MR) Select ADVREFP */
-#define   ACC_MR_SELMINUS_DAC0 (0x2u << 0) /**< \brief (ACC_MR) Select DAC0 */
-#define   ACC_MR_SELMINUS_DAC1 (0x3u << 0) /**< \brief (ACC_MR) Select DAC1 */
-#define   ACC_MR_SELMINUS_AFE0_AD0 (0x4u << 0) /**< \brief (ACC_MR) Select AFE0_AD0 */
-#define   ACC_MR_SELMINUS_AFE0_AD1 (0x5u << 0) /**< \brief (ACC_MR) Select AFE0_AD1 */
-#define   ACC_MR_SELMINUS_AFE0_AD2 (0x6u << 0) /**< \brief (ACC_MR) Select AFE0_AD2 */
-#define   ACC_MR_SELMINUS_AFE0_AD3 (0x7u << 0) /**< \brief (ACC_MR) Select AFE0_AD3 */
-#define ACC_MR_SELPLUS_Pos 4
-#define ACC_MR_SELPLUS_Msk (0x7u << ACC_MR_SELPLUS_Pos) /**< \brief (ACC_MR) Selection For Plus Comparator Input */
-#define ACC_MR_SELPLUS(value) ((ACC_MR_SELPLUS_Msk & ((value) << ACC_MR_SELPLUS_Pos)))
-#define   ACC_MR_SELPLUS_AFE0_AD0 (0x0u << 4) /**< \brief (ACC_MR) Select AFE0_AD0 */
-#define   ACC_MR_SELPLUS_AFE0_AD1 (0x1u << 4) /**< \brief (ACC_MR) Select AFE0_AD1 */
-#define   ACC_MR_SELPLUS_AFE0_AD2 (0x2u << 4) /**< \brief (ACC_MR) Select AFE0_AD2 */
-#define   ACC_MR_SELPLUS_AFE0_AD3 (0x3u << 4) /**< \brief (ACC_MR) Select AFE0_AD3 */
-#define   ACC_MR_SELPLUS_AFE0_AD4 (0x4u << 4) /**< \brief (ACC_MR) Select AFE0_AD4 */
-#define   ACC_MR_SELPLUS_AFE0_AD5 (0x5u << 4) /**< \brief (ACC_MR) Select AFE0_AD5 */
-#define   ACC_MR_SELPLUS_AFE1_AD0 (0x6u << 4) /**< \brief (ACC_MR) Select AFE1_AD0 */
-#define   ACC_MR_SELPLUS_AFE1_AD1 (0x7u << 4) /**< \brief (ACC_MR) Select AFE1_AD1 */
-#define ACC_MR_ACEN (0x1u << 8) /**< \brief (ACC_MR) Analog Comparator Enable */
-#define   ACC_MR_ACEN_DIS (0x0u << 8) /**< \brief (ACC_MR) Analog comparator disabled. */
-#define   ACC_MR_ACEN_EN (0x1u << 8) /**< \brief (ACC_MR) Analog comparator enabled. */
-#define ACC_MR_EDGETYP_Pos 9
-#define ACC_MR_EDGETYP_Msk (0x3u << ACC_MR_EDGETYP_Pos) /**< \brief (ACC_MR) Edge Type */
-#define ACC_MR_EDGETYP(value) ((ACC_MR_EDGETYP_Msk & ((value) << ACC_MR_EDGETYP_Pos)))
-#define   ACC_MR_EDGETYP_RISING (0x0u << 9) /**< \brief (ACC_MR) Only rising edge of comparator output */
-#define   ACC_MR_EDGETYP_FALLING (0x1u << 9) /**< \brief (ACC_MR) Falling edge of comparator output */
-#define   ACC_MR_EDGETYP_ANY (0x2u << 9) /**< \brief (ACC_MR) Any edge of comparator output */
-#define ACC_MR_INV (0x1u << 12) /**< \brief (ACC_MR) Invert Comparator Output */
-#define   ACC_MR_INV_DIS (0x0u << 12) /**< \brief (ACC_MR) Analog comparator output is directly processed. */
-#define   ACC_MR_INV_EN (0x1u << 12) /**< \brief (ACC_MR) Analog comparator output is inverted prior to being processed. */
-#define ACC_MR_SELFS (0x1u << 13) /**< \brief (ACC_MR) Selection Of Fault Source */
-#define   ACC_MR_SELFS_CE (0x0u << 13) /**< \brief (ACC_MR) The CE flag is used to drive the FAULT output. */
-#define   ACC_MR_SELFS_OUTPUT (0x1u << 13) /**< \brief (ACC_MR) The output of the analog comparator flag is used to drive the FAULT output. */
-#define ACC_MR_FE (0x1u << 14) /**< \brief (ACC_MR) Fault Enable */
-#define   ACC_MR_FE_DIS (0x0u << 14) /**< \brief (ACC_MR) The FAULT output is tied to 0. */
-#define   ACC_MR_FE_EN (0x1u << 14) /**< \brief (ACC_MR) The FAULT output is driven by the signal defined by SELFS. */
-/* -------- ACC_IER : (ACC Offset: 0x24) Interrupt Enable Register -------- */
-#define ACC_IER_CE (0x1u << 0) /**< \brief (ACC_IER) Comparison Edge */
-/* -------- ACC_IDR : (ACC Offset: 0x28) Interrupt Disable Register -------- */
-#define ACC_IDR_CE (0x1u << 0) /**< \brief (ACC_IDR) Comparison Edge */
-/* -------- ACC_IMR : (ACC Offset: 0x2C) Interrupt Mask Register -------- */
-#define ACC_IMR_CE (0x1u << 0) /**< \brief (ACC_IMR) Comparison Edge */
-/* -------- ACC_ISR : (ACC Offset: 0x30) Interrupt Status Register -------- */
-#define ACC_ISR_CE (0x1u << 0) /**< \brief (ACC_ISR) Comparison Edge (cleared on read) */
-#define ACC_ISR_SCO (0x1u << 1) /**< \brief (ACC_ISR) Synchronized Comparator Output */
-#define ACC_ISR_MASK (0x1u << 31) /**< \brief (ACC_ISR) Flag Mask */
-/* -------- ACC_ACR : (ACC Offset: 0x94) Analog Control Register -------- */
-#define ACC_ACR_ISEL (0x1u << 0) /**< \brief (ACC_ACR) Current Selection */
-#define   ACC_ACR_ISEL_LOPW (0x0u << 0) /**< \brief (ACC_ACR) Low-power option. */
-#define   ACC_ACR_ISEL_HISP (0x1u << 0) /**< \brief (ACC_ACR) High-speed option. */
-#define ACC_ACR_HYST_Pos 1
-#define ACC_ACR_HYST_Msk (0x3u << ACC_ACR_HYST_Pos) /**< \brief (ACC_ACR) Hysteresis Selection */
-#define ACC_ACR_HYST(value) ((ACC_ACR_HYST_Msk & ((value) << ACC_ACR_HYST_Pos)))
-/* -------- ACC_WPMR : (ACC Offset: 0xE4) Write Protection Mode Register -------- */
-#define ACC_WPMR_WPEN (0x1u << 0) /**< \brief (ACC_WPMR) Write Protection Enable */
-#define ACC_WPMR_WPKEY_Pos 8
-#define ACC_WPMR_WPKEY_Msk (0xffffffu << ACC_WPMR_WPKEY_Pos) /**< \brief (ACC_WPMR) Write Protection Key */
-#define ACC_WPMR_WPKEY(value) ((ACC_WPMR_WPKEY_Msk & ((value) << ACC_WPMR_WPKEY_Pos)))
-#define   ACC_WPMR_WPKEY_PASSWD (0x414343u << 8) /**< \brief (ACC_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0. */
-/* -------- ACC_WPSR : (ACC Offset: 0xE8) Write Protection Status Register -------- */
-#define ACC_WPSR_WPVS (0x1u << 0) /**< \brief (ACC_WPSR) Write Protection Violation Status */
 
-/*@}*/
+#elif COMPONENT_TYPEDEF_STYLE == 'N'
+/** \brief ACC hardware registers */
+typedef struct {  
+  __O  ACC_CR_Type                    ACC_CR;         /**< Offset: 0x00 ( /W  32) Control Register */
+  __IO ACC_MR_Type                    ACC_MR;         /**< Offset: 0x04 (R/W  32) Mode Register */
+  __I  uint8_t                        Reserved1[28];
+  __O  ACC_IER_Type                   ACC_IER;        /**< Offset: 0x24 ( /W  32) Interrupt Enable Register */
+  __O  ACC_IDR_Type                   ACC_IDR;        /**< Offset: 0x28 ( /W  32) Interrupt Disable Register */
+  __I  ACC_IMR_Type                   ACC_IMR;        /**< Offset: 0x2C (R/   32) Interrupt Mask Register */
+  __I  ACC_ISR_Type                   ACC_ISR;        /**< Offset: 0x30 (R/   32) Interrupt Status Register */
+  __I  uint8_t                        Reserved2[96];
+  __IO ACC_ACR_Type                   ACC_ACR;        /**< Offset: 0x94 (R/W  32) Analog Control Register */
+  __I  uint8_t                        Reserved3[76];
+  __IO ACC_WPMR_Type                  ACC_WPMR;       /**< Offset: 0xE4 (R/W  32) Write Protection Mode Register */
+  __I  ACC_WPSR_Type                  ACC_WPSR;       /**< Offset: 0xE8 (R/   32) Write Protection Status Register */
+} Acc;
 
+#else /* COMPONENT_TYPEDEF_STYLE */
+#error Unknown component typedef style
+#endif /* COMPONENT_TYPEDEF_STYLE */
 
-#endif /* _SAME70_ACC_COMPONENT_ */
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+/** @}  end of Analog Comparator Controller */
+
+#endif /* _SAME70_ACC_COMPONENT_H_ */

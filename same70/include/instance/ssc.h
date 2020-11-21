@@ -1,89 +1,84 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for SSC
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_SSC_INSTANCE_
-#define _SAME70_SSC_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_SSC_INSTANCE_H_
+#define _SAME70_SSC_INSTANCE_H_
 
 /* ========== Register definition for SSC peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_SSC_CR                    (0x40004000U) /**< \brief (SSC) Control Register */
-  #define REG_SSC_CMR                   (0x40004004U) /**< \brief (SSC) Clock Mode Register */
-  #define REG_SSC_RCMR                  (0x40004010U) /**< \brief (SSC) Receive Clock Mode Register */
-  #define REG_SSC_RFMR                  (0x40004014U) /**< \brief (SSC) Receive Frame Mode Register */
-  #define REG_SSC_TCMR                  (0x40004018U) /**< \brief (SSC) Transmit Clock Mode Register */
-  #define REG_SSC_TFMR                  (0x4000401CU) /**< \brief (SSC) Transmit Frame Mode Register */
-  #define REG_SSC_RHR                   (0x40004020U) /**< \brief (SSC) Receive Holding Register */
-  #define REG_SSC_THR                   (0x40004024U) /**< \brief (SSC) Transmit Holding Register */
-  #define REG_SSC_RSHR                  (0x40004030U) /**< \brief (SSC) Receive Sync. Holding Register */
-  #define REG_SSC_TSHR                  (0x40004034U) /**< \brief (SSC) Transmit Sync. Holding Register */
-  #define REG_SSC_RC0R                  (0x40004038U) /**< \brief (SSC) Receive Compare 0 Register */
-  #define REG_SSC_RC1R                  (0x4000403CU) /**< \brief (SSC) Receive Compare 1 Register */
-  #define REG_SSC_SR                    (0x40004040U) /**< \brief (SSC) Status Register */
-  #define REG_SSC_IER                   (0x40004044U) /**< \brief (SSC) Interrupt Enable Register */
-  #define REG_SSC_IDR                   (0x40004048U) /**< \brief (SSC) Interrupt Disable Register */
-  #define REG_SSC_IMR                   (0x4000404CU) /**< \brief (SSC) Interrupt Mask Register */
-  #define REG_SSC_WPMR                  (0x400040E4U) /**< \brief (SSC) Write Protection Mode Register */
-  #define REG_SSC_WPSR                  (0x400040E8U) /**< \brief (SSC) Write Protection Status Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_SSC_CR              (0x40004000) /**< (SSC) Control Register */
+#define REG_SSC_CMR             (0x40004004) /**< (SSC) Clock Mode Register */
+#define REG_SSC_RCMR            (0x40004010) /**< (SSC) Receive Clock Mode Register */
+#define REG_SSC_RFMR            (0x40004014) /**< (SSC) Receive Frame Mode Register */
+#define REG_SSC_TCMR            (0x40004018) /**< (SSC) Transmit Clock Mode Register */
+#define REG_SSC_TFMR            (0x4000401C) /**< (SSC) Transmit Frame Mode Register */
+#define REG_SSC_RHR             (0x40004020) /**< (SSC) Receive Holding Register */
+#define REG_SSC_THR             (0x40004024) /**< (SSC) Transmit Holding Register */
+#define REG_SSC_RSHR            (0x40004030) /**< (SSC) Receive Sync. Holding Register */
+#define REG_SSC_TSHR            (0x40004034) /**< (SSC) Transmit Sync. Holding Register */
+#define REG_SSC_RC0R            (0x40004038) /**< (SSC) Receive Compare 0 Register */
+#define REG_SSC_RC1R            (0x4000403C) /**< (SSC) Receive Compare 1 Register */
+#define REG_SSC_SR              (0x40004040) /**< (SSC) Status Register */
+#define REG_SSC_IER             (0x40004044) /**< (SSC) Interrupt Enable Register */
+#define REG_SSC_IDR             (0x40004048) /**< (SSC) Interrupt Disable Register */
+#define REG_SSC_IMR             (0x4000404C) /**< (SSC) Interrupt Mask Register */
+#define REG_SSC_WPMR            (0x400040E4) /**< (SSC) Write Protection Mode Register */
+#define REG_SSC_WPSR            (0x400040E8) /**< (SSC) Write Protection Status Register */
+
 #else
-  #define REG_SSC_CR   (*(__O  uint32_t*)0x40004000U) /**< \brief (SSC) Control Register */
-  #define REG_SSC_CMR  (*(__IO uint32_t*)0x40004004U) /**< \brief (SSC) Clock Mode Register */
-  #define REG_SSC_RCMR (*(__IO uint32_t*)0x40004010U) /**< \brief (SSC) Receive Clock Mode Register */
-  #define REG_SSC_RFMR (*(__IO uint32_t*)0x40004014U) /**< \brief (SSC) Receive Frame Mode Register */
-  #define REG_SSC_TCMR (*(__IO uint32_t*)0x40004018U) /**< \brief (SSC) Transmit Clock Mode Register */
-  #define REG_SSC_TFMR (*(__IO uint32_t*)0x4000401CU) /**< \brief (SSC) Transmit Frame Mode Register */
-  #define REG_SSC_RHR  (*(__I  uint32_t*)0x40004020U) /**< \brief (SSC) Receive Holding Register */
-  #define REG_SSC_THR  (*(__O  uint32_t*)0x40004024U) /**< \brief (SSC) Transmit Holding Register */
-  #define REG_SSC_RSHR (*(__I  uint32_t*)0x40004030U) /**< \brief (SSC) Receive Sync. Holding Register */
-  #define REG_SSC_TSHR (*(__IO uint32_t*)0x40004034U) /**< \brief (SSC) Transmit Sync. Holding Register */
-  #define REG_SSC_RC0R (*(__IO uint32_t*)0x40004038U) /**< \brief (SSC) Receive Compare 0 Register */
-  #define REG_SSC_RC1R (*(__IO uint32_t*)0x4000403CU) /**< \brief (SSC) Receive Compare 1 Register */
-  #define REG_SSC_SR   (*(__I  uint32_t*)0x40004040U) /**< \brief (SSC) Status Register */
-  #define REG_SSC_IER  (*(__O  uint32_t*)0x40004044U) /**< \brief (SSC) Interrupt Enable Register */
-  #define REG_SSC_IDR  (*(__O  uint32_t*)0x40004048U) /**< \brief (SSC) Interrupt Disable Register */
-  #define REG_SSC_IMR  (*(__I  uint32_t*)0x4000404CU) /**< \brief (SSC) Interrupt Mask Register */
-  #define REG_SSC_WPMR (*(__IO uint32_t*)0x400040E4U) /**< \brief (SSC) Write Protection Mode Register */
-  #define REG_SSC_WPSR (*(__I  uint32_t*)0x400040E8U) /**< \brief (SSC) Write Protection Status Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_SSC_CR              (*(__O  uint32_t*)0x40004000U) /**< (SSC) Control Register */
+#define REG_SSC_CMR             (*(__IO uint32_t*)0x40004004U) /**< (SSC) Clock Mode Register */
+#define REG_SSC_RCMR            (*(__IO uint32_t*)0x40004010U) /**< (SSC) Receive Clock Mode Register */
+#define REG_SSC_RFMR            (*(__IO uint32_t*)0x40004014U) /**< (SSC) Receive Frame Mode Register */
+#define REG_SSC_TCMR            (*(__IO uint32_t*)0x40004018U) /**< (SSC) Transmit Clock Mode Register */
+#define REG_SSC_TFMR            (*(__IO uint32_t*)0x4000401CU) /**< (SSC) Transmit Frame Mode Register */
+#define REG_SSC_RHR             (*(__I  uint32_t*)0x40004020U) /**< (SSC) Receive Holding Register */
+#define REG_SSC_THR             (*(__O  uint32_t*)0x40004024U) /**< (SSC) Transmit Holding Register */
+#define REG_SSC_RSHR            (*(__I  uint32_t*)0x40004030U) /**< (SSC) Receive Sync. Holding Register */
+#define REG_SSC_TSHR            (*(__IO uint32_t*)0x40004034U) /**< (SSC) Transmit Sync. Holding Register */
+#define REG_SSC_RC0R            (*(__IO uint32_t*)0x40004038U) /**< (SSC) Receive Compare 0 Register */
+#define REG_SSC_RC1R            (*(__IO uint32_t*)0x4000403CU) /**< (SSC) Receive Compare 1 Register */
+#define REG_SSC_SR              (*(__I  uint32_t*)0x40004040U) /**< (SSC) Status Register */
+#define REG_SSC_IER             (*(__O  uint32_t*)0x40004044U) /**< (SSC) Interrupt Enable Register */
+#define REG_SSC_IDR             (*(__O  uint32_t*)0x40004048U) /**< (SSC) Interrupt Disable Register */
+#define REG_SSC_IMR             (*(__I  uint32_t*)0x4000404CU) /**< (SSC) Interrupt Mask Register */
+#define REG_SSC_WPMR            (*(__IO uint32_t*)0x400040E4U) /**< (SSC) Write Protection Mode Register */
+#define REG_SSC_WPSR            (*(__I  uint32_t*)0x400040E8U) /**< (SSC) Write Protection Status Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for SSC peripheral ========== */
+#define SSC_DMAC_ID_RX                           33         
+#define SSC_DMAC_ID_TX                           32         
+#define SSC_INSTANCE_ID                          22         
 
 #endif /* _SAME70_SSC_INSTANCE_ */

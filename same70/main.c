@@ -46,14 +46,14 @@ HAL_GPIO_PIN(UART_RX,  A, 21)
 //-----------------------------------------------------------------------------
 static void timer_set_period(uint16_t i)
 {
-  TC0->TC_CHANNEL[0].TC_RC = 32768ul * i / 1000ul;
-  TC0->TC_CHANNEL[0].TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;
+  TC0->TcChannel[0].TC_RC = 32768ul * i / 1000ul;
+  TC0->TcChannel[0].TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;
 }
 
 //-----------------------------------------------------------------------------
 void irq_handler_tc0(void)
 {
-  if (TC0->TC_CHANNEL[0].TC_SR & TC_SR_CPCS)
+  if (TC0->TcChannel[0].TC_SR & TC_SR_CPCS)
   {
     HAL_GPIO_LED_toggle();
   }
@@ -64,10 +64,10 @@ static void timer_init(void)
 {
   PMC->PMC_PCER0 = PMC_PCER0_PID23;
 
-  TC0->TC_CHANNEL[0].TC_CMR = TC_CMR_TCCLKS_TIMER_CLOCK5 | TC_CMR_CPCTRG;
+  TC0->TcChannel[0].TC_CMR = TC_CMR_TCCLKS_TIMER_CLOCK5 | TC_CMR_CPCTRG;
   timer_set_period(PERIOD_SLOW);
-  TC0->TC_CHANNEL[0].TC_IER = TC_IER_CPCS;
-  TC0->TC_CHANNEL[0].TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;
+  TC0->TcChannel[0].TC_IER = TC_IER_CPCS;
+  TC0->TcChannel[0].TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;
 
   NVIC_EnableIRQ(TC0_IRQn);
 }

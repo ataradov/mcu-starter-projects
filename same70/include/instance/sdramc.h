@@ -1,79 +1,72 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for SDRAMC
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_SDRAMC_INSTANCE_
-#define _SAME70_SDRAMC_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_SDRAMC_INSTANCE_H_
+#define _SAME70_SDRAMC_INSTANCE_H_
 
 /* ========== Register definition for SDRAMC peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_SDRAMC_MR                         (0x40084000U) /**< \brief (SDRAMC) SDRAMC Mode Register */
-  #define REG_SDRAMC_TR                         (0x40084004U) /**< \brief (SDRAMC) SDRAMC Refresh Timer Register */
-  #define REG_SDRAMC_CR                         (0x40084008U) /**< \brief (SDRAMC) SDRAMC Configuration Register */
-  #define REG_SDRAMC_LPR                        (0x40084010U) /**< \brief (SDRAMC) SDRAMC Low Power Register */
-  #define REG_SDRAMC_IER                        (0x40084014U) /**< \brief (SDRAMC) SDRAMC Interrupt Enable Register */
-  #define REG_SDRAMC_IDR                        (0x40084018U) /**< \brief (SDRAMC) SDRAMC Interrupt Disable Register */
-  #define REG_SDRAMC_IMR                        (0x4008401CU) /**< \brief (SDRAMC) SDRAMC Interrupt Mask Register */
-  #define REG_SDRAMC_ISR                        (0x40084020U) /**< \brief (SDRAMC) SDRAMC Interrupt Status Register */
-  #define REG_SDRAMC_MDR                        (0x40084024U) /**< \brief (SDRAMC) SDRAMC Memory Device Register */
-  #define REG_SDRAMC_CFR1                       (0x40084028U) /**< \brief (SDRAMC) SDRAMC Configuration Register 1 */
-  #define REG_SDRAMC_OCMS                       (0x4008402CU) /**< \brief (SDRAMC) SDRAMC OCMS Register */
-  #define REG_SDRAMC_OCMS_KEY1                  (0x40084030U) /**< \brief (SDRAMC) SDRAMC OCMS KEY1 Register */
-  #define REG_SDRAMC_OCMS_KEY2                  (0x40084034U) /**< \brief (SDRAMC) SDRAMC OCMS KEY2 Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_SDRAMC_MR           (0x40084000) /**< (SDRAMC) SDRAMC Mode Register */
+#define REG_SDRAMC_TR           (0x40084004) /**< (SDRAMC) SDRAMC Refresh Timer Register */
+#define REG_SDRAMC_CR           (0x40084008) /**< (SDRAMC) SDRAMC Configuration Register */
+#define REG_SDRAMC_LPR          (0x40084010) /**< (SDRAMC) SDRAMC Low Power Register */
+#define REG_SDRAMC_IER          (0x40084014) /**< (SDRAMC) SDRAMC Interrupt Enable Register */
+#define REG_SDRAMC_IDR          (0x40084018) /**< (SDRAMC) SDRAMC Interrupt Disable Register */
+#define REG_SDRAMC_IMR          (0x4008401C) /**< (SDRAMC) SDRAMC Interrupt Mask Register */
+#define REG_SDRAMC_ISR          (0x40084020) /**< (SDRAMC) SDRAMC Interrupt Status Register */
+#define REG_SDRAMC_MDR          (0x40084024) /**< (SDRAMC) SDRAMC Memory Device Register */
+#define REG_SDRAMC_CFR1         (0x40084028) /**< (SDRAMC) SDRAMC Configuration Register 1 */
+#define REG_SDRAMC_OCMS         (0x4008402C) /**< (SDRAMC) SDRAMC OCMS Register */
+#define REG_SDRAMC_OCMS_KEY1    (0x40084030) /**< (SDRAMC) SDRAMC OCMS KEY1 Register */
+#define REG_SDRAMC_OCMS_KEY2    (0x40084034) /**< (SDRAMC) SDRAMC OCMS KEY2 Register */
+
 #else
-  #define REG_SDRAMC_MR        (*(__IO uint32_t*)0x40084000U) /**< \brief (SDRAMC) SDRAMC Mode Register */
-  #define REG_SDRAMC_TR        (*(__IO uint32_t*)0x40084004U) /**< \brief (SDRAMC) SDRAMC Refresh Timer Register */
-  #define REG_SDRAMC_CR        (*(__IO uint32_t*)0x40084008U) /**< \brief (SDRAMC) SDRAMC Configuration Register */
-  #define REG_SDRAMC_LPR       (*(__IO uint32_t*)0x40084010U) /**< \brief (SDRAMC) SDRAMC Low Power Register */
-  #define REG_SDRAMC_IER       (*(__O  uint32_t*)0x40084014U) /**< \brief (SDRAMC) SDRAMC Interrupt Enable Register */
-  #define REG_SDRAMC_IDR       (*(__O  uint32_t*)0x40084018U) /**< \brief (SDRAMC) SDRAMC Interrupt Disable Register */
-  #define REG_SDRAMC_IMR       (*(__I  uint32_t*)0x4008401CU) /**< \brief (SDRAMC) SDRAMC Interrupt Mask Register */
-  #define REG_SDRAMC_ISR       (*(__I  uint32_t*)0x40084020U) /**< \brief (SDRAMC) SDRAMC Interrupt Status Register */
-  #define REG_SDRAMC_MDR       (*(__IO uint32_t*)0x40084024U) /**< \brief (SDRAMC) SDRAMC Memory Device Register */
-  #define REG_SDRAMC_CFR1      (*(__IO uint32_t*)0x40084028U) /**< \brief (SDRAMC) SDRAMC Configuration Register 1 */
-  #define REG_SDRAMC_OCMS      (*(__IO uint32_t*)0x4008402CU) /**< \brief (SDRAMC) SDRAMC OCMS Register */
-  #define REG_SDRAMC_OCMS_KEY1 (*(__O  uint32_t*)0x40084030U) /**< \brief (SDRAMC) SDRAMC OCMS KEY1 Register */
-  #define REG_SDRAMC_OCMS_KEY2 (*(__O  uint32_t*)0x40084034U) /**< \brief (SDRAMC) SDRAMC OCMS KEY2 Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_SDRAMC_MR           (*(__IO uint32_t*)0x40084000U) /**< (SDRAMC) SDRAMC Mode Register */
+#define REG_SDRAMC_TR           (*(__IO uint32_t*)0x40084004U) /**< (SDRAMC) SDRAMC Refresh Timer Register */
+#define REG_SDRAMC_CR           (*(__IO uint32_t*)0x40084008U) /**< (SDRAMC) SDRAMC Configuration Register */
+#define REG_SDRAMC_LPR          (*(__IO uint32_t*)0x40084010U) /**< (SDRAMC) SDRAMC Low Power Register */
+#define REG_SDRAMC_IER          (*(__O  uint32_t*)0x40084014U) /**< (SDRAMC) SDRAMC Interrupt Enable Register */
+#define REG_SDRAMC_IDR          (*(__O  uint32_t*)0x40084018U) /**< (SDRAMC) SDRAMC Interrupt Disable Register */
+#define REG_SDRAMC_IMR          (*(__I  uint32_t*)0x4008401CU) /**< (SDRAMC) SDRAMC Interrupt Mask Register */
+#define REG_SDRAMC_ISR          (*(__I  uint32_t*)0x40084020U) /**< (SDRAMC) SDRAMC Interrupt Status Register */
+#define REG_SDRAMC_MDR          (*(__IO uint32_t*)0x40084024U) /**< (SDRAMC) SDRAMC Memory Device Register */
+#define REG_SDRAMC_CFR1         (*(__IO uint32_t*)0x40084028U) /**< (SDRAMC) SDRAMC Configuration Register 1 */
+#define REG_SDRAMC_OCMS         (*(__IO uint32_t*)0x4008402CU) /**< (SDRAMC) SDRAMC OCMS Register */
+#define REG_SDRAMC_OCMS_KEY1    (*(__O  uint32_t*)0x40084030U) /**< (SDRAMC) SDRAMC OCMS KEY1 Register */
+#define REG_SDRAMC_OCMS_KEY2    (*(__O  uint32_t*)0x40084034U) /**< (SDRAMC) SDRAMC OCMS KEY2 Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for SDRAMC peripheral ========== */
+#define SDRAMC_INSTANCE_ID                       62         
 
 #endif /* _SAME70_SDRAMC_INSTANCE_ */

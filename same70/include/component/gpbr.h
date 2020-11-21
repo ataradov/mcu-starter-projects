@@ -1,68 +1,89 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Component description for GPBR
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
- *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
+ * \license_stop
  *
  */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
+
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_GPBR_COMPONENT_H_
+#define _SAME70_GPBR_COMPONENT_H_
+#define _SAME70_GPBR_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
+
+/** \addtogroup SAME_SAME70 General Purpose Backup Registers
+ *  @{
  */
+/* ========================================================================== */
+/**  SOFTWARE API DEFINITION FOR GPBR */
+/* ========================================================================== */
+#ifndef COMPONENT_TYPEDEF_STYLE
+  #define COMPONENT_TYPEDEF_STYLE 'R'  /**< Defines default style of typedefs for the component header files ('R' = RFO, 'N' = NTO)*/
+#endif
 
-#ifndef _SAME70_GPBR_COMPONENT_
-#define _SAME70_GPBR_COMPONENT_
+#define GPBR_6378                       /**< (GPBR) Module ID */
+#define REV_GPBR H                      /**< (GPBR) Module revision */
 
-/* ============================================================================= */
-/**  SOFTWARE API DEFINITION FOR General Purpose Backup Registers */
-/* ============================================================================= */
-/** \addtogroup SAME70_GPBR General Purpose Backup Registers */
-/*@{*/
+/* -------- GPBR_SYS_GPBR : (GPBR Offset: 0x00) (R/W 32) General Purpose Backup Register 0 -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union { 
+  struct {
+    uint32_t GPBR_VALUE:32;             /**< bit:  0..31  Value of GPBR x                          */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} GPBR_SYS_GPBR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief Gpbr hardware registers */
-typedef struct {
-  __IO uint32_t SYS_GPBR[8]; /**< \brief (Gpbr Offset: 0x0) General Purpose Backup Register */
+#define GPBR_SYS_GPBR_OFFSET                (0x00)                                        /**<  (GPBR_SYS_GPBR) General Purpose Backup Register 0  Offset */
+
+#define GPBR_SYS_GPBR_GPBR_VALUE_Pos        0                                              /**< (GPBR_SYS_GPBR) Value of GPBR x Position */
+#define GPBR_SYS_GPBR_GPBR_VALUE_Msk        (_U_(0xFFFFFFFF) << GPBR_SYS_GPBR_GPBR_VALUE_Pos)  /**< (GPBR_SYS_GPBR) Value of GPBR x Mask */
+#define GPBR_SYS_GPBR_GPBR_VALUE(value)     (GPBR_SYS_GPBR_GPBR_VALUE_Msk & ((value) << GPBR_SYS_GPBR_GPBR_VALUE_Pos))
+#define GPBR_SYS_GPBR_MASK                  _U_(0xFFFFFFFF)                                /**< \deprecated (GPBR_SYS_GPBR) Register MASK  (Use GPBR_SYS_GPBR_Msk instead)  */
+#define GPBR_SYS_GPBR_Msk                   _U_(0xFFFFFFFF)                                /**< (GPBR_SYS_GPBR) Register Mask  */
+
+
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'R'
+/** \brief GPBR hardware registers */
+typedef struct {  
+  __IO uint32_t SYS_GPBR[8];    /**< (GPBR Offset: 0x00) General Purpose Backup Register 0 */
 } Gpbr;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
-/* -------- SYS_GPBR[8] : (GPBR Offset: 0x0) General Purpose Backup Register -------- */
-#define SYS_GPBR_GPBR_VALUE_Pos 0
-#define SYS_GPBR_GPBR_VALUE_Msk (0xffffffffu << SYS_GPBR_GPBR_VALUE_Pos) /**< \brief (SYS_GPBR[8]) Value of GPBR x */
-#define SYS_GPBR_GPBR_VALUE(value) ((SYS_GPBR_GPBR_VALUE_Msk & ((value) << SYS_GPBR_GPBR_VALUE_Pos)))
 
-/*@}*/
+#elif COMPONENT_TYPEDEF_STYLE == 'N'
+/** \brief GPBR hardware registers */
+typedef struct {  
+  __IO GPBR_SYS_GPBR_Type             SYS_GPBR[8];    /**< Offset: 0x00 (R/W  32) General Purpose Backup Register 0 */
+} Gpbr;
 
+#else /* COMPONENT_TYPEDEF_STYLE */
+#error Unknown component typedef style
+#endif /* COMPONENT_TYPEDEF_STYLE */
 
-#endif /* _SAME70_GPBR_COMPONENT_ */
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+/** @}  end of General Purpose Backup Registers */
+
+#endif /* _SAME70_GPBR_COMPONENT_H_ */

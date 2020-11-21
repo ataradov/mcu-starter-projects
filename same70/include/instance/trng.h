@@ -1,65 +1,58 @@
 /**
  * \file
  *
- * Copyright (c) 2015 Atmel Corporation. All rights reserved.
+ * \brief Instance description for TRNG
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_TRNG_INSTANCE_
-#define _SAME70_TRNG_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_TRNG_INSTANCE_H_
+#define _SAME70_TRNG_INSTANCE_H_
 
 /* ========== Register definition for TRNG peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_TRNG_CR                    (0x40070000U) /**< \brief (TRNG) Control Register */
-  #define REG_TRNG_IER                   (0x40070010U) /**< \brief (TRNG) Interrupt Enable Register */
-  #define REG_TRNG_IDR                   (0x40070014U) /**< \brief (TRNG) Interrupt Disable Register */
-  #define REG_TRNG_IMR                   (0x40070018U) /**< \brief (TRNG) Interrupt Mask Register */
-  #define REG_TRNG_ISR                   (0x4007001CU) /**< \brief (TRNG) Interrupt Status Register */
-  #define REG_TRNG_ODATA                 (0x40070050U) /**< \brief (TRNG) Output Data Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_TRNG_CR             (0x40070000) /**< (TRNG) Control Register */
+#define REG_TRNG_IER            (0x40070010) /**< (TRNG) Interrupt Enable Register */
+#define REG_TRNG_IDR            (0x40070014) /**< (TRNG) Interrupt Disable Register */
+#define REG_TRNG_IMR            (0x40070018) /**< (TRNG) Interrupt Mask Register */
+#define REG_TRNG_ISR            (0x4007001C) /**< (TRNG) Interrupt Status Register */
+#define REG_TRNG_ODATA          (0x40070050) /**< (TRNG) Output Data Register */
+
 #else
-  #define REG_TRNG_CR    (*(__O uint32_t*)0x40070000U) /**< \brief (TRNG) Control Register */
-  #define REG_TRNG_IER   (*(__O uint32_t*)0x40070010U) /**< \brief (TRNG) Interrupt Enable Register */
-  #define REG_TRNG_IDR   (*(__O uint32_t*)0x40070014U) /**< \brief (TRNG) Interrupt Disable Register */
-  #define REG_TRNG_IMR   (*(__I uint32_t*)0x40070018U) /**< \brief (TRNG) Interrupt Mask Register */
-  #define REG_TRNG_ISR   (*(__I uint32_t*)0x4007001CU) /**< \brief (TRNG) Interrupt Status Register */
-  #define REG_TRNG_ODATA (*(__I uint32_t*)0x40070050U) /**< \brief (TRNG) Output Data Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_TRNG_CR             (*(__O  uint32_t*)0x40070000U) /**< (TRNG) Control Register */
+#define REG_TRNG_IER            (*(__O  uint32_t*)0x40070010U) /**< (TRNG) Interrupt Enable Register */
+#define REG_TRNG_IDR            (*(__O  uint32_t*)0x40070014U) /**< (TRNG) Interrupt Disable Register */
+#define REG_TRNG_IMR            (*(__I  uint32_t*)0x40070018U) /**< (TRNG) Interrupt Mask Register */
+#define REG_TRNG_ISR            (*(__I  uint32_t*)0x4007001CU) /**< (TRNG) Interrupt Status Register */
+#define REG_TRNG_ODATA          (*(__I  uint32_t*)0x40070050U) /**< (TRNG) Output Data Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for TRNG peripheral ========== */
+#define TRNG_INSTANCE_ID                         57         
 
 #endif /* _SAME70_TRNG_INSTANCE_ */

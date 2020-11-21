@@ -1,179 +1,158 @@
 /**
  * \file
  *
- * Copyright (c) 2015-2016 Atmel Corporation. All rights reserved.
+ * \brief Instance description for PIOE
  *
- * \asf_license_start
+ * Copyright (c) 2019 Microchip Technology Inc.
+ *
+ * \license_start
  *
  * \page License
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * 3. The name of Atmel may not be used to endorse or promote products derived
- *    from this software without specific prior written permission.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * 4. This software may only be redistributed and used in connection with an
- *    Atmel microcontroller product.
+ * \license_stop
  *
- * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
- * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
-#ifndef _SAME70_PIOE_INSTANCE_
-#define _SAME70_PIOE_INSTANCE_
+/* file generated from device description version 2017-08-25T14:00:00Z */
+#ifndef _SAME70_PIOE_INSTANCE_H_
+#define _SAME70_PIOE_INSTANCE_H_
 
 /* ========== Register definition for PIOE peripheral ========== */
-#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-  #define REG_PIOE_PER                      (0x400E1600U) /**< \brief (PIOE) PIO Enable Register */
-  #define REG_PIOE_PDR                      (0x400E1604U) /**< \brief (PIOE) PIO Disable Register */
-  #define REG_PIOE_PSR                      (0x400E1608U) /**< \brief (PIOE) PIO Status Register */
-  #define REG_PIOE_OER                      (0x400E1610U) /**< \brief (PIOE) Output Enable Register */
-  #define REG_PIOE_ODR                      (0x400E1614U) /**< \brief (PIOE) Output Disable Register */
-  #define REG_PIOE_OSR                      (0x400E1618U) /**< \brief (PIOE) Output Status Register */
-  #define REG_PIOE_IFER                     (0x400E1620U) /**< \brief (PIOE) Glitch Input Filter Enable Register */
-  #define REG_PIOE_IFDR                     (0x400E1624U) /**< \brief (PIOE) Glitch Input Filter Disable Register */
-  #define REG_PIOE_IFSR                     (0x400E1628U) /**< \brief (PIOE) Glitch Input Filter Status Register */
-  #define REG_PIOE_SODR                     (0x400E1630U) /**< \brief (PIOE) Set Output Data Register */
-  #define REG_PIOE_CODR                     (0x400E1634U) /**< \brief (PIOE) Clear Output Data Register */
-  #define REG_PIOE_ODSR                     (0x400E1638U) /**< \brief (PIOE) Output Data Status Register */
-  #define REG_PIOE_PDSR                     (0x400E163CU) /**< \brief (PIOE) Pin Data Status Register */
-  #define REG_PIOE_IER                      (0x400E1640U) /**< \brief (PIOE) Interrupt Enable Register */
-  #define REG_PIOE_IDR                      (0x400E1644U) /**< \brief (PIOE) Interrupt Disable Register */
-  #define REG_PIOE_IMR                      (0x400E1648U) /**< \brief (PIOE) Interrupt Mask Register */
-  #define REG_PIOE_ISR                      (0x400E164CU) /**< \brief (PIOE) Interrupt Status Register */
-  #define REG_PIOE_MDER                     (0x400E1650U) /**< \brief (PIOE) Multi-driver Enable Register */
-  #define REG_PIOE_MDDR                     (0x400E1654U) /**< \brief (PIOE) Multi-driver Disable Register */
-  #define REG_PIOE_MDSR                     (0x400E1658U) /**< \brief (PIOE) Multi-driver Status Register */
-  #define REG_PIOE_PUDR                     (0x400E1660U) /**< \brief (PIOE) Pull-up Disable Register */
-  #define REG_PIOE_PUER                     (0x400E1664U) /**< \brief (PIOE) Pull-up Enable Register */
-  #define REG_PIOE_PUSR                     (0x400E1668U) /**< \brief (PIOE) Pad Pull-up Status Register */
-  #define REG_PIOE_ABCDSR                   (0x400E1670U) /**< \brief (PIOE) Peripheral Select Register */
-  #define REG_PIOE_IFSCDR                   (0x400E1680U) /**< \brief (PIOE) Input Filter Slow Clock Disable Register */
-  #define REG_PIOE_IFSCER                   (0x400E1684U) /**< \brief (PIOE) Input Filter Slow Clock Enable Register */
-  #define REG_PIOE_IFSCSR                   (0x400E1688U) /**< \brief (PIOE) Input Filter Slow Clock Status Register */
-  #define REG_PIOE_SCDR                     (0x400E168CU) /**< \brief (PIOE) Slow Clock Divider Debouncing Register */
-  #define REG_PIOE_PPDDR                    (0x400E1690U) /**< \brief (PIOE) Pad Pull-down Disable Register */
-  #define REG_PIOE_PPDER                    (0x400E1694U) /**< \brief (PIOE) Pad Pull-down Enable Register */
-  #define REG_PIOE_PPDSR                    (0x400E1698U) /**< \brief (PIOE) Pad Pull-down Status Register */
-  #define REG_PIOE_OWER                     (0x400E16A0U) /**< \brief (PIOE) Output Write Enable */
-  #define REG_PIOE_OWDR                     (0x400E16A4U) /**< \brief (PIOE) Output Write Disable */
-  #define REG_PIOE_OWSR                     (0x400E16A8U) /**< \brief (PIOE) Output Write Status Register */
-  #define REG_PIOE_AIMER                    (0x400E16B0U) /**< \brief (PIOE) Additional Interrupt Modes Enable Register */
-  #define REG_PIOE_AIMDR                    (0x400E16B4U) /**< \brief (PIOE) Additional Interrupt Modes Disable Register */
-  #define REG_PIOE_AIMMR                    (0x400E16B8U) /**< \brief (PIOE) Additional Interrupt Modes Mask Register */
-  #define REG_PIOE_ESR                      (0x400E16C0U) /**< \brief (PIOE) Edge Select Register */
-  #define REG_PIOE_LSR                      (0x400E16C4U) /**< \brief (PIOE) Level Select Register */
-  #define REG_PIOE_ELSR                     (0x400E16C8U) /**< \brief (PIOE) Edge/Level Status Register */
-  #define REG_PIOE_FELLSR                   (0x400E16D0U) /**< \brief (PIOE) Falling Edge/Low-Level Select Register */
-  #define REG_PIOE_REHLSR                   (0x400E16D4U) /**< \brief (PIOE) Rising Edge/High-Level Select Register */
-  #define REG_PIOE_FRLHSR                   (0x400E16D8U) /**< \brief (PIOE) Fall/Rise - Low/High Status Register */
-  #define REG_PIOE_LOCKSR                   (0x400E16E0U) /**< \brief (PIOE) Lock Status */
-  #define REG_PIOE_WPMR                     (0x400E16E4U) /**< \brief (PIOE) Write Protection Mode Register */
-  #define REG_PIOE_WPSR                     (0x400E16E8U) /**< \brief (PIOE) Write Protection Status Register */
-  #define REG_PIOE_SCHMITT                  (0x400E1700U) /**< \brief (PIOE) Schmitt Trigger Register */
-  #define REG_PIOE_DRIVER                   (0x400E1718U) /**< \brief (PIOE) PIO I/O Drive Register */
-  #define REG_PIOE_KER                      (0x400E1720U) /**< \brief (PIOE) Keypad Controller Enable Register */
-  #define REG_PIOE_KRCR                     (0x400E1724U) /**< \brief (PIOE) Keypad Controller Row Column Register */
-  #define REG_PIOE_KDR                      (0x400E1728U) /**< \brief (PIOE) Keypad Controller Debouncing Register */
-  #define REG_PIOE_KIER                     (0x400E1730U) /**< \brief (PIOE) Keypad Controller Interrupt Enable Register */
-  #define REG_PIOE_KIDR                     (0x400E1734U) /**< \brief (PIOE) Keypad Controller Interrupt Disable Register */
-  #define REG_PIOE_KIMR                     (0x400E1738U) /**< \brief (PIOE) Keypad Controller Interrupt Mask Register */
-  #define REG_PIOE_KSR                      (0x400E173CU) /**< \brief (PIOE) Keypad Controller Status Register */
-  #define REG_PIOE_KKPR                     (0x400E1740U) /**< \brief (PIOE) Keypad Controller Key Press Register */
-  #define REG_PIOE_KKRR                     (0x400E1744U) /**< \brief (PIOE) Keypad Controller Key Release Register */
-  #define REG_PIOE_PCMR                     (0x400E1750U) /**< \brief (PIOE) Parallel Capture Mode Register */
-  #define REG_PIOE_PCIER                    (0x400E1754U) /**< \brief (PIOE) Parallel Capture Interrupt Enable Register */
-  #define REG_PIOE_PCIDR                    (0x400E1758U) /**< \brief (PIOE) Parallel Capture Interrupt Disable Register */
-  #define REG_PIOE_PCIMR                    (0x400E175CU) /**< \brief (PIOE) Parallel Capture Interrupt Mask Register */
-  #define REG_PIOE_PCISR                    (0x400E1760U) /**< \brief (PIOE) Parallel Capture Interrupt Status Register */
-  #define REG_PIOE_PCRHR                    (0x400E1764U) /**< \brief (PIOE) Parallel Capture Reception Holding Register */
+#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+
+#define REG_PIOE_PER            (0x400E1600) /**< (PIOE) PIO Enable Register */
+#define REG_PIOE_PDR            (0x400E1604) /**< (PIOE) PIO Disable Register */
+#define REG_PIOE_PSR            (0x400E1608) /**< (PIOE) PIO Status Register */
+#define REG_PIOE_OER            (0x400E1610) /**< (PIOE) Output Enable Register */
+#define REG_PIOE_ODR            (0x400E1614) /**< (PIOE) Output Disable Register */
+#define REG_PIOE_OSR            (0x400E1618) /**< (PIOE) Output Status Register */
+#define REG_PIOE_IFER           (0x400E1620) /**< (PIOE) Glitch Input Filter Enable Register */
+#define REG_PIOE_IFDR           (0x400E1624) /**< (PIOE) Glitch Input Filter Disable Register */
+#define REG_PIOE_IFSR           (0x400E1628) /**< (PIOE) Glitch Input Filter Status Register */
+#define REG_PIOE_SODR           (0x400E1630) /**< (PIOE) Set Output Data Register */
+#define REG_PIOE_CODR           (0x400E1634) /**< (PIOE) Clear Output Data Register */
+#define REG_PIOE_ODSR           (0x400E1638) /**< (PIOE) Output Data Status Register */
+#define REG_PIOE_PDSR           (0x400E163C) /**< (PIOE) Pin Data Status Register */
+#define REG_PIOE_IER            (0x400E1640) /**< (PIOE) Interrupt Enable Register */
+#define REG_PIOE_IDR            (0x400E1644) /**< (PIOE) Interrupt Disable Register */
+#define REG_PIOE_IMR            (0x400E1648) /**< (PIOE) Interrupt Mask Register */
+#define REG_PIOE_ISR            (0x400E164C) /**< (PIOE) Interrupt Status Register */
+#define REG_PIOE_MDER           (0x400E1650) /**< (PIOE) Multi-driver Enable Register */
+#define REG_PIOE_MDDR           (0x400E1654) /**< (PIOE) Multi-driver Disable Register */
+#define REG_PIOE_MDSR           (0x400E1658) /**< (PIOE) Multi-driver Status Register */
+#define REG_PIOE_PUDR           (0x400E1660) /**< (PIOE) Pull-up Disable Register */
+#define REG_PIOE_PUER           (0x400E1664) /**< (PIOE) Pull-up Enable Register */
+#define REG_PIOE_PUSR           (0x400E1668) /**< (PIOE) Pad Pull-up Status Register */
+#define REG_PIOE_ABCDSR         (0x400E1670) /**< (PIOE) Peripheral ABCD Select Register 0 */
+#define REG_PIOE_ABCDSR0        (0x400E1670) /**< (PIOE) Peripheral ABCD Select Register 0 */
+#define REG_PIOE_ABCDSR1        (0x400E1674) /**< (PIOE) Peripheral ABCD Select Register 1 */
+#define REG_PIOE_IFSCDR         (0x400E1680) /**< (PIOE) Input Filter Slow Clock Disable Register */
+#define REG_PIOE_IFSCER         (0x400E1684) /**< (PIOE) Input Filter Slow Clock Enable Register */
+#define REG_PIOE_IFSCSR         (0x400E1688) /**< (PIOE) Input Filter Slow Clock Status Register */
+#define REG_PIOE_SCDR           (0x400E168C) /**< (PIOE) Slow Clock Divider Debouncing Register */
+#define REG_PIOE_PPDDR          (0x400E1690) /**< (PIOE) Pad Pull-down Disable Register */
+#define REG_PIOE_PPDER          (0x400E1694) /**< (PIOE) Pad Pull-down Enable Register */
+#define REG_PIOE_PPDSR          (0x400E1698) /**< (PIOE) Pad Pull-down Status Register */
+#define REG_PIOE_OWER           (0x400E16A0) /**< (PIOE) Output Write Enable */
+#define REG_PIOE_OWDR           (0x400E16A4) /**< (PIOE) Output Write Disable */
+#define REG_PIOE_OWSR           (0x400E16A8) /**< (PIOE) Output Write Status Register */
+#define REG_PIOE_AIMER          (0x400E16B0) /**< (PIOE) Additional Interrupt Modes Enable Register */
+#define REG_PIOE_AIMDR          (0x400E16B4) /**< (PIOE) Additional Interrupt Modes Disable Register */
+#define REG_PIOE_AIMMR          (0x400E16B8) /**< (PIOE) Additional Interrupt Modes Mask Register */
+#define REG_PIOE_ESR            (0x400E16C0) /**< (PIOE) Edge Select Register */
+#define REG_PIOE_LSR            (0x400E16C4) /**< (PIOE) Level Select Register */
+#define REG_PIOE_ELSR           (0x400E16C8) /**< (PIOE) Edge/Level Status Register */
+#define REG_PIOE_FELLSR         (0x400E16D0) /**< (PIOE) Falling Edge/Low-Level Select Register */
+#define REG_PIOE_REHLSR         (0x400E16D4) /**< (PIOE) Rising Edge/High-Level Select Register */
+#define REG_PIOE_FRLHSR         (0x400E16D8) /**< (PIOE) Fall/Rise - Low/High Status Register */
+#define REG_PIOE_LOCKSR         (0x400E16E0) /**< (PIOE) Lock Status */
+#define REG_PIOE_WPMR           (0x400E16E4) /**< (PIOE) Write Protection Mode Register */
+#define REG_PIOE_WPSR           (0x400E16E8) /**< (PIOE) Write Protection Status Register */
+#define REG_PIOE_SCHMITT        (0x400E1700) /**< (PIOE) Schmitt Trigger Register */
+#define REG_PIOE_DRIVER         (0x400E1718) /**< (PIOE) I/O Drive Register */
+#define REG_PIOE_PCMR           (0x400E1750) /**< (PIOE) Parallel Capture Mode Register */
+#define REG_PIOE_PCIER          (0x400E1754) /**< (PIOE) Parallel Capture Interrupt Enable Register */
+#define REG_PIOE_PCIDR          (0x400E1758) /**< (PIOE) Parallel Capture Interrupt Disable Register */
+#define REG_PIOE_PCIMR          (0x400E175C) /**< (PIOE) Parallel Capture Interrupt Mask Register */
+#define REG_PIOE_PCISR          (0x400E1760) /**< (PIOE) Parallel Capture Interrupt Status Register */
+#define REG_PIOE_PCRHR          (0x400E1764) /**< (PIOE) Parallel Capture Reception Holding Register */
+
 #else
-  #define REG_PIOE_PER     (*(__O  uint32_t*)0x400E1600U) /**< \brief (PIOE) PIO Enable Register */
-  #define REG_PIOE_PDR     (*(__O  uint32_t*)0x400E1604U) /**< \brief (PIOE) PIO Disable Register */
-  #define REG_PIOE_PSR     (*(__I  uint32_t*)0x400E1608U) /**< \brief (PIOE) PIO Status Register */
-  #define REG_PIOE_OER     (*(__O  uint32_t*)0x400E1610U) /**< \brief (PIOE) Output Enable Register */
-  #define REG_PIOE_ODR     (*(__O  uint32_t*)0x400E1614U) /**< \brief (PIOE) Output Disable Register */
-  #define REG_PIOE_OSR     (*(__I  uint32_t*)0x400E1618U) /**< \brief (PIOE) Output Status Register */
-  #define REG_PIOE_IFER    (*(__O  uint32_t*)0x400E1620U) /**< \brief (PIOE) Glitch Input Filter Enable Register */
-  #define REG_PIOE_IFDR    (*(__O  uint32_t*)0x400E1624U) /**< \brief (PIOE) Glitch Input Filter Disable Register */
-  #define REG_PIOE_IFSR    (*(__I  uint32_t*)0x400E1628U) /**< \brief (PIOE) Glitch Input Filter Status Register */
-  #define REG_PIOE_SODR    (*(__O  uint32_t*)0x400E1630U) /**< \brief (PIOE) Set Output Data Register */
-  #define REG_PIOE_CODR    (*(__O  uint32_t*)0x400E1634U) /**< \brief (PIOE) Clear Output Data Register */
-  #define REG_PIOE_ODSR    (*(__IO uint32_t*)0x400E1638U) /**< \brief (PIOE) Output Data Status Register */
-  #define REG_PIOE_PDSR    (*(__I  uint32_t*)0x400E163CU) /**< \brief (PIOE) Pin Data Status Register */
-  #define REG_PIOE_IER     (*(__O  uint32_t*)0x400E1640U) /**< \brief (PIOE) Interrupt Enable Register */
-  #define REG_PIOE_IDR     (*(__O  uint32_t*)0x400E1644U) /**< \brief (PIOE) Interrupt Disable Register */
-  #define REG_PIOE_IMR     (*(__I  uint32_t*)0x400E1648U) /**< \brief (PIOE) Interrupt Mask Register */
-  #define REG_PIOE_ISR     (*(__I  uint32_t*)0x400E164CU) /**< \brief (PIOE) Interrupt Status Register */
-  #define REG_PIOE_MDER    (*(__O  uint32_t*)0x400E1650U) /**< \brief (PIOE) Multi-driver Enable Register */
-  #define REG_PIOE_MDDR    (*(__O  uint32_t*)0x400E1654U) /**< \brief (PIOE) Multi-driver Disable Register */
-  #define REG_PIOE_MDSR    (*(__I  uint32_t*)0x400E1658U) /**< \brief (PIOE) Multi-driver Status Register */
-  #define REG_PIOE_PUDR    (*(__O  uint32_t*)0x400E1660U) /**< \brief (PIOE) Pull-up Disable Register */
-  #define REG_PIOE_PUER    (*(__O  uint32_t*)0x400E1664U) /**< \brief (PIOE) Pull-up Enable Register */
-  #define REG_PIOE_PUSR    (*(__I  uint32_t*)0x400E1668U) /**< \brief (PIOE) Pad Pull-up Status Register */
-  #define REG_PIOE_ABCDSR  (*(__IO uint32_t*)0x400E1670U) /**< \brief (PIOE) Peripheral Select Register */
-  #define REG_PIOE_IFSCDR  (*(__O  uint32_t*)0x400E1680U) /**< \brief (PIOE) Input Filter Slow Clock Disable Register */
-  #define REG_PIOE_IFSCER  (*(__O  uint32_t*)0x400E1684U) /**< \brief (PIOE) Input Filter Slow Clock Enable Register */
-  #define REG_PIOE_IFSCSR  (*(__I  uint32_t*)0x400E1688U) /**< \brief (PIOE) Input Filter Slow Clock Status Register */
-  #define REG_PIOE_SCDR    (*(__IO uint32_t*)0x400E168CU) /**< \brief (PIOE) Slow Clock Divider Debouncing Register */
-  #define REG_PIOE_PPDDR   (*(__O  uint32_t*)0x400E1690U) /**< \brief (PIOE) Pad Pull-down Disable Register */
-  #define REG_PIOE_PPDER   (*(__O  uint32_t*)0x400E1694U) /**< \brief (PIOE) Pad Pull-down Enable Register */
-  #define REG_PIOE_PPDSR   (*(__I  uint32_t*)0x400E1698U) /**< \brief (PIOE) Pad Pull-down Status Register */
-  #define REG_PIOE_OWER    (*(__O  uint32_t*)0x400E16A0U) /**< \brief (PIOE) Output Write Enable */
-  #define REG_PIOE_OWDR    (*(__O  uint32_t*)0x400E16A4U) /**< \brief (PIOE) Output Write Disable */
-  #define REG_PIOE_OWSR    (*(__I  uint32_t*)0x400E16A8U) /**< \brief (PIOE) Output Write Status Register */
-  #define REG_PIOE_AIMER   (*(__O  uint32_t*)0x400E16B0U) /**< \brief (PIOE) Additional Interrupt Modes Enable Register */
-  #define REG_PIOE_AIMDR   (*(__O  uint32_t*)0x400E16B4U) /**< \brief (PIOE) Additional Interrupt Modes Disable Register */
-  #define REG_PIOE_AIMMR   (*(__I  uint32_t*)0x400E16B8U) /**< \brief (PIOE) Additional Interrupt Modes Mask Register */
-  #define REG_PIOE_ESR     (*(__O  uint32_t*)0x400E16C0U) /**< \brief (PIOE) Edge Select Register */
-  #define REG_PIOE_LSR     (*(__O  uint32_t*)0x400E16C4U) /**< \brief (PIOE) Level Select Register */
-  #define REG_PIOE_ELSR    (*(__I  uint32_t*)0x400E16C8U) /**< \brief (PIOE) Edge/Level Status Register */
-  #define REG_PIOE_FELLSR  (*(__O  uint32_t*)0x400E16D0U) /**< \brief (PIOE) Falling Edge/Low-Level Select Register */
-  #define REG_PIOE_REHLSR  (*(__O  uint32_t*)0x400E16D4U) /**< \brief (PIOE) Rising Edge/High-Level Select Register */
-  #define REG_PIOE_FRLHSR  (*(__I  uint32_t*)0x400E16D8U) /**< \brief (PIOE) Fall/Rise - Low/High Status Register */
-  #define REG_PIOE_LOCKSR  (*(__I  uint32_t*)0x400E16E0U) /**< \brief (PIOE) Lock Status */
-  #define REG_PIOE_WPMR    (*(__IO uint32_t*)0x400E16E4U) /**< \brief (PIOE) Write Protection Mode Register */
-  #define REG_PIOE_WPSR    (*(__I  uint32_t*)0x400E16E8U) /**< \brief (PIOE) Write Protection Status Register */
-  #define REG_PIOE_SCHMITT (*(__IO uint32_t*)0x400E1700U) /**< \brief (PIOE) Schmitt Trigger Register */
-  #define REG_PIOE_DRIVER  (*(__IO uint32_t*)0x400E1718U) /**< \brief (PIOE) PIO I/O Drive Register */
-  #define REG_PIOE_KER     (*(__IO uint32_t*)0x400E1720U) /**< \brief (PIOE) Keypad Controller Enable Register */
-  #define REG_PIOE_KRCR    (*(__IO uint32_t*)0x400E1724U) /**< \brief (PIOE) Keypad Controller Row Column Register */
-  #define REG_PIOE_KDR     (*(__IO uint32_t*)0x400E1728U) /**< \brief (PIOE) Keypad Controller Debouncing Register */
-  #define REG_PIOE_KIER    (*(__O  uint32_t*)0x400E1730U) /**< \brief (PIOE) Keypad Controller Interrupt Enable Register */
-  #define REG_PIOE_KIDR    (*(__O  uint32_t*)0x400E1734U) /**< \brief (PIOE) Keypad Controller Interrupt Disable Register */
-  #define REG_PIOE_KIMR    (*(__I  uint32_t*)0x400E1738U) /**< \brief (PIOE) Keypad Controller Interrupt Mask Register */
-  #define REG_PIOE_KSR     (*(__I  uint32_t*)0x400E173CU) /**< \brief (PIOE) Keypad Controller Status Register */
-  #define REG_PIOE_KKPR    (*(__I  uint32_t*)0x400E1740U) /**< \brief (PIOE) Keypad Controller Key Press Register */
-  #define REG_PIOE_KKRR    (*(__I  uint32_t*)0x400E1744U) /**< \brief (PIOE) Keypad Controller Key Release Register */
-  #define REG_PIOE_PCMR    (*(__IO uint32_t*)0x400E1750U) /**< \brief (PIOE) Parallel Capture Mode Register */
-  #define REG_PIOE_PCIER   (*(__O  uint32_t*)0x400E1754U) /**< \brief (PIOE) Parallel Capture Interrupt Enable Register */
-  #define REG_PIOE_PCIDR   (*(__O  uint32_t*)0x400E1758U) /**< \brief (PIOE) Parallel Capture Interrupt Disable Register */
-  #define REG_PIOE_PCIMR   (*(__I  uint32_t*)0x400E175CU) /**< \brief (PIOE) Parallel Capture Interrupt Mask Register */
-  #define REG_PIOE_PCISR   (*(__I  uint32_t*)0x400E1760U) /**< \brief (PIOE) Parallel Capture Interrupt Status Register */
-  #define REG_PIOE_PCRHR   (*(__I  uint32_t*)0x400E1764U) /**< \brief (PIOE) Parallel Capture Reception Holding Register */
-#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define REG_PIOE_PER            (*(__O  uint32_t*)0x400E1600U) /**< (PIOE) PIO Enable Register */
+#define REG_PIOE_PDR            (*(__O  uint32_t*)0x400E1604U) /**< (PIOE) PIO Disable Register */
+#define REG_PIOE_PSR            (*(__I  uint32_t*)0x400E1608U) /**< (PIOE) PIO Status Register */
+#define REG_PIOE_OER            (*(__O  uint32_t*)0x400E1610U) /**< (PIOE) Output Enable Register */
+#define REG_PIOE_ODR            (*(__O  uint32_t*)0x400E1614U) /**< (PIOE) Output Disable Register */
+#define REG_PIOE_OSR            (*(__I  uint32_t*)0x400E1618U) /**< (PIOE) Output Status Register */
+#define REG_PIOE_IFER           (*(__O  uint32_t*)0x400E1620U) /**< (PIOE) Glitch Input Filter Enable Register */
+#define REG_PIOE_IFDR           (*(__O  uint32_t*)0x400E1624U) /**< (PIOE) Glitch Input Filter Disable Register */
+#define REG_PIOE_IFSR           (*(__I  uint32_t*)0x400E1628U) /**< (PIOE) Glitch Input Filter Status Register */
+#define REG_PIOE_SODR           (*(__O  uint32_t*)0x400E1630U) /**< (PIOE) Set Output Data Register */
+#define REG_PIOE_CODR           (*(__O  uint32_t*)0x400E1634U) /**< (PIOE) Clear Output Data Register */
+#define REG_PIOE_ODSR           (*(__IO uint32_t*)0x400E1638U) /**< (PIOE) Output Data Status Register */
+#define REG_PIOE_PDSR           (*(__I  uint32_t*)0x400E163CU) /**< (PIOE) Pin Data Status Register */
+#define REG_PIOE_IER            (*(__O  uint32_t*)0x400E1640U) /**< (PIOE) Interrupt Enable Register */
+#define REG_PIOE_IDR            (*(__O  uint32_t*)0x400E1644U) /**< (PIOE) Interrupt Disable Register */
+#define REG_PIOE_IMR            (*(__I  uint32_t*)0x400E1648U) /**< (PIOE) Interrupt Mask Register */
+#define REG_PIOE_ISR            (*(__I  uint32_t*)0x400E164CU) /**< (PIOE) Interrupt Status Register */
+#define REG_PIOE_MDER           (*(__O  uint32_t*)0x400E1650U) /**< (PIOE) Multi-driver Enable Register */
+#define REG_PIOE_MDDR           (*(__O  uint32_t*)0x400E1654U) /**< (PIOE) Multi-driver Disable Register */
+#define REG_PIOE_MDSR           (*(__I  uint32_t*)0x400E1658U) /**< (PIOE) Multi-driver Status Register */
+#define REG_PIOE_PUDR           (*(__O  uint32_t*)0x400E1660U) /**< (PIOE) Pull-up Disable Register */
+#define REG_PIOE_PUER           (*(__O  uint32_t*)0x400E1664U) /**< (PIOE) Pull-up Enable Register */
+#define REG_PIOE_PUSR           (*(__I  uint32_t*)0x400E1668U) /**< (PIOE) Pad Pull-up Status Register */
+#define REG_PIOE_ABCDSR         (*(__IO uint32_t*)0x400E1670U) /**< (PIOE) Peripheral ABCD Select Register 0 */
+#define REG_PIOE_ABCDSR0        (*(__IO uint32_t*)0x400E1670U) /**< (PIOE) Peripheral ABCD Select Register 0 */
+#define REG_PIOE_ABCDSR1        (*(__IO uint32_t*)0x400E1674U) /**< (PIOE) Peripheral ABCD Select Register 1 */
+#define REG_PIOE_IFSCDR         (*(__O  uint32_t*)0x400E1680U) /**< (PIOE) Input Filter Slow Clock Disable Register */
+#define REG_PIOE_IFSCER         (*(__O  uint32_t*)0x400E1684U) /**< (PIOE) Input Filter Slow Clock Enable Register */
+#define REG_PIOE_IFSCSR         (*(__I  uint32_t*)0x400E1688U) /**< (PIOE) Input Filter Slow Clock Status Register */
+#define REG_PIOE_SCDR           (*(__IO uint32_t*)0x400E168CU) /**< (PIOE) Slow Clock Divider Debouncing Register */
+#define REG_PIOE_PPDDR          (*(__O  uint32_t*)0x400E1690U) /**< (PIOE) Pad Pull-down Disable Register */
+#define REG_PIOE_PPDER          (*(__O  uint32_t*)0x400E1694U) /**< (PIOE) Pad Pull-down Enable Register */
+#define REG_PIOE_PPDSR          (*(__I  uint32_t*)0x400E1698U) /**< (PIOE) Pad Pull-down Status Register */
+#define REG_PIOE_OWER           (*(__O  uint32_t*)0x400E16A0U) /**< (PIOE) Output Write Enable */
+#define REG_PIOE_OWDR           (*(__O  uint32_t*)0x400E16A4U) /**< (PIOE) Output Write Disable */
+#define REG_PIOE_OWSR           (*(__I  uint32_t*)0x400E16A8U) /**< (PIOE) Output Write Status Register */
+#define REG_PIOE_AIMER          (*(__O  uint32_t*)0x400E16B0U) /**< (PIOE) Additional Interrupt Modes Enable Register */
+#define REG_PIOE_AIMDR          (*(__O  uint32_t*)0x400E16B4U) /**< (PIOE) Additional Interrupt Modes Disable Register */
+#define REG_PIOE_AIMMR          (*(__I  uint32_t*)0x400E16B8U) /**< (PIOE) Additional Interrupt Modes Mask Register */
+#define REG_PIOE_ESR            (*(__O  uint32_t*)0x400E16C0U) /**< (PIOE) Edge Select Register */
+#define REG_PIOE_LSR            (*(__O  uint32_t*)0x400E16C4U) /**< (PIOE) Level Select Register */
+#define REG_PIOE_ELSR           (*(__I  uint32_t*)0x400E16C8U) /**< (PIOE) Edge/Level Status Register */
+#define REG_PIOE_FELLSR         (*(__O  uint32_t*)0x400E16D0U) /**< (PIOE) Falling Edge/Low-Level Select Register */
+#define REG_PIOE_REHLSR         (*(__O  uint32_t*)0x400E16D4U) /**< (PIOE) Rising Edge/High-Level Select Register */
+#define REG_PIOE_FRLHSR         (*(__I  uint32_t*)0x400E16D8U) /**< (PIOE) Fall/Rise - Low/High Status Register */
+#define REG_PIOE_LOCKSR         (*(__I  uint32_t*)0x400E16E0U) /**< (PIOE) Lock Status */
+#define REG_PIOE_WPMR           (*(__IO uint32_t*)0x400E16E4U) /**< (PIOE) Write Protection Mode Register */
+#define REG_PIOE_WPSR           (*(__I  uint32_t*)0x400E16E8U) /**< (PIOE) Write Protection Status Register */
+#define REG_PIOE_SCHMITT        (*(__IO uint32_t*)0x400E1700U) /**< (PIOE) Schmitt Trigger Register */
+#define REG_PIOE_DRIVER         (*(__IO uint32_t*)0x400E1718U) /**< (PIOE) I/O Drive Register */
+#define REG_PIOE_PCMR           (*(__IO uint32_t*)0x400E1750U) /**< (PIOE) Parallel Capture Mode Register */
+#define REG_PIOE_PCIER          (*(__O  uint32_t*)0x400E1754U) /**< (PIOE) Parallel Capture Interrupt Enable Register */
+#define REG_PIOE_PCIDR          (*(__O  uint32_t*)0x400E1758U) /**< (PIOE) Parallel Capture Interrupt Disable Register */
+#define REG_PIOE_PCIMR          (*(__I  uint32_t*)0x400E175CU) /**< (PIOE) Parallel Capture Interrupt Mask Register */
+#define REG_PIOE_PCISR          (*(__I  uint32_t*)0x400E1760U) /**< (PIOE) Parallel Capture Interrupt Status Register */
+#define REG_PIOE_PCRHR          (*(__I  uint32_t*)0x400E1764U) /**< (PIOE) Parallel Capture Reception Holding Register */
+
+#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+/* ========== Instance Parameter definitions for PIOE peripheral ========== */
+#define PIOE_INSTANCE_ID                         17         
 
 #endif /* _SAME70_PIOE_INSTANCE_ */
