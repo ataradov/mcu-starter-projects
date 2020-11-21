@@ -71,6 +71,7 @@ DUMMY void irq_handler_usart_1(void);
 DUMMY void irq_handler_usart_2(void);
 DUMMY void irq_handler_usart_3_4_lpuart_1(void);
 DUMMY void irq_handler_cec(void);
+DUMMY void irq_handler_aes_rng(void);
 
 extern int main(void);
 
@@ -136,6 +137,7 @@ void (* const vectors[])(void) =
   irq_handler_usart_2,                 // 28 - USART2
   irq_handler_usart_3_4_lpuart_1,      // 29 - USART3, USART4 and LPUART1 (combined with EXTI 28)
   irq_handler_cec,                     // 30 - CEC (combined with EXTI 27)
+  irq_handler_aes_rng,                 // 31 - AES and RNG Interrupt
 };
 
 //-----------------------------------------------------------------------------
