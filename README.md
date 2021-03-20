@@ -2,7 +2,7 @@
 
 This is a collection of simple projects for bare-metal MCU development.
 Both Makefiles and IDE projects are provided when possible.
-The target compiler is GCC. 
+The target compiler is GCC.
 
 ### Currrently supported devices:
 
@@ -27,5 +27,6 @@ The target compiler is GCC.
 * ST STM32G071 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/stm32g071c))
 * ST STM32G031 (8-pin device on a breadboard)
 * GigaDevice GD32F407VET6 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/gd32f407v))
+* Nuvoton M484SIDAE ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/m484sidae))
 
 
