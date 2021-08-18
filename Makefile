@@ -14,6 +14,7 @@ TARGETS = \
   saml22a \
   same54 \
   samg55 \
+  samg53 \
   same70 \
   samv71 \
   sam4s \
