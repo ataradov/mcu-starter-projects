@@ -23,6 +23,7 @@ TARGETS = \
   stm32g031 \
   gd32f4 \
   m484 \
+  rp2040 \
 
 TARGETS_ALL   = $(addprefix all_,   $(TARGETS))
 TARGETS_CLEAN = $(addprefix clean_, $(TARGETS))
