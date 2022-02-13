@@ -39,7 +39,7 @@ void irq_handler_timer_0(void)
 {
   TIMER->INTR = TIMER_INTR_ALARM_0_Msk;
   TIMER->ALARM0 = TIMER->TIMELR + timer_period;
-  SIO->GPIO_OUT_XOR = (1 << 25);
+  HAL_GPIO_LED_toggle();
 }
 
 //-----------------------------------------------------------------------------
