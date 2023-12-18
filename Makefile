@@ -13,6 +13,7 @@ TARGETS = \
   saml21b \
   saml22a \
   same54 \
+  samd51 \
   samg55 \
   samg53 \
   same70 \

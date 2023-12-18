@@ -22,6 +22,7 @@ The target compiler is GCC.
 * Atmel SAM4SD32C (SAM 4S Xplained Pro)
 * Atmel SAM4LC4C (SAM 4L Xplained Pro)
 * Atmel SAME54P20A (SAM E45 Xplained Pro)
+* Atmel SAMD51J20A (Custom Project Board)
 * Microchip SAML10E16A (SAM L10 Xplained Pro)
 * Microchip SAML11E16A (SAM L11 Xplained Pro)
 * SiFive FE310-G000 (HiFive1)
