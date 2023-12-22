@@ -27,6 +27,7 @@ LDFLAGS += -mcpu=cortex-m0plus -mthumb
 LDFLAGS += -nostartfiles
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -Wl,--script=../linker/rp2040.ld
+LDFLAGS += -Wl,--no-warn-rwx-segments
 
 INCLUDES += \
   -I../include \
