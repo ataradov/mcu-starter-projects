@@ -54,14 +54,16 @@ static const struct option long_options[] =
   { "update",    no_argument,        0, 'u' },
   { "input",     required_argument,  0, 'i' },
   { "output",    required_argument,  0, 'o' },
+  { "show",      required_argument,  0, 's' },
   { 0, 0, 0, 0 }
 };
 
-static const char *short_options = "hui:o:";
+static const char *short_options = "hui:o:s";
 
 static bool g_update = false;
 static char *g_input = NULL;
 static char *g_output = NULL;
+static bool g_show = false;
 
 static uint32_t crc32_tab[256];
 
@@ -133,6 +135,7 @@ static void print_help(char *name)
   printf("  -u, --update         generate raw binary file with an updated CRC\n");
   printf("  -i, --input <name>   input file name\n");
   printf("  -o, --output <name>  output file name\n");
+  printf("  -s, --show           show CRC value\n");
   exit(0);
 }
 
@@ -150,6 +153,7 @@ static void parse_command_line(int argc, char **argv)
       case 'u': g_update = true; break;
       case 'i': g_input = optarg; break;
       case 'o': g_output = optarg; break;
+      case 's': g_show = true; break;
       default: exit(1); break;
     }
   }
@@ -195,6 +199,9 @@ int main(int argc, char *argv[])
   g_data[BL2_SIZE-3] = (crc >> 8);
   g_data[BL2_SIZE-2] = (crc >> 16);
   g_data[BL2_SIZE-1] = (crc >> 24);
+
+  if (g_show)
+    printf("CRC value is 0x%08x\n", crc);
 
   fd = open(g_output, O_WRONLY | O_TRUNC | O_CREAT | O_BINARY, 0644);
 
