@@ -22,6 +22,7 @@ TARGETS = \
   sam4l \
   stm32g071 \
   stm32g031 \
+  stm32g441 \
   gd32f4 \
   m484 \
   rp2040 \

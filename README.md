@@ -28,6 +28,7 @@ The target compiler is GCC.
 * SiFive FE310-G000 (HiFive1)
 * ST STM32G071 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/stm32g071c))
 * ST STM32G031 (8-pin device on a breadboard)
+* ST STM32G441 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/stm32g441kb))
 * GigaDevice GD32F407VET6 ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/gd32f407v))
 * Nuvoton M484SIDAE ([Custom Board](https://github.com/ataradov/breakout-boards/tree/master/m484sidae))
 * Raspberry Pi RP2040 (Raspberry Pi Pico)
